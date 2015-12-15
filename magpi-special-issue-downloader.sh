@@ -11,8 +11,8 @@ VERSION=0.1.0
 USAGE="Usage: sh magpi-special-issue-downloader.sh"
 
 
-if [ ! -d "special-issues" ]; then
- mkdir special-issues
+if [ ! -d "special_issues" ]; then
+ mkdir special_issues
 fi
 
 # Essential Games v1
