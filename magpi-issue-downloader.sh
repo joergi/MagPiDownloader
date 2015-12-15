@@ -8,7 +8,7 @@
 # ------------------------------------------------------------------
 
 VERSION=0.1.0
-USAGE="Usage: sh magpidownloader.sh"
+USAGE="Usage: sh magpi-issue-downloader.sh"
 
 
 if [ ! -d "issues" ]; then
@@ -30,5 +30,6 @@ do
 	fi
 	i=$(( i+1 ))
 done
+
 
 
