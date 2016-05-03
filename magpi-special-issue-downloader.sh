@@ -24,11 +24,11 @@ wget https://raspberrypi.org/magpi-issues/Projects_Book_v1.pdf -P special_issues
 # Bash Essentials v1 - https://www.raspberrypi.org/magpi/issues/essentials-bash-vol1/
 wget https://raspberrypi.org/magpi-issues/Essentials_Bash_v1.pdf -P special_issues/
 
-# Essentials Sense Hat v1  https://www.raspberrypi.org/magpi/issues/essentials-sense-hat-v1/
+# Essentials Sense Hat v1 - https://www.raspberrypi.org/magpi/issues/essentials-sense-hat-v1/
 wget https://www.raspberrypi.org/magpi-issues/Essentials_SenseHAT_v1.pdf -P special_issues/
 
-
-
+# Sonic Pi Essentials - Code Music with Sonic Pi - https://www.raspberrypi.org/magpi/issues/essentials-sonic-pi-v1/
+wget https://raspberrypi.org/magpi-issues/Essentials_Sonic_Pi-v1.pdf -P special_issues/
 
 
 
