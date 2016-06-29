@@ -30,5 +30,9 @@ wget https://www.raspberrypi.org/magpi-issues/Essentials_SenseHAT_v1.pdf -P spec
 # Sonic Pi Essentials - Code Music with Sonic Pi - https://www.raspberrypi.org/magpi/issues/essentials-sonic-pi-v1/
 wget https://raspberrypi.org/magpi-issues/Essentials_Sonic_Pi-v1.pdf -P special_issues/
 
+# Scratch Essentials - Learn to code with scratch - https://www.raspberrypi.org/magpi/issues/essentials-scratch-v1/
+wget https://www.raspberrypi.org/magpi-issues/Essentials_Scratch_v1.pdf -P special_issues/
+
+
 
 
