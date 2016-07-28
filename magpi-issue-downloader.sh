@@ -17,7 +17,7 @@ fi
 
 
 i=1
-issues=47
+issues=48
 
 
 while [ $i -le $issues ]
