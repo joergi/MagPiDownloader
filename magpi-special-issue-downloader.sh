@@ -36,6 +36,5 @@ wget https://www.raspberrypi.org/magpi-issues/Essentials_Scratch_v1.pdf -P speci
 # Minecraft Essentials - Hacking and Making in Minecraft - https://www.raspberrypi.org/magpi/issues/essentials-minecraft-v1/
 wget https://raspberrypi.org/magpi-issues/Essentials_Minecraft_v1.pdf -P special_issues/
 
-
-
-
+# GPIO Zero Essentials - Simple Electronics with GPIO Zero
+wget https://raspberrypi.org/magpi-issues/Essentials_GPIOZero_v1.pdf -P special_issues/
