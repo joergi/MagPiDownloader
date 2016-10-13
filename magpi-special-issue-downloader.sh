@@ -38,3 +38,6 @@ wget https://raspberrypi.org/magpi-issues/Essentials_Minecraft_v1.pdf -P special
 
 # GPIO Zero Essentials - Simple Electronics with GPIO Zero
 wget https://raspberrypi.org/magpi-issues/Essentials_GPIOZero_v1.pdf -P special_issues/
+
+# C Essentials - Learn to code with C - https://www.raspberrypi.org/magpi/issues/essentials-c-v1/
+wget https://www.raspberrypi.org/magpi-issues/Essentials_C_v1.pdf -P special_issues/
