@@ -8,6 +8,9 @@ Download the normal issues:
   
 Download the special issues / books 
   `sh magpi-special-issue-downloader.sh`
+  
+Download the education issues
+  `sh  magpi-education-downloader.sh`
 
 All the issues are downloadable for free on https://www.raspberrypi.org/magpi/issues/   
 You can also buy all the paper versions of this issues on http://swag.raspberrypi.org/collections/magpi
