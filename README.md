@@ -12,6 +12,21 @@ Download the special issues / books
 Download the education issues
   `sh  magpi-education-downloader.sh`
 
+Télécharger les traductions françaises:
+  `sh  magpi-issue-downloader_french.sh`
+
+Scarica i temi tradotti traduzione:
+  `sh  magpi-issue-downloader_french.sh`
+
+Descargue la traducción española:
+  `sh  magpi-issue-downloader_spanish.sh`
+
+הורד את הבעיות מתורגמות העבריות:
+  `sh  magpi-issue-downloader_hebrew.sh`
+
+
+
+
 All the issues are downloadable for free on https://www.raspberrypi.org/magpi/issues/   
 You can also buy all the paper versions of this issues on http://swag.raspberrypi.org/collections/magpi
 
