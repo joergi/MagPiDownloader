@@ -1,6 +1,5 @@
 #spanish
 
-
 #!/bin/sh
 
 # ------------------------------------------------------------------
@@ -14,21 +13,17 @@
 VERSION=0.1.0
 USAGE="Usage: sh magpi-issue-downloader_spanish.sh"
 
-
 if [ ! -d "spanish_issues" ]; then
  mkdir spanish_issues
 fi
 
-
 i=1
-issues=2
-
+issues=3
 
 while [ $i -le $issues ]
 do
 	if [ "$i" -lt 10 ]; then
 		wget https://www.raspberrypi.org/magpi-issues/MagPi_Mini_Spanish_0$i.pdf -P spanish_issues/
-		
 	else
 		wget https://www.raspberrypi.org/magpi-issues/MagPi_Mini_Spanish_$i.pdf -P spanish_issues/
 	fi
