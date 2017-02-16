@@ -13,24 +13,19 @@
 VERSION=0.1.0
 USAGE="Usage: sh magpi-issue-downloader_hebrew.sh"
 
-
 if [ ! -d "hebrew_issues" ]; then
  mkdir hebrew_issues
 fi
 
-
 i=1
-issues=2
-
+issues=3
 
 while [ $i -le $issues ]
 do
 	if [ "$i" -lt 10 ]; then
-		wget https://www.raspberrypi.org/magpi-issues/MagPi_Mini_Hebrew_0$i.pdf -P spanish_issues/
-		
+		wget https://www.raspberrypi.org/magpi-issues/MagPi_Mini_Hebrew_0$i.pdf -P hebrew_issues/
 	else
-		wget https://www.raspberrypi.org/magpi-issues/MagPi_Mini_Hebrew_$i.pdf -P spanish_issues/
+		wget https://www.raspberrypi.org/magpi-issues/MagPi_Mini_Hebrew_$i.pdf -P hebrew_issues/
 	fi
 	i=$(( i+1 ))
 done
-
