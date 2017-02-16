@@ -21,7 +21,7 @@ fi
 
 
 i=1
-issues=2
+issues=3
 
 
 while [ $i -le $issues ]
