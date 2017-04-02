@@ -7,18 +7,27 @@
 #          this script is under GNU GENERAL PUBLIC LICENSE 
 # ------------------------------------------------------------------
 
-VERSION=0.1.0
-USAGE="Usage: sh magpi-issue-downloader.sh"
-
+VERSION=0.1.1
+USAGE="Usage: sh magpi-issue-downloader.sh [-f firstissue] [-l lastissue]"
 
 if [ ! -d "issues" ]; then
  mkdir issues
 fi
 
-
 i=1
 issues=55
 
+while :
+do
+    case "$1" in
+	-f) shift; i="$1";;
+	-l) shift; issues="$1";;
+	--) shift; break;;
+	-*) usage "bad argument $1";;
+	*) break;;
+    esac
+    shift
+done
 
 while [ $i -le $issues ]
 do

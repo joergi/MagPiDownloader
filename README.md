@@ -5,6 +5,9 @@ Downloads all the Mag Pi issues (a Raspberry Pi magazine) on Linux and Mac OS
   
 Download the normal issues:  
   `sh magpi-issue-downloader.sh`
+
+Download a specific range of normal issues:
+  `sh magpi-issue-downloader.sh -f 42 -l 52`
   
 Download the special issues / books 
   `sh magpi-special-issue-downloader.sh`
