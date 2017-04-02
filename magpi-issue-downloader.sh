@@ -15,7 +15,7 @@ if [ ! -d "issues" ]; then
 fi
 
 i=1
-issues=55
+issues=56
 
 while :
 do
