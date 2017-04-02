@@ -7,7 +7,7 @@
 #          this script is under GNU GENERAL PUBLIC LICENSE 
 # ------------------------------------------------------------------
 
-VERSION=0.1.1
+VERSION=0.1.2
 USAGE="Usage: sh magpi-issue-downloader.sh [-f firstissue] [-l lastissue]"
 
 if [ ! -d "issues" ]; then
@@ -17,28 +17,43 @@ fi
 i=1
 issues=56
 
-while :
-do
-    case "$1" in
-	-f) shift; i="$1";;
-	-l) shift; issues="$1";;
-	--) shift; break;;
-	-*) usage "bad argument $1";;
-	*) break;;
-    esac
-    shift
-done
+if [ -z $1 ]
+then
+	wget https://www.raspberrypi.org/magpi-issues/ \
+	--recursive \
+	--no-directories \
+	--no-parent \
+	--directory-prefix issues \
+	--mirror \
+	--accept-regex "/MagPi[0-9]+\.pdf" \
+	--reject index.html \
+	--execute robots=off
 
-while [ $i -le $issues ]
-do
-	if [ "$i" -lt 10 ]; then
-		wget https://www.raspberrypi.org/magpi-issues/MagPi0$i.pdf -P issues/
+else
+
+	while :
+	do
+		case "$1" in
+		-f) shift; i="$1";;
+		-l) shift; issues="$1";;
+		--) shift; break;;
+		-*) usage "bad argument $1";;
+		*) break;;
+		esac
+		shift
+	done
+
+	while [ $i -le $issues ]
+	do
+		if [ "$i" -lt 10 ]; then
+			wget https://www.raspberrypi.org/magpi-issues/MagPi0$i.pdf -P issues/
 		
-	else
-		wget https://www.raspberrypi.org/magpi-issues/MagPi$i.pdf -P issues/
-	fi
-	i=$(( i+1 ))
-done
+		else
+			wget https://www.raspberrypi.org/magpi-issues/MagPi$i.pdf -P issues/
+		fi
+		i=$(( i+1 ))
+	done
 
+fi
 
 
