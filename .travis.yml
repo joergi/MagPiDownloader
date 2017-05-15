@@ -1,1 +1,10 @@
 image: alpine
+
+before_script:
+  - echo ls -la
+
+test:
+  script:
+    - echo ls -la
+  only:
+    - master
