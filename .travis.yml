@@ -1,6 +1,5 @@
-image: alpine
 deploy:
- - provider: script
+  - provider: script
     script: magpi-education-downloader.sh
 
     on:
