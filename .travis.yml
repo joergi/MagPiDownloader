@@ -1,1 +1,2 @@
+image: alpine:latest
 ls -la
