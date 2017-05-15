@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/joergi/MagPiDownloader.svg?branch=master)](https://travis-ci.org/joergi/MagPiDownloader)
+
 
 # MagPiDownloader
 Downloads all the Mag Pi issues (a Raspberry Pi magazine) on Linux and Mac OS
