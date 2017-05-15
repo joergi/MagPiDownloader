@@ -1,10 +1,6 @@
 image: alpine
+- provider: script
+    script: magpi-education-downloader.sh
 
-before_script:
-  - echo ls -la
-
-test:
-  script:
-    - echo ls -la
-  only:
-    - master
+    on:
+      branch: master
