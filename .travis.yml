@@ -1,9 +1,4 @@
-deploy:
-  - provider: script
-  
-    language: bash
-  
-    script: magpi-education-downloader.sh
+language: bash
 
-    on:
-      branch: master
+script:
+- bash magpi-education-downloader.sh
