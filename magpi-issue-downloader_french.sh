@@ -1,10 +1,10 @@
 #french
 
 
-#!/bin/sh
+#!/bin/bash
 
 # ------------------------------------------------------------------
-# [Author] joergi77 - https://github.com/joergi77
+# [Author] joergi - https://github.com/joergi/MagPiDownloader
 #          downloader for all MagPi issues
 #          they are downloadable for free under https://www.raspberrypi.org/magpi/issues/
 #          or you can buy the paper issues under: http://swag.raspberrypi.org/collections/magpi
