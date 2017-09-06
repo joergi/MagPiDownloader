@@ -1,5 +1,8 @@
 deploy:
   - provider: script
+  
+    language: bash
+  
     script: magpi-education-downloader.sh
 
     on:
