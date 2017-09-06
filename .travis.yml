@@ -2,3 +2,10 @@ language: bash
 
 script:
 - bash magpi-education-downloader.sh
+- bash magpi-issue-downloader.sh
+- bash magpi-issue-downloader.sh -f 60 -l 61
+- bash magpi-issue-downloader_french.sh
+- bash magpi-issue-downloader_hebrew.sh
+- bash magpi-issue-downloader_italian.sh
+- bash magpi-issue-downloader_spanish.sh
+- bash magpi-special-issue-downloader.sh
