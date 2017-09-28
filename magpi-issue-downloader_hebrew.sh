@@ -1,6 +1,5 @@
-# hebrew version
-
 #!/bin/bash
+# hebrew version
 
 # ------------------------------------------------------------------
 # [Author] joergi - https://github.com/joergi/MagPiDownloader

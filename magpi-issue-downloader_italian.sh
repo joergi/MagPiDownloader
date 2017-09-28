@@ -1,6 +1,5 @@
-# italian version
-
 #!/bin/bash
+# italian version
 
 # ------------------------------------------------------------------
 # [Author] joergi - https://github.com/joergi/MagPiDownloader

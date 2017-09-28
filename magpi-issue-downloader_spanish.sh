@@ -1,7 +1,5 @@
-# spanish version
-
 #!/bin/bash
-
+# spanish version
 # ------------------------------------------------------------------
 # [Author] joergi - https://github.com/joergi/MagPiDownloader
 #          downloader for all MagPi issues

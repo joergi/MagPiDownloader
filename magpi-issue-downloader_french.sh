@@ -1,8 +1,5 @@
-# french version
-
-
 #!/bin/bash
-
+# french version
 # ------------------------------------------------------------------
 # [Author] joergi - https://github.com/joergi/MagPiDownloader
 #          downloader for all MagPi issues
