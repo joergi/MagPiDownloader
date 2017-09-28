@@ -1,6 +1,9 @@
 ![](https://travis-ci.org/joergi/MagPiDownloader.svg?branch=master)
 
 # MagPiDownloader
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6148b12808964799910ed67ce82065ce)](https://www.codacy.com/app/joerg.liedl/MagPiDownloader?utm_source=github.com&utm_medium=referral&utm_content=joergi/MagPiDownloader&utm_campaign=badger)
+
 Downloads all the Mag Pi issues (a Raspberry Pi magazine) on Linux and Mac OS
 
   `git clone https://github.com/joergi77/MagPiDownloader.git`   
