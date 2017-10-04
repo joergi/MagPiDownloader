@@ -2,31 +2,31 @@
 # MagPiDownloader
 Downloads all the Mag Pi issues (a Raspberry Pi magazine) on Linux and Mac OS
 
-  `git clone https://github.com/joergi77/MagPiDownloader.git`   
+  `git clone https://github.com/joergi77/MagPiDownloader.git`
 
-Download the normal issues:  
-  `bash magpi-issue-downloader.sh`
+Download the normal issues:
+  `./agpi-issue-downloader.ps1`
 
 Download a specific range of normal issues:
-  `bash magpi-issue-downloader.sh -f 42 -l 52`
+  `./agpi-issue-downloader.ps1 -f 42 -l 52`
 
 Download the special issues / books
-  `bash magpi-special-issue-downloader.sh`
+  `./agpi-special-issue-downloader.ps1`
 
 Download the education issues
-  `bash  magpi-education-downloader.sh`
+  `./magpi-education-downloader.ps1`
 
 Télécharger les traductions françaises:
-  `bash  magpi-issue-downloader_french.sh`
+  `./magpi-issue-downloader_french.ps1`
 
 Scarica i temi tradotti traduzione:
-  `bash  magpi-issue-downloader_french.sh`
+  `./magpi-issue-downloader_french.ps1`
 
 Descargue la traducción española:
-  `bash  magpi-issue-downloader_spanish.sh`
+  `./magpi-issue-downloader_spanish.ps1`
 
 הורד את הבעיות מתורגמות העבריות:
-  `bash  magpi-issue-downloader_hebrew.sh`
+  `./magpi-issue-downloader_hebrew.ps1`
 
-All the issues are downloadable for free on https://www.raspberrypi.org/magpi/issues/   
+All the issues are downloadable for free on https://www.raspberrypi.org/magpi/issues/
 You can also buy all the paper versions of this issues on http://swag.raspberrypi.org/collections/magpi
