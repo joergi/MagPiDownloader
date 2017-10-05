@@ -7,6 +7,6 @@ You can also buy all the paper versions of this issues on http://swag.raspberryp
 
 This project should save you time, and let you download all scripts together.
 
-Windows user: [here is your tuturial](windows/)
+## Windows user: [here is your tuturial](windows/)
 
-Linux and Mac user: [here is your tutorial](linux_mac/)
+## Linux and Mac user: [here is your tutorial](linux_mac/)

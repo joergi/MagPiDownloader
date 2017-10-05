@@ -38,3 +38,6 @@ Descargue la traducción española:
 
 All the issues are downloadable for free on https://www.raspberrypi.org/magpi/issues/
 You can also buy all the paper versions of this issues on http://swag.raspberrypi.org/collections/magpi
+
+
+## You don't have a Windows? [Go here for the Mac or Linux version](../linux_mac/)
