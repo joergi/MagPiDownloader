@@ -1,11 +1,11 @@
 language: bash
 
 script:
-- bash magpi-education-downloader.sh
-- bash magpi-issue-downloader.sh
-- bash magpi-issue-downloader.sh -f 60 -l 62
-- bash magpi-issue-downloader_french.sh
-- bash magpi-issue-downloader_hebrew.sh
-- bash magpi-issue-downloader_italian.sh
-- bash magpi-issue-downloader_spanish.sh
-- bash magpi-special-issue-downloader.sh
+- bash linux_mac/magpi-education-downloader.sh
+- bash linux_mac/magpi-issue-downloader.sh
+- bash linux_mac/magpi-issue-downloader.sh -f 60 -l 62
+- bash linux_mac/magpi-issue-downloader_french.sh
+- bash linux_mac/magpi-issue-downloader_hebrew.sh
+- bash linux_mac/magpi-issue-downloader_italian.sh
+- bash linux_mac/magpi-issue-downloader_spanish.sh
+- bash linux_mac/magpi-special-issue-downloader.sh
