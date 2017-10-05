@@ -14,8 +14,9 @@ All Windows scripts are done by [github user Rubemlrm](https://github.com/Rubeml
 Download the normal issues:
   `./magpi-issue-downloader.ps1`
 
-Download a specific range of normal issues:
-  `./magpi-issue-downloader.ps1 -f 42 -l 52`
+~~Download a specific range of normal issues:
+  `./magpi-issue-downloader.ps1 -f 42 -l 52`~~
+  (not working yet, will be fixed soon)
 
 Download the special issues / books
   `./magpi-special-issue-downloader.ps1`
