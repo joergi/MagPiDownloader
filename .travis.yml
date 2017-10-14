@@ -1,11 +1,21 @@
-language: bash
-
-script:
-- bash linux_mac/magpi-education-downloader.sh
-- bash linux_mac/magpi-issue-downloader.sh
-- bash linux_mac/magpi-issue-downloader.sh -f 60 -l 62
-- bash linux_mac/magpi-issue-downloader_french.sh
-- bash linux_mac/magpi-issue-downloader_hebrew.sh
-- bash linux_mac/magpi-issue-downloader_italian.sh
-- bash linux_mac/magpi-issue-downloader_spanish.sh
-- bash linux_mac/magpi-special-issue-downloader.sh
+matrix:
+  include:
+  - language: bash
+    script:
+    - bash linux_mac/magpi-education-downloader.sh
+    - bash linux_mac/magpi-issue-downloader.sh
+    - bash linux_mac/magpi-issue-downloader.sh -f 60 -l 62
+    - bash linux_mac/magpi-issue-downloader_french.sh
+    - bash linux_mac/magpi-issue-downloader_hebrew.sh
+    - bash linux_mac/magpi-issue-downloader_italian.sh
+    - bash linux_mac/magpi-issue-downloader_spanish.sh
+    - bash linux_mac/magpi-special-issue-downloader.sh
+  - language: cpp
+    script:
+    - ./windows/magpi-education-downloader.ps1
+    - ./windows/magpi-issue-downloader.ps1
+    - ./windows/magpi-issue-downloader_french.ps1
+    - ./windows/magpi-issue-downloader_hebrew.ps1
+    - ./windows/magpi-issue-downloader_italian.ps1
+    - ./windows/magpi-issue-downloader_spanish.ps1
+    - ./windows/magpi-special-issue-downloader.ps1
