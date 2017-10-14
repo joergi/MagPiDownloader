@@ -10,7 +10,9 @@ matrix:
     - bash linux_mac/magpi-issue-downloader_italian.sh
     - bash linux_mac/magpi-issue-downloader_spanish.sh
     - bash linux_mac/magpi-special-issue-downloader.sh
-  - language: cpp
+  - language: csharp
+    before_script:
+      - chmod +x *.ps1
     script:
     - ./windows/magpi-education-downloader.ps1
     - ./windows/magpi-issue-downloader.ps1
