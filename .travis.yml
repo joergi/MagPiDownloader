@@ -14,7 +14,7 @@ matrix:
     services:
       - docker
       # Replace with your image name.
-    before_script:
+    script:
       - docker pull microsoft/powershell
       - docker run -v $(pwd)/windows:/data microsoft/powershell /bin/sh -c "cd /data; chmod +x *.ps1; powershell ./magpi-education-downloader.ps1"
       #- docker run -v $(pwd)/windows:/data microsoft/powershell /bin/sh -c "cd /data; chmod +x *.ps1; powershell ./magpi-issue-downloader.ps1"
@@ -23,5 +23,4 @@ matrix:
       - docker run -v $(pwd)/windows:/data microsoft/powershell /bin/sh -c "cd /data; chmod +x *.ps1; powershell ./magpi-issue-downloader_italian.ps1"
       - docker run -v $(pwd)/windows:/data microsoft/powershell /bin/sh -c "cd /data; chmod +x *.ps1; powershell ./magpi-issue-downloader_spanish.ps1"
       - docker run -v $(pwd)/windows:/data microsoft/powershell /bin/sh -c "cd /data; chmod +x *.ps1; powershell ./magpi-special-issue-downloader.ps1"
-      - ls $(pwd)/windows
 
