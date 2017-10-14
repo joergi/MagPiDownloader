@@ -11,13 +11,16 @@ matrix:
     - bash linux_mac/magpi-issue-downloader_spanish.sh
     - bash linux_mac/magpi-special-issue-downloader.sh
   - language: csharp
+    services:
+      - docker
+      # Replace with your image name.
     before_script:
-      - chmod +x ./windows/*.ps1
-    script:
-    - ./windows/magpi-education-downloader.ps1
-    - ./windows/magpi-issue-downloader.ps1
-    - ./windows/magpi-issue-downloader_french.ps1
-    - ./windows/magpi-issue-downloader_hebrew.ps1
-    - ./windows/magpi-issue-downloader_italian.ps1
-    - ./windows/magpi-issue-downloader_spanish.ps1
-    - ./windows/magpi-special-issue-downloader.ps1
+      - docker pull microsoft/powershell
+      - docker run -v ./windows:/data microsoft/powershell /bin/sh -c "cd /data; ./windows/magpi-education-downloader.ps1"
+      - docker run -v ./windows:/data microsoft/powershell /bin/sh -c "cd /data; ./windows/magpi-issue-downloader.ps1"
+      - docker run -v ./windows:/data microsoft/powershell /bin/sh -c "cd /data; ./windows/magpi-issue-downloader_french.ps1"
+      - docker run -v ./windows:/data microsoft/powershell /bin/sh -c "cd /data; ./windows/magpi-issue-downloader_hebrew.ps1"
+      - docker run -v ./windows:/data microsoft/powershell /bin/sh -c "cd /data; ./windows/magpi-issue-downloader_italian.ps1"
+      - docker run -v ./windows:/data microsoft/powershell /bin/sh -c "cd /data; ./windows/magpi-issue-downloader_spanish.ps1"
+      - docker run -v ./windows:/data microsoft/powershell /bin/sh -c "cd /data; ./windows/magpi-special-issue-downloader.ps1"
+
