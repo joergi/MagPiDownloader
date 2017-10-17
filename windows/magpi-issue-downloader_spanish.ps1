@@ -37,6 +37,7 @@ while ($i -le $issues)
 	} Catch
 	{
 		Write-Host "Ocorred an error trying download " + $filePattern
+		exit 1
 	}
 	$i++
 }

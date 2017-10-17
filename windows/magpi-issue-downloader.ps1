@@ -46,6 +46,7 @@ if(-Not $f) {
                 } Catch
                 {
                     Write-Host "Ocorred an error trying download " + $file
+   		    exit 1
                 }
             }
         }
@@ -81,6 +82,7 @@ if(-Not $f) {
         } Catch
         {
             Write-Host "Ocorred an error trying download " + $filePattern
+            exit 1
         }
 
         $i++

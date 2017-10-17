@@ -44,5 +44,6 @@ foreach($issue in $special_issues)
                 } Catch
                 {
                     Write-Host "Ocorred an error trying download " + $file
+		    exit 1
                 }
 }
