@@ -1,11 +1,26 @@
-language: bash
+matrix:
+  include:
+  - language: bash
+    script:
+    - bash linux_mac/magpi-education-downloader.sh
+    - bash linux_mac/magpi-issue-downloader.sh
+    - bash linux_mac/magpi-issue-downloader.sh -f 60 -l 62
+    - bash linux_mac/magpi-issue-downloader_french.sh
+    - bash linux_mac/magpi-issue-downloader_hebrew.sh
+    - bash linux_mac/magpi-issue-downloader_italian.sh
+    - bash linux_mac/magpi-issue-downloader_spanish.sh
+    - bash linux_mac/magpi-special-issue-downloader.sh
+  - language: bash
+    services:
+      - docker
+      # Replace with your image name.
+    script:
+      - docker pull microsoft/powershell
+      - docker run -v $(pwd)/windows:/data microsoft/powershell /bin/sh -c "cd /data; chmod +x *.ps1; powershell ./magpi-education-downloader.ps1"
+      - docker run -v $(pwd)/windows:/data microsoft/powershell /bin/sh -c "cd /data; chmod +x *.ps1; powershell ./magpi-issue-downloader.ps1"
+      - docker run -v $(pwd)/windows:/data microsoft/powershell /bin/sh -c "cd /data; chmod +x *.ps1; powershell ./magpi-issue-downloader_french.ps1"
+      - docker run -v $(pwd)/windows:/data microsoft/powershell /bin/sh -c "cd /data; chmod +x *.ps1; powershell ./magpi-issue-downloader_hebrew.ps1"
+      - docker run -v $(pwd)/windows:/data microsoft/powershell /bin/sh -c "cd /data; chmod +x *.ps1; powershell ./magpi-issue-downloader_italian.ps1"
+      - docker run -v $(pwd)/windows:/data microsoft/powershell /bin/sh -c "cd /data; chmod +x *.ps1; powershell ./magpi-issue-downloader_spanish.ps1"
+      - docker run -v $(pwd)/windows:/data microsoft/powershell /bin/sh -c "cd /data; chmod +x *.ps1; powershell ./magpi-special-issue-downloader.ps1"
 
-script:
-- bash linux_mac/magpi-education-downloader.sh
-- bash linux_mac/magpi-issue-downloader.sh
-- bash linux_mac/magpi-issue-downloader.sh -f 60 -l 62
-- bash linux_mac/magpi-issue-downloader_french.sh
-- bash linux_mac/magpi-issue-downloader_hebrew.sh
-- bash linux_mac/magpi-issue-downloader_italian.sh
-- bash linux_mac/magpi-issue-downloader_spanish.sh
-- bash linux_mac/magpi-special-issue-downloader.sh
