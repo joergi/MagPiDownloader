@@ -32,7 +32,7 @@ $special_issues = @(
 
 $baseUrl="https://www.raspberrypi.org/magpi-issues"
 $web = New-Object system.net.webclient
-
+$errorCount = 0
 foreach($issue in $special_issues)
 {
       try
@@ -44,6 +44,10 @@ foreach($issue in $special_issues)
                 } Catch
                 {
                     Write-Host "Ocorred an error trying download " + $file
-		    exit 1
+                    $errorCount++
                 }
+}
+
+if ($errorCount -gt 0) {
+	exit 1
 }
