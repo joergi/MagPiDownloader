@@ -12,8 +12,9 @@
 
 $i=1
 $issues=2
-$baseUrl="https://www.raspberrypi.org/magpi-issues"
+$baseUrl="https://www.raspberrypi.org/magpi-issue"
 $web = New-Object system.net.webclient
+$errorCount = 0
 # Check if directory dont exist and try create
 if( -Not (Test-Path -Path "education_issues" ) )
 {
@@ -34,11 +35,14 @@ while ($i -le $issues)
 		Write-Host Downloading $filePattern
 		$fileUrl = $baseUrl + "/" + $filePattern
 		$web.DownloadFile($fileUrl, "$PSScriptRoot\education_issues\" + $filePattern)
-		exit 1
 	} Catch
 	{
 		Write-Host "Ocorred an error trying download " + $filePattern
-		exit 1
+		$errorCount++
 	}
 	$i++
+}
+
+if ($errorCount -gt 0) {
+	exit 1
 }
