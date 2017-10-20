@@ -34,6 +34,7 @@ while ($i -le $issues)
 		Write-Host Downloading $filePattern
 		$fileUrl = $baseUrl + "/" + $filePattern
 		$web.DownloadFile($fileUrl, "$PSScriptRoot\education_issues\" + $filePattern)
+		exit 1
 	} Catch
 	{
 		Write-Host "Ocorred an error trying download " + $filePattern
