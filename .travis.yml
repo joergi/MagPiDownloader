@@ -16,7 +16,7 @@ matrix:
       # Replace with your image name.
     script:
       - docker pull microsoft/powershell
-      - docker run -v $(pwd)/windows:/data microsoft/powershell /bin/sh -c "cd /data; chmod +x *.ps1; powershell ./magpi-education-downloader.ps1; exit $?"
+      - docker run -v $(pwd)/windows:/data microsoft/powershell /bin/sh -c "cd /data; chmod +x *.ps1; powershell ./magpi-education-downloader.ps1"
       - docker run -v $(pwd)/windows:/data microsoft/powershell /bin/sh -c "cd /data; chmod +x *.ps1; powershell ./magpi-issue-downloader.ps1; exit $?"
       - docker run -v $(pwd)/windows:/data microsoft/powershell /bin/sh -c "cd /data; chmod +x *.ps1; powershell ./magpi-issue-downloader_french.ps1; exit $?"
       - docker run -v $(pwd)/windows:/data microsoft/powershell /bin/sh -c "cd /data; chmod +x *.ps1; powershell ./magpi-issue-downloader_hebrew.ps1; exit $?"
