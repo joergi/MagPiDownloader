@@ -21,6 +21,7 @@ $i=1
 $issues=63
 $baseUrl="https://www.raspberrypi.org/magpi-issues"
 $web = New-Object system.net.webclient
+$errorCount = 0
 # Check if directory dont exist and try create
 if( -Not (Test-Path -Path "issues" ) )
 {
@@ -46,7 +47,7 @@ if(-Not $f) {
                 } Catch
                 {
                     Write-Host "Ocorred an error trying download " + $file
-   		    exit 1
+                    $errorCount++
                 }
             }
         }
@@ -82,9 +83,13 @@ if(-Not $f) {
         } Catch
         {
             Write-Host "Ocorred an error trying download " + $filePattern
-            exit 1
+            $errorCount++
         }
 
         $i++
      } While($1 -lt $issues)
+}
+
+if ($errorCount -gt 0) {
+	exit 1
 }
