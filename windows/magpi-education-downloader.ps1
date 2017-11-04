@@ -12,7 +12,7 @@
 
 $i=1
 $issues=2
-$baseUrl="https://www.raspberrypi.org/magpi-issue"
+$baseUrl="https://www.raspberrypi.org/magpi-issues"
 $web = New-Object system.net.webclient
 $errorCount = 0
 # Check if directory dont exist and try create
