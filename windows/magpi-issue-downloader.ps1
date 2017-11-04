@@ -18,7 +18,7 @@ Param(
 
 # control variables
 $i=1
-$issues=62
+$issues=63
 $baseUrl="https://www.raspberrypi.org/magpi-issues"
 $web = New-Object system.net.webclient
 # Check if directory dont exist and try create
