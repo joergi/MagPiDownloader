@@ -27,7 +27,8 @@ $special_issues = @(
     "Essentials_Minecraft_v1.pdf",
     "Essentials_GPIOZero_v1.pdf",
     "Essentials_C_v1.pdf",
-    "Essentials_Camera_v1.pdf"
+    "Essentials_Camera_v1.pdf",
+    "Essentials_AIY_Projects_Voice_v1.pdf"
 )
 
 $baseUrl="https://www.raspberrypi.org/magpi-issues"

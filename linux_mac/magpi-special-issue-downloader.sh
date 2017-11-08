@@ -44,3 +44,6 @@ wget https://www.raspberrypi.org/magpi-issues/Essentials_C_v1.pdf -P special_iss
 
 # Camera Essentials - The Camera Module Guide https://www.raspberrypi.org/magpi/issues/essentials_camera_v1/
 wget https://www.raspberrypi.org/magpi-issues/Essentials_Camera_v1.pdf -P special_issues/
+
+# AIY VOICE ESSENTIALS - https://www.raspberrypi.org/magpi/issues/essentials-aiy-v1/
+wget https://www.raspberrypi.org/magpi-issues/Essentials_AIY_Projects_Voice_v1.pdf -P special_issues/
