@@ -53,18 +53,14 @@ if(-Not $f) {
         }
     }
 } else {
-    #handle the single issue download
-    do {
-        switch ($1) {
-            "-f" { $i=$1 }
-            "-l" { issues=$1}
-            "--" { break}
-            "-*" {Write-Host "bad argument $1"}
-            "*" { break}
-            Default {}
-        }
-        break
-    } While(true)
+
+    if ($f) {
+        $i = [int]$f
+    }
+
+    if ($l) {
+        $issues = [int]$l
+    }
 
     do{
         $filePattern = "";
@@ -74,20 +70,18 @@ if(-Not $f) {
             $filePattern = "MagPi$i.pdf"
         }
 
-        try
-        {
-            Write-Host $env:appdata
+        try {
+            Write-Host Downloading $filePattern
             $fileUrl = $baseUrl + "/" + $filePattern
-            Write-Host $fileUrl
             $web.DownloadFile($fileUrl, "$PSScriptRoot\issues\" + $filePattern)
-        } Catch
-        {
+        }
+        Catch {
             Write-Host "Ocorred an error trying download " + $filePattern
-            $errorCount++
+            $errorCount++;
         }
 
         $i++
-     } While($1 -lt $issues)
+     } While($i -le $issues)
 }
 
 if ($errorCount -gt 0) {
