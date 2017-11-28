@@ -21,6 +21,12 @@ wget https://www.raspberrypi.org/magpi-issues/Essentials_Games_v1.pdf -P special
 # Project Book - v1 https://www.raspberrypi.org/magpi/issues/projects-1/
 wget https://raspberrypi.org/magpi-issues/Projects_Book_v1.pdf -P special_issues/
 
+# Project Book - v2 https://www.raspberrypi.org/magpi/issues/projects-2/
+wget https://www.raspberrypi.org/magpi-issues/Projects_Book_v2.pdf -P special_issues/
+
+# Project Book - v3 https://www.raspberrypi.org/magpi/issues/projects-3/
+https://www.raspberrypi.org/magpi-issues/Projects_Book_v3.pdf -P special_issues/
+
 # Bash Essentials v1 - https://www.raspberrypi.org/magpi/issues/essentials-bash-vol1/
 wget https://raspberrypi.org/magpi-issues/Essentials_Bash_v1.pdf -P special_issues/
 

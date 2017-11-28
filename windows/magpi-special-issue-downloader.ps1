@@ -20,6 +20,8 @@ if( -Not (Test-Path -Path "special_issues" ) )
 $special_issues = @(
     "Essentials_Games_v1.pdf",
     "Projects_Book_v1.pdf",
+    "Projects_Book_v2.pdf",
+    "Projects_Book_v3.pdf",
     "Essentials_Bash_v1.pdf",
     "Essentials_SenseHAT_v1.pdf",
     "Essentials_Sonic_Pi-v1.pdf",
