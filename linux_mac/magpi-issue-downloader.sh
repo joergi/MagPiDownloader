@@ -15,7 +15,7 @@ if [ ! -d "issues" ]; then
 fi
 
 i=1
-issues=63
+issues=64
 
 if [ -z $1 ]
 then
