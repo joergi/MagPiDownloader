@@ -25,7 +25,7 @@ wget https://raspberrypi.org/magpi-issues/Projects_Book_v1.pdf -P special_issues
 wget https://www.raspberrypi.org/magpi-issues/Projects_Book_v2.pdf -P special_issues/
 
 # Project Book - v3 https://www.raspberrypi.org/magpi/issues/projects-3/
-https://www.raspberrypi.org/magpi-issues/Projects_Book_v3.pdf -P special_issues/
+wget https://www.raspberrypi.org/magpi-issues/Projects_Book_v3.pdf -P special_issues/
 
 # Bash Essentials v1 - https://www.raspberrypi.org/magpi/issues/essentials-bash-vol1/
 wget https://raspberrypi.org/magpi-issues/Essentials_Bash_v1.pdf -P special_issues/
@@ -53,3 +53,9 @@ wget https://www.raspberrypi.org/magpi-issues/Essentials_Camera_v1.pdf -P specia
 
 # AIY VOICE ESSENTIALS - https://www.raspberrypi.org/magpi/issues/essentials-aiy-v1/
 wget https://www.raspberrypi.org/magpi-issues/Essentials_AIY_Projects_Voice_v1.pdf -P special_issues/
+
+# THE OFFICIAL RASPBERRY PI BEGINNER’S BOOK (2018) - https://www.raspberrypi.org/magpi/issues/beginners-1/
+wget https://www.raspberrypi.org/magpi-issues/Beginners_Book_v1.pdf -P special_issues/
+
+
+
