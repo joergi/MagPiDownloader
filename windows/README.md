@@ -9,7 +9,7 @@ and you are able to use the Powershell scripts.
 All Windows scripts are done by [github user Rubemlrm](https://github.com/Rubemlrm)
 
 
-  `git clone https://github.com/joergi77/MagPiDownloader.git`
+  `git clone https://github.com/joergi/MagPiDownloader.git`
 
 Download the normal issues:
   `./magpi-issue-downloader.ps1`

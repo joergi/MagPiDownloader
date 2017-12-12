@@ -4,7 +4,7 @@
 
 Downloads all the Mag Pi issues (a Raspberry Pi magazine) on Linux and Mac OS
 
-  `git clone https://github.com/joergi77/MagPiDownloader.git`   
+  `git clone https://github.com/joergi/MagPiDownloader.git`   
 
 Download the normal issues:  
   `bash magpi-issue-downloader.sh`
