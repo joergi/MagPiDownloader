@@ -31,7 +31,8 @@ $special_issues = @(
     "Essentials_C_v1.pdf",
     "Essentials_Camera_v1.pdf",
     "Essentials_AIY_Projects_Voice_v1.pdf",
-    "Beginners_Book_v1.pdf"
+    "Beginners_Book_v1.pdf",
+    "Annual2018.pdf"
 )
 
 $baseUrl="https://www.raspberrypi.org/magpi-issues"

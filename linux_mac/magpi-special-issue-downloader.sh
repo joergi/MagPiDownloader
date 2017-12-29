@@ -57,5 +57,7 @@ wget https://www.raspberrypi.org/magpi-issues/Essentials_AIY_Projects_Voice_v1.p
 # THE OFFICIAL RASPBERRY PI BEGINNER’S BOOK (2018) - https://www.raspberrypi.org/magpi/issues/beginners-1/
 wget https://www.raspberrypi.org/magpi-issues/Beginners_Book_v1.pdf -P special_issues/
 
+# Raspberry Pi THE ANNUAL 2018
+wget https://www.raspberrypi.org/magpi-issues/Annual2018.pdf -P special_issues/
 
 
