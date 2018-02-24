@@ -18,7 +18,7 @@ Param(
 
 # control variables
 $i=1
-$issues=66
+$issues=67
 $baseUrl="https://www.raspberrypi.org/magpi-issues"
 $web = New-Object system.net.webclient
 $errorCount = 0

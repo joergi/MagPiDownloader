@@ -15,7 +15,8 @@ if [ ! -d "issues" ]; then
 fi
 
 i=1
-issues=66
+file="../issues.txt";
+issues=$(cat "$file");
 
 if [ -z $1 ]
 then
