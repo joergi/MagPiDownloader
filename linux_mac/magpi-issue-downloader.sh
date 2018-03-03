@@ -47,10 +47,10 @@ else
 	while [ $i -le $issues ]
 	do
 		if [ "$i" -lt 10 ]; then
-			wget https://www.raspberrypi.org/magpi-issues/MagPi0$i.pdf -P issues/
+			wget -N https://www.raspberrypi.org/magpi-issues/MagPi0$i.pdf -P issues/
 
 		else
-			wget https://www.raspberrypi.org/magpi-issues/MagPi$i.pdf -P issues/
+			wget -N https://www.raspberrypi.org/magpi-issues/MagPi$i.pdf -P issues/
 		fi
 		i=$(( i+1 ))
 	done
