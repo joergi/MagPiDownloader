@@ -10,12 +10,15 @@
 # VERSION=0.1.2
 # USAGE="Usage: sh magpi-issue-downloader.sh [-f firstissue] [-l lastissue]"
 
-if [ ! -d "issues" ]; then
- mkdir issues
+BASEDIR=`dirname $0`/..
+OUTDIR=$BASEDIR/issues
+
+if [ ! -d "$OUTDIR" ]; then
+ mkdir $OUTDIR
 fi
 
 i=1
-file="../issues.txt";
+file="$BASEDIR/issues.txt";
 issues=$(cat "$file");
 
 if [ -z $1 ]
@@ -28,7 +31,8 @@ then
 	--mirror \
 	--accept-regex "/MagPi[0-9]+\.pdf" \
 	--reject index.html \
-	--execute robots=off
+	--execute robots=off \
+	-P $OUTDIR
 
 else
 
@@ -47,10 +51,10 @@ else
 	while [ $i -le $issues ]
 	do
 		if [ "$i" -lt 10 ]; then
-			wget -N https://www.raspberrypi.org/magpi-issues/MagPi0$i.pdf -P issues/
+			wget -N https://www.raspberrypi.org/magpi-issues/MagPi0$i.pdf -P $OUTDIR
 
 		else
-			wget -N https://www.raspberrypi.org/magpi-issues/MagPi$i.pdf -P issues/
+			wget -N https://www.raspberrypi.org/magpi-issues/MagPi$i.pdf -P $OUTDIR
 		fi
 		i=$(( i+1 ))
 	done
