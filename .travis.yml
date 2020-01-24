@@ -4,7 +4,7 @@ matrix:
     script:
     - bash linux_mac/magpi-education-downloader.sh
     - bash linux_mac/magpi-issue-downloader.sh
-    - bash linux_mac/magpi-issue-downloader.sh -f 72 -l 74
+    - bash linux_mac/magpi-issue-downloader.sh -f 85 -l 89
     - bash linux_mac/magpi-issue-downloader_french.sh
     - bash linux_mac/magpi-issue-downloader_hebrew.sh
     - bash linux_mac/magpi-issue-downloader_italian.sh
@@ -18,7 +18,7 @@ matrix:
       - docker pull microsoft/powershell
       - docker run -v $(pwd)/windows:/data microsoft/powershell /bin/sh -c "cd /data; chmod +x *.ps1; pwsh ./magpi-education-downloader.ps1"
       - docker run -v $(pwd)/windows:/data microsoft/powershell /bin/sh -c "cd /data; chmod +x *.ps1; pwsh ./magpi-issue-downloader.ps1"
-      - docker run -v $(pwd)/windows:/data microsoft/powershell /bin/sh -c "cd /data; chmod +x *.ps1; pwsh ./magpi-issue-downloader.ps1 -f 66 -l 67"
+      - docker run -v $(pwd)/windows:/data microsoft/powershell /bin/sh -c "cd /data; chmod +x *.ps1; pwsh ./magpi-issue-downloader.ps1 -f 85 -l 89"
       - docker run -v $(pwd)/windows:/data microsoft/powershell /bin/sh -c "cd /data; chmod +x *.ps1; pwsh ./magpi-issue-downloader_french.ps1"
       - docker run -v $(pwd)/windows:/data microsoft/powershell /bin/sh -c "cd /data; chmod +x *.ps1; pwsh ./magpi-issue-downloader_hebrew.ps1"
       - docker run -v $(pwd)/windows:/data microsoft/powershell /bin/sh -c "cd /data; chmod +x *.ps1; pwsh ./magpi-issue-downloader_italian.ps1"
