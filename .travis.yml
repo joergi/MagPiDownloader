@@ -1,6 +1,6 @@
 env:
   global:
-    - issues=$(cat "issues.txt");
+    - issues=cat "issues.txt";
 matrix:
   include:
   - language: bash
