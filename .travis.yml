@@ -1,12 +1,9 @@
-env:
-  global:
-    - file="issues.txt"
-    - issues=$(cat $file);
 matrix:
   include:
   - language: bash
     script:
     - echo $PWD 
     - ls -lah
+    - issues=$(cat "/home/travis/build/joergi/MagPiDownloader/issues.txt");
     - bash linux_mac/magpi-issue-downloader.sh -f $issues-4 -l $issues
 
