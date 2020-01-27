@@ -2,7 +2,6 @@ matrix:
   include:
   - language: bash
     script:
-    - echo $PWD 
-    - ls -lah
+    - echo $(cat "/home/travis/build/joergi/MagPiDownloader/issues.txt")
     - bash linux_mac/magpi-issue-downloader.sh -f $(cat "/home/travis/build/joergi/MagPiDownloader/issues.txt")-4 -l $(cat "/home/travis/build/joergi/MagPiDownloader/issues.txt")
 
