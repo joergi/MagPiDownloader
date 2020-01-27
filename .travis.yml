@@ -1,9 +1,10 @@
 env:
   global:
-    - issues=$(cat "issues.txt");
+    - issues=$(cat file="issues.txt");
 matrix:
   include:
   - language: bash
     script:
+    - $PWD 
     - bash linux_mac/magpi-issue-downloader.sh -f $issues-4 -l $issues
 
