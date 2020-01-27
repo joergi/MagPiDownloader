@@ -5,6 +5,6 @@ matrix:
   include:
   - language: bash
     script:
-    - $PWD 
+    - echo $PWD 
     - bash linux_mac/magpi-issue-downloader.sh -f $issues-4 -l $issues
 
