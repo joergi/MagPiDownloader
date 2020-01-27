@@ -2,5 +2,5 @@ matrix:
   include:
   - language: bash
     script:
-    - bash linux_mac/magpi-issue-downloader.sh -f $($(cat "issues.txt")-4) -l $($(cat "issues.txt"))
+    - bash linux_mac/magpi-issue-downloader.sh -f $( $(cat "issues.txt")) -4 -l $( $(cat "issues.txt"))
 
