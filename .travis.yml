@@ -4,6 +4,5 @@ matrix:
     script:
     - echo $PWD 
     - ls -lah
-    - issues=$(cat "/home/travis/build/joergi/MagPiDownloader/issues.txt");
-    - bash linux_mac/magpi-issue-downloader.sh -f $issues-4 -l $issues
+    - bash linux_mac/magpi-issue-downloader.sh -f $(cat "/home/travis/build/joergi/MagPiDownloader/issues.txt")-4 -l $(cat "/home/travis/build/joergi/MagPiDownloader/issues.txt")
 
