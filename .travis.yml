@@ -1,7 +1,18 @@
+env:
+  global:
+    - issue=$(<issues.txt)
+    - bash linux_mac/magpi-issue-downloader.sh -f $(($issue - 5)) -l $(($issue))
 matrix:
   include:
   - language: bash
     script:
-    - issue=$(<issues.txt)
     - bash linux_mac/magpi-issue-downloader.sh -f $(($issue - 5)) -l $(($issue))
-
+ 
+  - language: bash
+    services:
+      - docker
+      # Replace with your image name.
+    script:
+      - docker pull microsoft/powershell
+      - docker run -v $(pwd)/windows:/data microsoft/powershell /bin/sh -c "cd /data; chmod +x *.ps1; pwsh ./magpi-issue-downloader.ps1 -f $(($issue - 5)) -l $(($issue))"
+     
