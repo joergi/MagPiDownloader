@@ -2,8 +2,6 @@ matrix:
   include:
   - language: bash
     script:
-    - issues=$(cat "issues.txt")
-    - echo issues
-    - echo $($issues-4)
-    - bash linux_mac/magpi-issue-downloader.sh -f $issues-4 -l $issues
+    - issue=$(<issues.txt)
+    - bash linux_mac/magpi-issue-downloader.sh -f $(($issue - 5)) -l $(($issue))
 
