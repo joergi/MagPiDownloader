@@ -50,12 +50,9 @@ else
 
 	while [ $i -le $issues ]
 	do
-		if [ "$i" -lt 10 ]; then
-			wget -N https://www.raspberrypi.org/magpi-issues/MagPi0$i.pdf -P $OUTDIR
-
-		else
-			wget -N https://www.raspberrypi.org/magpi-issues/MagPi$i.pdf -P $OUTDIR
-		fi
+		printf -v page_url "https://magpi.raspberrypi.org/issues/%02d/pdf" $i
+		pdf_url=`curl -sf $page_url | grep c-link | sed 's/^.*href=\"//' | sed 's/\?.*$//'`
+		wget -N $pdf_url -P $OUTDIR
 		i=$(( i+1 ))
 	done
 
