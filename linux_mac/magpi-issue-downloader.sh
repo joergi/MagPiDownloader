@@ -21,21 +21,6 @@ i=1
 file="$BASEDIR/issues.txt";
 issues=$(cat "$file");
 
-if [ -z $1 ]
-then
-	wget https://www.raspberrypi.org/magpi-issues/ \
-	--recursive \
-	--no-directories \
-	--no-parent \
-	--directory-prefix issues \
-	--mirror \
-	--accept-regex "/MagPi[0-9]+\.pdf" \
-	--reject index.html \
-	--execute robots=off \
-	-P $OUTDIR
-
-else
-
 	while :
 	do
 		case "$1" in
@@ -56,4 +41,4 @@ else
 		i=$(( i+1 ))
 	done
 
-fi
+exit 0
