@@ -10,11 +10,12 @@
 # VERSION=0.1.0
 # USAGE="Usage: sh magpi-education-downloader.sh"
 
+BASEDIR=`dirname $0`/..
+OUTDIR=$BASEDIR/education_issues
 
-if [ ! -d "education_issues" ]; then
- mkdir education_issues
+if [ ! -d "$OUTDIR" ]; then
+ mkdir $OUTDIR
 fi
-
 
 i=1
 issues=2
@@ -23,10 +24,10 @@ issues=2
 while [ $i -le $issues ]
 do
 	if [ "$i" -lt 10 ]; then
-		wget https://www.raspberrypi.org/magpi-issues/MagPi-EduEdition0$i.pdf -P education_issues/
+		wget -N https://www.raspberrypi.org/magpi-issues/MagPi-EduEdition0$i.pdf -P $OUTDIR
 
 	else
-		wget https://www.raspberrypi.org/magpi-issues/MagPi-EduEdition$i.pdf -P education_issues/
+		wget -N https://www.raspberrypi.org/magpi-issues/MagPi-EduEdition$i.pdf -P $OUTDIR
 	fi
 	i=$(( i+1 ))
 done
