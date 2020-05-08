@@ -16,12 +16,12 @@ matrix:
       # Replace with your image name.
     script:
       - docker pull microsoft/powershell
-      - docker run -v $(pwd)/windows:/data microsoft/powershell /bin/sh -c "cd /data; chmod +x *.ps1; pwsh ./magpi-education-downloader.ps1"
-      - docker run -v $(pwd)/windows:/data microsoft/powershell /bin/sh -c "cd /data; chmod +x *.ps1; pwsh ./magpi-issue-downloader.ps1"
-      - docker run -v $(pwd)/windows:/data microsoft/powershell /bin/sh -c "cd /data; chmod +x *.ps1; pwsh ./magpi-issue-downloader.ps1 -f 66 -l 67"
-      - docker run -v $(pwd)/windows:/data microsoft/powershell /bin/sh -c "cd /data; chmod +x *.ps1; pwsh ./magpi-issue-downloader_french.ps1"
-      - docker run -v $(pwd)/windows:/data microsoft/powershell /bin/sh -c "cd /data; chmod +x *.ps1; pwsh ./magpi-issue-downloader_hebrew.ps1"
-      - docker run -v $(pwd)/windows:/data microsoft/powershell /bin/sh -c "cd /data; chmod +x *.ps1; pwsh ./magpi-issue-downloader_italian.ps1"
-      - docker run -v $(pwd)/windows:/data microsoft/powershell /bin/sh -c "cd /data; chmod +x *.ps1; pwsh ./magpi-issue-downloader_spanish.ps1"
-      - docker run -v $(pwd)/windows:/data microsoft/powershell /bin/sh -c "cd /data; chmod +x *.ps1; pwsh ./magpi-special-issue-downloader.ps1"
+      - docker run -v $(pwd):/data microsoft/powershell /bin/sh -c "cd /data; chmod +x ./windows/*.ps1; pwsh ./windows/magpi-education-downloader.ps1"
+      - docker run -v $(pwd):/data microsoft/powershell /bin/sh -c "cd /data; chmod +x ./windows/*.ps1; pwsh ./windows/magpi-issue-downloader.ps1 -l 3"
+      - docker run -v $(pwd):/data microsoft/powershell /bin/sh -c "cd /data; chmod +x ./windows/*.ps1; pwsh ./windows/magpi-issue-downloader.ps1 -f 92 -l 93"
+      - docker run -v $(pwd):/data microsoft/powershell /bin/sh -c "cd /data; chmod +x ./windows/*.ps1; pwsh ./windows/magpi-issue-downloader_french.ps1"
+      - docker run -v $(pwd):/data microsoft/powershell /bin/sh -c "cd /data; chmod +x ./windows/*.ps1; pwsh ./windows/magpi-issue-downloader_hebrew.ps1"
+      - docker run -v $(pwd):/data microsoft/powershell /bin/sh -c "cd /data; chmod +x ./windows/*.ps1; pwsh ./windows/magpi-issue-downloader_italian.ps1"
+      - docker run -v $(pwd):/data microsoft/powershell /bin/sh -c "cd /data; chmod +x ./windows/*.ps1; pwsh ./windows/magpi-issue-downloader_spanish.ps1"
+      - docker run -v $(pwd):/data microsoft/powershell /bin/sh -c "cd /data; chmod +x ./windows/*.ps1; pwsh ./windows/magpi-special-issue-downloader.ps1"
 

@@ -17,73 +17,45 @@ Param(
 )
 
 # control variables
-$i=1
-$issues=67
-$baseUrl="https://www.raspberrypi.org/magpi-issues"
+$i = 1
+$baseDir = (Split-Path -Path $PSScriptRoot -Parent)
+$issues = Get-Content "$baseDir\issues.txt" -First 1
+$baseUrl = "https://magpi.raspberrypi.org/issues/"
 $web = New-Object system.net.webclient
 $errorCount = 0
+
 # Check if directory dont exist and try create
-if( -Not (Test-Path -Path "issues" ) )
-{
-    New-Item -ItemType directory -Path "issues"
+if ( -Not (Test-Path -Path "$baseDir\issues" ) ) {
+    New-Item -ItemType directory -Path "$baseDir\issues"
 }
 
-#check last command executation
-if(-Not $f) {
+
+if ($f) {
+    $i = [int]$f
+}
+
+if ($l) {
+    $issues = [int]$l
+}
+
+do {
     #start scrapping directory and download files
-    $l = (Invoke-WebRequest -Uri $baseUrl -usebasicparsing).Links
-
-    ($web.downloadstring($baseUrl) -split "<a\s+") | %{
-        [void]($_ -match "^href=[`'`"]([^`'`">\s]*)");
-        if ($matches.Length -gt 0) {
-        $file = $matches[1]
-            if( $file -match 'MagPi[0-9]+\.pdf') {
-                try
-                {
-                    Write-Host $env:appdata
-                    $fileUrl = $baseUrl + "/" + $file
-                    Write-Host $fileUrl
-                    $web.DownloadFile($fileUrl, "$PSScriptRoot\issues\" + $file)
-                } Catch
-                {
-                    Write-Host "Ocorred an error trying download " + $file
-                    $errorCount++
-                }
-            }
-        }
-    }
-} else {
-
-    if ($f) {
-        $i = [int]$f
-    }
-
-    if ($l) {
-        $issues = [int]$l
-    }
-
-    do{
-        $filePattern = "";
-        if ($i -lt 10) {
-            $filePattern = "MagPi0$i.pdf"
-        } else {
-            $filePattern = "MagPi$i.pdf"
-        }
-
+    $tempCounter = if ($i -le 9)  {"{0:00}" -f $i}  Else {$i}
+    $fileReponse = ((Invoke-WebRequest -UseBasicParsing "$baseUrl$tempCounter/pdf").Links | Where-Object { $_.href -like "http*" } | Where class -eq c-link)
+    if ($fileReponse) {
         try {
-            Write-Host Downloading $filePattern
-            $fileUrl = $baseUrl + "/" + $filePattern
-            $web.DownloadFile($fileUrl, "$PSScriptRoot\issues\" + $filePattern)
+            $web.DownloadFile($fileReponse.href, "$baseDir\issues\" + $fileReponse.download)
+            Write-Host "Downloaded from " + $fileReponse.href
         }
         Catch {
-            Write-Host "Ocorred an error trying download " + $filePattern
-            $errorCount++;
+            Write-Host $_.Exception | format-list -force
+            Write-Host "Ocorred an error trying download " + $fileReponse.download
+            $errorCount++
         }
-
-        $i++
-     } While($i -le $issues)
-}
+    }
+    $i++
+} While ($i -le $issues)
 
 if ($errorCount -gt 0) {
-	exit 1
+    exit 1
 }
