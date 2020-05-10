@@ -40,7 +40,7 @@ $web = New-Object system.net.webclient
 $errorCount = 0
 foreach ($issue in $special_issues) {
     try {
-        Write-Host Downloading $filePattern
+        Write-Host Downloading $issue
         $fileUrl = $baseUrl + "/" + $issue
         $web.DownloadFile($fileUrl, "$baseDir\special_issues\$issue")
     }
