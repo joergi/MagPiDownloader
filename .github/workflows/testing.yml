@@ -54,61 +54,47 @@ jobs:
       - uses: actions/checkout@v1
       - name: Download Education Issues
         id: educationIssues
-        shell: bash
-        run: ./linux_mac/magpi-education-downloader.sh
+        run: bash ./linux_mac/magpi-education-downloader.sh
       - name: Download Issues with start and end limit
         id: normalIssuesWithRange
-        shell: bash
-        run: ./linux_mac/magpi-issue-downloader.sh -f 92 -l 93
+        run: bash ./linux_mac/magpi-issue-downloader.sh -f 92 -l 93
       - name: Download French Issues
         id: frenchIssues
-        shell: bash
-        run: ./linux_mac/magpi-issue-downloader_french.sh
+        run: bash ./linux_mac/magpi-issue-downloader_french.sh
       - name: Download Hebrew Issues
         id: hebrewIssues
-        shell: bash
-        run: ./linux_mac/magpi-issue-downloader_hebrew.sh
+        run: bash ./linux_mac/magpi-issue-downloader_hebrew.sh
       - name: Download Italian Issues
         id: italianIssues
-        shell: bash
-        run: ./linux_mac/magpi-issue-downloader_italian.sh
+        run: bash ./linux_mac/magpi-issue-downloader_italian.sh
       - name: Download Spanish Issues
         id: spanishIssues
-        shell: bash
-        run: ./linux_mac/magpi-issue-downloader_spanish.sh
+        run: bash ./linux_mac/magpi-issue-downloader_spanish.sh
       - name: Download Special Issues
         id: specialIssues
-        shell: bash
-        run: ./linux_mac/magpi-special-issue-downloader.sh
+        run: bash ./linux_mac/magpi-special-issue-downloader.sh
   bash-macos:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v1
       - name: Download Education Issues
         id: educationIssues
-        shell: bash
-        run: ./linux_mac/magpi-education-downloader.sh
+        run: bash ./linux_mac/magpi-education-downloader.sh
       - name: Download Issues with start and end limit
         id: normalIssuesWithRange
-        shell: bash
-        run: ./linux_mac/magpi-issue-downloader.sh -f 92 -l 93
+        run: bash ./linux_mac/magpi-issue-downloader.sh -f 92 -l 93
       - name: Download French Issues
         id: frenchIssues
-        shell: bash
-        run: ./linux_mac/magpi-issue-downloader_french.sh
+        run: bash ./linux_mac/magpi-issue-downloader_french.sh
       - name: Download Hebrew Issues
         id: hebrewIssues
-        shell: bash
-        run: ./linux_mac/magpi-issue-downloader_hebrew.sh
+        run: bash ./linux_mac/magpi-issue-downloader_hebrew.sh
       - name: Download Italian Issues
         id: italianIssues
-        shell: bash
-        run: ./linux_mac/magpi-issue-downloader_italian.sh
+        run: bash ./linux_mac/magpi-issue-downloader_italian.sh
       - name: Download Spanish Issues
         id: spanishIssues
-        shell: bash
-        run: ./linux_mac/magpi-issue-downloader_spanish.sh
+        run: bash ./linux_mac/magpi-issue-downloader_spanish.sh
       - name: Download Special Issues
         id: specialIssues
-        shell: bash
-        run: ./linux_mac/magpi-special-issue-downloader.sh
+        run: bash ./linux_mac/magpi-special-issue-downloader.sh
