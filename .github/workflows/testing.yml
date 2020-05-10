@@ -16,7 +16,35 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Set outputs
+      - name: Download Education Issues
         id: vars
         shell: pwsh
         run: ./windows/magpi-education-downloader.ps1
+      - name: Download Issues With end limit
+        id: vars
+        shell: pwsh
+        run: ./windows/magpi-issue-downloader.ps1 -l 3
+      - name: Download Issues with start and end limit
+        id: vars
+        shell: pwsh
+        run: ./windows/magpi-issue-downloader.ps1 -f 92 -l 93
+      - name: Download French Issues
+        id: vars
+        shell: pwsh
+        run: ./windows/magpi-issue-downloader_french.ps1
+      - name: Download Hebrew Issues
+        id: vars
+        shell: pwsh
+        run: ./windows/magpi-issue-downloader_hebrew.ps1
+      - name: Download Italian Issues
+        id: vars
+        shell: pwsh
+        run: ./windows/magpi-issue-downloader_italian.ps1
+      - name: Download Spanish Issues
+        id: vars
+        shell: pwsh
+        run: ./windows/magpi-issue-downloader_spanish.ps1
+      - name: Download Special Issues
+        id: vars
+        shell: pwsh
+        run: ./windows/magpi-special-issue-downloader.ps1
