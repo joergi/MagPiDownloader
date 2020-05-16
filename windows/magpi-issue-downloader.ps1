@@ -40,7 +40,9 @@ if ($l) {
 
 do {
     #start scrapping directory and download files
+
     $tempCounter = if ($i -le 9) { "{0:00}" -f $i }  Else { $i }
+
     $fileReponse = ((Invoke-WebRequest -UseBasicParsing "$baseUrl$tempCounter/pdf").Links | Where-Object { $_.href -like "http*" } | Where class -eq c-link)
     if ($fileReponse) {
         try {
