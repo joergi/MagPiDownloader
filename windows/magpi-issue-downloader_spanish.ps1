@@ -10,33 +10,32 @@
 # USAGE="Usage: ./magpi-issue-downloader-spanish.ps1"
 
 
-$i=1
-$issues=3
-$baseUrl="https://www.raspberrypi.org/magpi-issues"
+$i = 1
+$issues = 3
+$baseUrl = "https://www.raspberrypi.org/magpi-issues"
+$baseDir = (Split-Path -Path $PSScriptRoot -Parent)
 $web = New-Object system.net.webclient
 $errorCount = 0
 # Check if directory dont exist and try create
-if( -Not (Test-Path -Path "spanish_issues" ) )
-{
-    New-Item -ItemType directory -Path "spanish_issues"
+if ( -Not (Test-Path -Path "$baseDir\spanish_issues" ) ) {
+	New-Item -ItemType directory -Path "$baseDir\spanish_issues"
 }
 
-while ($i -le $issues)
-{
+while ($i -le $issues) {
 	$filePattern = "";
 	if ($i -lt 10) {
 		$filePattern = "MagPi_Mini_Spanish_0$i.pdf"
-	} else {
+	}
+ else {
 		$filePattern = "MagPi_Mini_Spanish_$i.pdf"
 	}
 
-	try
-	{
+	try {
 		Write-Host Downloading $filePattern
 		$fileUrl = $baseUrl + "/" + $filePattern
-		$web.DownloadFile($fileUrl, "$PSScriptRoot\spanish_issues\\$filePattern")
-	} Catch
-	{
+		$web.DownloadFile($fileUrl, "$baseDir\spanish_issues\$filePattern")
+	}
+ Catch {
 		Write-Host "Ocorred an error trying download " + $filePattern
 		$errorCount++
 	}

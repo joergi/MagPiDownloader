@@ -12,8 +12,7 @@
 
 
 # Check if directory dont exist and try create
-if( -Not (Test-Path -Path "special_issues" ) )
-{
+if ( -Not (Test-Path -Path "special_issues" ) ) {
     New-Item -ItemType directory -Path "special_issues"
 }
 
@@ -35,24 +34,22 @@ $special_issues = @(
     "Annual2018.pdf"
 )
 
-$baseUrl="https://www.raspberrypi.org/magpi-issues"
+$baseUrl = "https://www.raspberrypi.org/magpi-issues"
+$baseDir = (Split-Path -Path $PSScriptRoot -Parent)
 $web = New-Object system.net.webclient
 $errorCount = 0
-foreach($issue in $special_issues)
-{
-      try
-                {
-                    Write-Host $env:appdata
-                    $fileUrl = $baseUrl + "/" + $issue
-                    Write-Host $fileUrl
-                    $web.DownloadFile($fileUrl, "$PSScriptRoot\special_issues\\$issue")
-                } Catch
-                {
-                    Write-Host "Ocorred an error trying download " + $file
-                    $errorCount++
-                }
+foreach ($issue in $special_issues) {
+    try {
+        Write-Host Downloading $issue
+        $fileUrl = $baseUrl + "/" + $issue
+        $web.DownloadFile($fileUrl, "$baseDir\special_issues\$issue")
+    }
+    Catch {
+        Write-Host "Ocorred an error trying download " + $file
+        $errorCount++
+    }
 }
 
 if ($errorCount -gt 0) {
-	exit 1
+    exit 1
 }
