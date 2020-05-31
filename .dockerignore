@@ -1,0 +1,8 @@
+windows/*
+.travis
+.gitignore
+.github
+.git
+docs
+CONTRIBUTING.md
+README.md
