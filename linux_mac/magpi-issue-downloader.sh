@@ -8,7 +8,7 @@
 # ------------------------------------------------------------------
 
 # VERSION=0.1.2
-# USAGE="Usage: sh magpi-issue-downloader.sh [-f firstissue] [-l lastissue]"
+# USAGE="Usage: bash magpi-issue-downloader.sh [-f firstissue] [-l lastissue]"
 
 BASEDIR=`dirname $0`/..
 OUTDIR=$BASEDIR/issues
@@ -42,3 +42,4 @@ issues=$(cat "$file");
 	done
 
 exit 0
+
