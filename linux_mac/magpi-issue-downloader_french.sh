@@ -10,7 +10,7 @@
 
 
 # VERSION=0.1.0
-# USAGE="Usage: sh magpi-issue-downloader_french.sh"
+# USAGE="Usage: bash magpi-issue-downloader_french.sh"
 
 
 if [ ! -d "french_issues" ]; then

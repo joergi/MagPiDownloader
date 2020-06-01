@@ -42,3 +42,4 @@ issues=$(cat "$file");
 	done
 
 exit 0
+
