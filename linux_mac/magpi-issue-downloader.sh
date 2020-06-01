@@ -18,7 +18,7 @@ if [ ! -d "$OUTDIR" ]; then
 fi
 
 i=1
-file="$BASEDIR/issues.txt";
+file="$BASEDIR/sources-for-download/regular-issues.txt";
 issues=$(cat "$file");
 
 	while :
