@@ -12,6 +12,17 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  run_lints:
+    runs-on: ubuntu-latest
+    name: Lint Code Base
+    steps:
+      - uses: actions/checkout@v1
+      - name: Super-Linter
+        uses: github/super-linter@v2.1.0
+        env:
+           VALIDATE_ALL_CODEBASE: true
+           VALIDATE_BASH: true
+           VALIDATE_POWERSHELL: true
   powershell:
     runs-on: windows-latest
     steps:
