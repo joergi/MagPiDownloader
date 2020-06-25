@@ -34,7 +34,7 @@ jobs:
            VALIDATE_BASH: true
   lint_docker:
     runs-on: ubuntu-latest
-    name: Lint Bash Base
+    name: Lint Docker Base
     steps:
       - uses: actions/checkout@v2.3.1
       - name: Super-Linter
