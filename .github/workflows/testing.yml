@@ -12,10 +12,30 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  lint_powershell:
+    runs-on: ubuntu-latest
+    name: Lint Powershell Code Base
+    steps:
+      - uses: actions/checkout@v2.3.1
+      - name: Super-Linter
+        uses: github/super-linter@v2.2.0
+        env:
+           VALIDATE_ALL_CODEBASE: true
+           VALIDATE_POWERSHELL: true
+  lint_bash:
+    runs-on: ubuntu-latest
+    name: Lint Bash Base
+    steps:
+      - uses: actions/checkout@v2.3.1
+      - name: Super-Linter
+        uses: github/super-linter@v2.2.0
+        env:
+           VALIDATE_ALL_CODEBASE: true
+           VALIDATE_BASH: true
   powershell:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2.3.1
       - name: Download Education Issues
         id: educationIssues
         shell: pwsh
@@ -27,7 +47,7 @@ jobs:
       - name: Download Issues with start and end limit
         id: normalIssuesWithRange
         shell: pwsh
-        run: ./windows/magpi-issue-downloader.ps1 -f 92 -l 93
+        run: ./windows/magpi-issue-downloader.ps1 -f 93 -l 94
       - name: Download French Issues
         id: frenchIssues
         shell: pwsh
@@ -52,12 +72,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - uses: actions/checkout@v2.3.1
       - name: Download Education Issues
         id: educationIssues
         run: bash ./linux_mac/magpi-education-downloader.sh
       - name: Download Issues with start and end limit
         id: normalIssuesWithRange
-        run: bash ./linux_mac/magpi-issue-downloader.sh -f 92 -l 93
+        run: bash ./linux_mac/magpi-issue-downloader.sh -f 93 -l 94
       - name: Download French Issues
         id: frenchIssues
         run: bash ./linux_mac/magpi-issue-downloader_french.sh
@@ -77,12 +98,13 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v1
+      - uses: actions/checkout@v2.3.1
       - name: Download Education Issues
         id: educationIssues
         run: bash ./linux_mac/magpi-education-downloader.sh
       - name: Download Issues with start and end limit
         id: normalIssuesWithRange
-        run: bash ./linux_mac/magpi-issue-downloader.sh -f 92 -l 93
+        run: bash ./linux_mac/magpi-issue-downloader.sh -f 93 -l 94
       - name: Download French Issues
         id: frenchIssues
         run: bash ./linux_mac/magpi-issue-downloader_french.sh

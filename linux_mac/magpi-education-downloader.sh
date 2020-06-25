@@ -8,7 +8,7 @@
 # ------------------------------------------------------------------
 
 # VERSION=0.1.0
-# USAGE="Usage: sh magpi-education-downloader.sh"
+# USAGE="Usage: bash magpi-education-downloader.sh"
 
 BASEDIR=`dirname $0`/..
 OUTDIR=$BASEDIR/education_issues

@@ -10,7 +10,7 @@
 # ------------------------------------------------------------------
 
 # VERSION=0.1.0
-# USAGE="Usage: sh magpi-issue-downloader_hebrew.sh"
+# USAGE="Usage: bash magpi-issue-downloader_hebrew.sh"
 
 if [ ! -d "hebrew_issues" ]; then
  mkdir hebrew_issues

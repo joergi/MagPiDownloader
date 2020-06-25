@@ -8,7 +8,7 @@
 # ------------------------------------------------------------------
 
 # VERSION=0.1.0
-# USAGE="Usage: sh magpi-special-issue-downloader.sh"
+# USAGE="Usage: bash magpi-special-issue-downloader.sh"
 
 BASEDIR=`dirname $0`/..
 OUTDIR=$BASEDIR/special_issues

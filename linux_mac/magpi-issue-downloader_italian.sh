@@ -10,7 +10,7 @@
 # ------------------------------------------------------------------
 
 # VERSION=0.1.0
-# USAGE="Usage: sh magpi-issue-downloader_italian.sh"
+# USAGE="Usage: bash magpi-issue-downloader_italian.sh"
 
 if [ ! -d "italian_issues" ]; then
  mkdir italian_issues

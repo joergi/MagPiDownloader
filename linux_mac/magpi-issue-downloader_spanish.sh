@@ -9,7 +9,7 @@
 # ------------------------------------------------------------------
 
 # VERSION=0.1.0
-# USAGE="Usage: sh magpi-issue-downloader_spanish.sh"
+# USAGE="Usage: bash magpi-issue-downloader_spanish.sh"
 
 if [ ! -d "spanish_issues" ]; then
  mkdir spanish_issues
