@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2.3.1
       - name: Super-Linter
-        uses: github/super-linter@v3.0.1
+        uses: github/super-linter@v3.1.0
         env:
            VALIDATE_ALL_CODEBASE: true
            VALIDATE_POWERSHELL: true
@@ -28,7 +28,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2.3.1
       - name: Super-Linter
-        uses: github/super-linter@v3.0.1
+        uses: github/super-linter@v3.1.0
         env:
            VALIDATE_ALL_CODEBASE: true
            VALIDATE_BASH: true
@@ -38,7 +38,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2.3.1
       - name: Super-Linter
-        uses: github/super-linter@v3.0.1
+        uses: github/super-linter@v3.1.0
         env:
            VALIDATE_ALL_CODEBASE: true
            VALIDATE_DOCKER: true
