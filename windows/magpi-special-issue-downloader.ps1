@@ -1,4 +1,3 @@
-#!/bin/bash
 # ------------------------------------------------------------------
 # [Author] rubemlrm - https://github.com/joergi/MagPiDownloader
 #          downloader for all MagPi issues
@@ -40,12 +39,12 @@ $web = New-Object system.net.webclient
 $errorCount = 0
 foreach ($issue in $special_issues) {
     try {
-        Write-Host Downloading $issue
+        Write-Verbose -Message Downloading $issue
         $fileUrl = $baseUrl + "/" + $issue
         $web.DownloadFile($fileUrl, "$baseDir\special_issues\$issue")
     }
     Catch {
-        Write-Host "Ocorred an error trying download " + $file
+        Write-Verbose -Message "Ocorred an error trying download " + $file
         $errorCount++
     }
 }
