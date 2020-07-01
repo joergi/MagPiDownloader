@@ -1,0 +1,44 @@
+# This is a basic workflow to help you get started with Actions
+
+name: LINTERS
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  lint_powershell:
+    runs-on: ubuntu-latest
+    name: Lint Powershell Code Base
+    steps:
+      - uses: actions/checkout@v2.3.1
+      - name: Super-Linter
+        uses: docker://github/super-linter:v3
+        env:
+           VALIDATE_ALL_CODEBASE: true
+           VALIDATE_POWERSHELL: true
+  lint_bash:
+    runs-on: ubuntu-latest
+    name: Lint Bash Base
+    steps:
+      - uses: actions/checkout@v2.3.1
+      - name: Super-Linter
+        uses: docker://github/super-linter:v3
+        env:
+           VALIDATE_ALL_CODEBASE: true
+           VALIDATE_BASH: true
+  lint_docker:
+    runs-on: ubuntu-latest
+    name: Lint Docker Base
+    steps:
+      - uses: actions/checkout@v2.3.1
+      - name: Super-Linter
+        uses: docker://github/super-linter:v3
+        env:
+           VALIDATE_ALL_CODEBASE: true
+           VALIDATE_DOCKER: true

@@ -18,7 +18,7 @@ fi
 i=1
 issues=3
 
-while [ $i -le $issues ]
+while [ "$i" -le "$issues" ]
 do
 	if [ "$i" -lt 10 ]; then
 		wget https://www.raspberrypi.org/magpi-issues/MagPi_Mini_Spanish_0$i.pdf -P spanish_issues/

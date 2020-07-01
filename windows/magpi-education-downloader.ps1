@@ -31,12 +31,12 @@ while ($i -le $issues) {
 	}
 
 	try {
-		Write-Host Downloading $filePattern
+		Write-Verbose -Message "Downloading $filePattern"
 		$fileUrl = $baseUrl + "/" + $filePattern
 		$web.DownloadFile($fileUrl, "$baseDir\education_issues\" + $filePattern)
 	}
  Catch {
-		Write-Host "Ocorred an error trying download " + $filePattern
+		Write-Verbose -Message "Ocorred an error trying download  $filePattern"
 		$errorCount++
 	}
 	$i++
