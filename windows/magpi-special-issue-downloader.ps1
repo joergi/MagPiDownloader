@@ -39,12 +39,12 @@ $web = New-Object system.net.webclient
 $errorCount = 0
 foreach ($issue in $special_issues) {
     try {
-        Write-Verbose -Message Downloading $issue
+        Write-Verbose -Message "Downloading $issue"
         $fileUrl = $baseUrl + "/" + $issue
         $web.DownloadFile($fileUrl, "$baseDir\special_issues\$issue")
     }
     Catch {
-        Write-Verbose -Message "Ocorred an error trying download " + $file
+        Write-Verbose -Message "Ocorred an error trying download $file"
         $errorCount++
     }
 }

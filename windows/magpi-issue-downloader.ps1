@@ -47,11 +47,11 @@ do {
     if ($fileReponse) {
         try {
             $web.DownloadFile($fileReponse.href, "$baseDir\issues\" + $fileReponse.download)
-            Write-Verbose -Message "Downloaded from " + $fileReponse.href
+            Write-Verbose -Message "Downloaded from  $fileReponse.href"
         }
         Catch {
             Write-Verbose -Message $_.Exception | format-list -force
-            Write-Verbose -Message "Ocorred an error trying download " + $fileReponse.download
+            Write-Verbose -Message "Ocorred an error trying download $fileReponse.download"
             $errorCount++
         }
     }

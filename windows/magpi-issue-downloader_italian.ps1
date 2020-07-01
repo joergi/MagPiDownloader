@@ -36,7 +36,7 @@ while ($i -le $issues) {
 		$web.DownloadFile($fileUrl, "$baseDir\italian_issues\$filePattern")
 	}
  Catch {
-		Write-Verbose -Message "Ocorred an error trying download " + $filePattern
+		Write-Verbose -Message "Ocorred an error trying download $filePattern"
 		$errorCount++
 	}
 	$i++
