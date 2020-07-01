@@ -31,7 +31,7 @@ while ($i -le $issues) {
 	}
 
 	try {
-		Write-Verbose -Message Downloading $filePattern
+		Write-Verbose -Message "Downloading $filePattern"
 		$fileUrl = $baseUrl + "/" + $filePattern
 		$web.DownloadFile($fileUrl, "$baseDir\italian_issues\$filePattern")
 	}
