@@ -27,7 +27,7 @@ jobs:
       - name: Download Issues with start and end limit
         id: normalIssuesWithRange
         shell: pwsh
-        run: ./windows/magpi-issue-downloader.ps1 -f 93 -l 94
+        run: ./windows/magpi-issue-downloader.ps1 -f 94 -l 95
       - name: Download French Issues
         id: frenchIssues
         shell: pwsh
@@ -58,7 +58,7 @@ jobs:
         run: bash ./linux_mac/magpi-education-downloader.sh
       - name: Download Issues with start and end limit
         id: normalIssuesWithRange
-        run: bash ./linux_mac/magpi-issue-downloader.sh -f 93 -l 94
+        run: bash ./linux_mac/magpi-issue-downloader.sh -f 94 -l 95
       - name: Download French Issues
         id: frenchIssues
         run: bash ./linux_mac/magpi-issue-downloader_french.sh
@@ -84,7 +84,7 @@ jobs:
         run: bash ./linux_mac/magpi-education-downloader.sh
       - name: Download Issues with start and end limit
         id: normalIssuesWithRange
-        run: bash ./linux_mac/magpi-issue-downloader.sh -f 93 -l 94
+        run: bash ./linux_mac/magpi-issue-downloader.sh -f 94 -l 95
       - name: Download French Issues
         id: frenchIssues
         run: bash ./linux_mac/magpi-issue-downloader_french.sh
