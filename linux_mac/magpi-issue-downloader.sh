@@ -19,7 +19,6 @@ if [ ! -d "$OUTDIR" ]; then
  mkdir "$OUTDIR"
 fi
 
-i=1
 downloadUrl="https://magpi.raspberrypi.org/issues/%02d/pdf"
 file="$BASEDIR/issues.txt";
 recentIssue=$(cat "$file");
