@@ -20,12 +20,11 @@ if [ ! -d "$OUTDIR" ]; then
 fi
 
 i=1
+downloadUrl="https://magpi.raspberrypi.org/issues/%02d/pdf"
 file="$BASEDIR/issues.txt";
 recentIssue=$(cat "$file");
 
-downloadUrl="https://magpi.raspberrypi.org/issues/%02d/pdf"
-
-source <(curl -s https://raw.githubusercontent.com/joergi/downloader/master/linux_mac/downloader.sh)
+source <(curl -s https://raw.githubusercontent.com/joergi/downloader/master/linux_mac/downloader.sh) $downloadUrl $recentIssue "$@"
 
 exit 0
 
