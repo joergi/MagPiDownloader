@@ -23,7 +23,7 @@ downloadUrl="https://magpi.raspberrypi.org/issues/%02d/pdf"
 file="$BASEDIR/issues.txt";
 recentIssue=$(cat "$file");
 
-source <(curl -s https://raw.githubusercontent.com/joergi/downloader/master/linux_mac/downloader.sh) $downloadUrl $recentIssue "$@"
+source <(curl -s https://raw.githubusercontent.com/joergi/downloader/master/linux_mac/downloader.sh) "$downloadUrl" "$recentIssue" "$@"
 
 exit 0
 
