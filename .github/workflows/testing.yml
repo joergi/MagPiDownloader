@@ -18,7 +18,7 @@ jobs:
       - id: recent_issue
         run: |
           pwd
-          recent_issue=`cat ../issues.txt`
+          recent_issue=`cat issues.txt`
           echo $recent_issue
   powershell:
     runs-on: windows-latest
