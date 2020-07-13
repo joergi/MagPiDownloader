@@ -12,6 +12,13 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  read_recent_issue:
+    runs-on: ubuntu-latest
+    steps:
+      - id: recent_issue
+        run: |
+          recent_issue=`cat ../../issue.txt`
+          echo $recent_issue
   powershell:
     runs-on: windows-latest
     steps:
