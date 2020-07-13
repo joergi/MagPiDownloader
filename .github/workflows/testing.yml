@@ -17,7 +17,7 @@ jobs:
     steps:
       - id: recent_issue
         run: |
-          recent_issue=`cat ../../issue.txt`
+          recent_issue=`cat ../../issues.txt`
           echo $recent_issue
   powershell:
     runs-on: windows-latest
