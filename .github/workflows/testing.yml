@@ -14,10 +14,15 @@ on:
 jobs:
   read_recent_issue:
     runs-on: ubuntu-latest
+    
     steps:
-      - id: recent_issue
-        run: |
-          cat ./issues.txt
+    - uses: pCYSl5EDgo/cat@master
+      id: read_recent
+      with:
+        path: issues.txt
+    - run: echo $TEXT
+      env:
+        TEXT: ${{ steps.read_recent.outputs.text }}
   powershell:
     runs-on: windows-latest
     steps:
