@@ -17,7 +17,7 @@ jobs:
     steps:
       - id: recent_issue
         run: |
-          pwd
+          ls -lah
           recent_issue=`cat issues.txt`
           echo $recent_issue
   powershell:
