@@ -70,7 +70,7 @@ jobs:
         run: bash ./linux_mac/magpi-education-downloader.sh
       - name: Download Issues with start and end limit
         id: normalIssuesWithRange
-        run: bash ./linux_mac/magpi-issue-downloader.sh -f 94 -l ${{ read_recent_issue.steps.read_recent.outputs.text }}
+        run: bash ./linux_mac/magpi-issue-downloader.sh -f 94 -l 95
       - name: Download French Issues
         id: frenchIssues
         run: bash ./linux_mac/magpi-issue-downloader_french.sh
