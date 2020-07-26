@@ -10,11 +10,11 @@
 # VERSION=0.1.2
 # USAGE="Usage: bash magpi-issue-downloader.sh [-f firstissue] [-l lastissue]"
 
-BASEDIR=`dirname $0`/..
+BASEDIR=$(dirname "$0")/..
 OUTDIR=$BASEDIR/issues
 
 if [ ! -d "$OUTDIR" ]; then
- mkdir $OUTDIR
+ mkdir "$OUTDIR"
 fi
 
 i=1
@@ -33,11 +33,11 @@ issues=$(cat "$file");
 		shift
 	done
 
-	while [ $i -le $issues ]
+	while [ "$i" -le "$issues" ]
 	do
-		printf -v page_url "https://magpi.raspberrypi.org/issues/%02d/pdf" $i
-		pdf_url=`curl -sf $page_url | grep c-link | sed 's/^.*href=\"//' | sed 's/\?.*$//'`
-		wget -N $pdf_url -P $OUTDIR
+		printf -v page_url "https://magpi.raspberrypi.org/issues/%02d/pdf" "$i"
+		pdf_url=$(curl -sf "$page_url" | grep c-link | sed 's/^.*href=\"//' | sed 's/\?.*$//')
+		wget -N "$pdf_url" -P "$OUTDIR"
 		i=$(( i+1 ))
 	done
 
