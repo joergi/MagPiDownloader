@@ -24,7 +24,12 @@ file="$BASEDIR/issues.txt";
 recentIssue=$(cat "$file");
 
 # shellcheck disable=SC1090
-source <(curl -s https://raw.githubusercontent.com/joergi/downloader/main/linux_mac/downloader.sh) "$downloadUrl" "$recentIssue" "$@"
+# source <(curl -s https://raw.githubusercontent.com/joergi/downloader/main/linux_mac/downloader.sh) "$downloadUrl" "$recentIssue" "$@"
+
+# workaround for a known limitation in bash 3.x: http://lists.gnu.org/archive/html/bug-bash/2006-01/msg00018.html
+# stackoverflow: https://stackoverflow.com/questions/32596123/why-source-command-doesnt-work-with-process-substitution-in-bash-3-2/32596626#32596626
+# shellcheck disable=SC1090
+source /dev/stdin <<<"$(curl -s https://raw.githubusercontent.com/joergi/downloader/main/linux_mac/downloader.sh)" "$downloadUrl" "$recentIssue" "$@"
 
 exit 0
 
