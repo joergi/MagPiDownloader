@@ -1,74 +1,26 @@
-# Essential Games v1
-https://www.raspberrypi.org/magpi-issues/Essentials_Games_v1.pdf
-
-# Project Book - v1 https://www.raspberrypi.org/magpi/issues/projects-1/
-https://raspberrypi.org/magpi-issues/Projects_Book_v1.pdf
-
-# Project Book - v2 https://www.raspberrypi.org/magpi/issues/projects-2/
-https://www.raspberrypi.org/magpi-issues/Projects_Book_v2.pdf
-
-# Project Book - v3 https://www.raspberrypi.org/magpi/issues/projects-3/
-https://www.raspberrypi.org/magpi-issues/Projects_Book_v3.pdf
-
-# Bash Essentials v1 - https://www.raspberrypi.org/magpi/issues/essentials-bash-vol1/
-https://raspberrypi.org/magpi-issues/Essentials_Bash_v1.pdf
-
-# Essentials Sense Hat v1 - https://www.raspberrypi.org/magpi/issues/essentials-sense-hat-v1/
-https://www.raspberrypi.org/magpi-issues/Essentials_SenseHAT_v1.pdf
-
-# Sonic Pi Essentials - Code Music with Sonic Pi - https://www.raspberrypi.org/magpi/issues/essentials-sonic-pi-v1/
-https://raspberrypi.org/magpi-issues/Essentials_Sonic_Pi-v1.pdf
-
-# Scratch Essentials - Learn to code with scratch - https://www.raspberrypi.org/magpi/issues/essentials-scratch-v1/
-https://www.raspberrypi.org/magpi-issues/Essentials_Scratch_v1.pdf
-
-# Minecraft Essentials - Hacking and Making in Minecraft - https://www.raspberrypi.org/magpi/issues/essentials-minecraft-v1/
-https://raspberrypi.org/magpi-issues/Essentials_Minecraft_v1.pdf
-
-# GPIO Zero Essentials - Simple Electronics with GPIO Zero
-https://raspberrypi.org/magpi-issues/Essentials_GPIOZero_v1.pdf
-
-# C Essentials - Learn to code with C - https://www.raspberrypi.org/magpi/issues/essentials-c-v1/
-https://www.raspberrypi.org/magpi-issues/Essentials_C_v1.pdf
-
-# Camera Essentials - The Camera Module Guide https://www.raspberrypi.org/magpi/issues/essentials_camera_v1/
-https://www.raspberrypi.org/magpi-issues/Essentials_Camera_v1.pdf
-
-# AIY VOICE ESSENTIALS - https://www.raspberrypi.org/magpi/issues/essentials-aiy-v1/
-https://www.raspberrypi.org/magpi-issues/Essentials_AIY_Projects_Voice_v1.pdf
-
-# THE OFFICIAL RASPBERRY PI BEGINNER’S BOOK (2018) - https://www.raspberrypi.org/magpi/issues/beginners-1/
-https://www.raspberrypi.org/magpi-issues/Beginners_Book_v1.pdf
-
-# Raspberry Pi THE ANNUAL 2018 - https://magpi.raspberrypi.org/books/annual-2018
-https://www.raspberrypi.org/magpi-issues/Annual2018.pdf
-
-# Raspberry Pi Projects Book 4 - https://magpi.raspberrypi.org/books/projects-4
+https://magpi.raspberrypi.org/books/se1/pdf
+https://magpi.raspberrypi.org/books/essentials-bash-vol1/pdf
+https://magpi.raspberrypi.org/books/projects-1/pdf
+https://magpi.raspberrypi.org/books/essentials-games-vol1/pdf
+https://magpi.raspberrypi.org/books/essentials-sense-hat-v1/pdf
+https://magpi.raspberrypi.org/books/essentials-sonic-pi-v1/pdf
+https://magpi.raspberrypi.org/books/essentials-scratch-v1/pdf
+https://magpi.raspberrypi.org/books/essentials-minecraft-v1/pdf
+https://magpi.raspberrypi.org/books/essentials-gpio-zero-v1/pdf
+https://magpi.raspberrypi.org/books/essentials-c-v1/pdf
+https://magpi.raspberrypi.org/books/projects-2/pdf
+https://magpi.raspberrypi.org/books/essentials_camera_v1/pdf
+https://magpi.raspberrypi.org/books/essentials-aiy-v1/pdf
+https://magpi.raspberrypi.org/books/projects-3/pdf
+https://magpi.raspberrypi.org/books/beginners-1/pdf
+https://magpi.raspberrypi.org/books/annual-2018/pdf
 https://magpi.raspberrypi.org/books/projects-4/pdf
-
-# Code Club Book of Scratch - https://magpi.raspberrypi.org/books/book-of-scratch
 https://magpi.raspberrypi.org/books/book-of-scratch/pdf
-
-# Essentials - Conquer the Command Line 2nd Edition 2019 - https://magpi.raspberrypi.org/books/command-line-second-edition
 https://magpi.raspberrypi.org/books/command-line-second-edition/pdf
-
-# C & GUI Programming - https://magpi.raspberrypi.org/books/c-gui-programming
 https://magpi.raspberrypi.org/books/c-gui-programming/pdf
-
-# Beginner's Guide v2 June 2019 - https://magpi.raspberrypi.org/books/beginners-guide-2nd-ed
 https://magpi.raspberrypi.org/books/beginners-guide-2nd-ed/pdf
-
-# Beginner's Guide v3 Nov 2019 - https://magpi.raspberrypi.org/books/beginners-guide-3rd-ed
 https://magpi.raspberrypi.org/books/beginners-guide-3rd-ed/pdf
-
-# Get Started with Raspberry Pi - https://magpi.raspberrypi.org/books/get-started
 https://magpi.raspberrypi.org/books/get-started/pdf
-
-# Retro Gaming with Raspberry Pi - https://magpi.raspberrypi.org/books/retro-gaming
 https://magpi.raspberrypi.org/books/retro-gaming/pdf
-
-# Raspberry Pi Projects Book 5 - https://magpi.raspberrypi.org/books/projects-5
 https://magpi.raspberrypi.org/books/projects-5/pdf
-
-# Raspberry Pi Camera Guide - https://magpi.raspberrypi.org/books/camera-guide
 https://magpi.raspberrypi.org/books/camera-guide/pdf
