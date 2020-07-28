@@ -5,7 +5,7 @@ https://www.raspberrypi.org/magpi-issues/Essentials_Games_v1.pdf
 https://raspberrypi.org/magpi-issues/Projects_Book_v1.pdf
 
 # Project Book - v2 https://www.raspberrypi.org/magpi/issues/projects-2/
-https://www.raspberrypi.org/magpi-issues/Projects_Book_v2.pdf -P $OUTDIR
+https://www.raspberrypi.org/magpi-issues/Projects_Book_v2.pdf
 
 # Project Book - v3 https://www.raspberrypi.org/magpi/issues/projects-3/
 https://www.raspberrypi.org/magpi-issues/Projects_Book_v3.pdf
