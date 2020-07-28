@@ -21,7 +21,7 @@ fi
 file=$BASEDIR"/sources-for-download/special-issues.txt"
 while IFS= read -r line
 do
-	bash <(curl https://raw.githubusercontent.com/joergi/downloader/special_edition_changes/linux_mac/downloader.sh) $line $OUTDIR
+	bash <(curl https://raw.githubusercontent.com/joergi/downloader/special_edition_changes/linux_mac/downloader.sh) "$line" "$OUTDIR"
 done < "$file"
 
 exit 0
