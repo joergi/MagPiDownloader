@@ -17,7 +17,6 @@ Param(
 )
 
 # control variables
-$i = 1
 $baseDir = (Split-Path -Path $PSScriptRoot -Parent)
 $baseUrl = "https://magpi.raspberrypi.org/issues/"
 $fFlag = ""
