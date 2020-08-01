@@ -23,6 +23,9 @@ $issues = Get-Content "$baseDir\sources-for-download\regular-issues.txt" -First 
 $baseUrl = "https://magpi.raspberrypi.org/issues/"
 $web = New-Object system.net.webclient
 $errorCount = 0
+$fFlag = ""
+$rFlag = ""
+$lFlag = ""
 
 # Check if directory dont exist and try create
 if ( -Not (Test-Path -Path "$baseDir\issues" ) ) {
@@ -31,33 +34,16 @@ if ( -Not (Test-Path -Path "$baseDir\issues" ) ) {
 
 
 if ($f) {
-    $i = [int]$f
+    $fFlag = "-f $f"
+}
+elseif ($r) {
+    $rFlag = "-r $r"
 }
 
 if ($l) {
-    $issues = [int]$l
+    $lFlag = "-l $l"
 }
 
-do {
-    #start scrapping directory and download files
-
-    $tempCounter = if ($i -le 9) { "{0:00}" -f $i }  Else { $i }
-
-    $fileReponse = ((Invoke-WebRequest -UseBasicParsing "$baseUrl$tempCounter/pdf").Links | Where-Object { $_.href -like "http*" } | Where-Object class -eq c-link)
-    if ($fileReponse) {
-        try {
-            $web.DownloadFile($fileReponse.href, "$baseDir\issues\" + $fileReponse.download)
-            Write-Verbose -Message "Downloaded from  $fileReponse.href"
-        }
-        Catch {
-            Write-Verbose -Message $_.Exception | format-list -force
-            Write-Verbose -Message "Ocorred an error trying download $fileReponse.download"
-            $errorCount++
-        }
-    }
-    $i++
-} While ($i -le $issues)
-
-if ($errorCount -gt 0) {
-    exit 1
-}
+Invoke-WebRequest "https://raw.githubusercontent.com/Rubemlrm/downloader/main/windows/generic-downloader.ps1" -OutFile "$baseDir\downloader.ps1"
+powershell.exe $baseDir\downloader.ps1 -url $baseUrl -outDir "$baseDir\issues\" $fFlag $rFlag $lFlag
+Remove-Item "$baseDir\downloader.ps1"
