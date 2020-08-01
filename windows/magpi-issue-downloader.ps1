@@ -19,10 +19,7 @@ Param(
 # control variables
 $i = 1
 $baseDir = (Split-Path -Path $PSScriptRoot -Parent)
-$issues = Get-Content "$baseDir\sources-for-download\regular-issues.txt" -First 1
 $baseUrl = "https://magpi.raspberrypi.org/issues/"
-$web = New-Object system.net.webclient
-$errorCount = 0
 $fFlag = ""
 $rFlag = ""
 $lFlag = ""
@@ -36,8 +33,10 @@ if ( -Not (Test-Path -Path "$baseDir\issues" ) ) {
 if ($f) {
     $fFlag = "-f $f"
 }
-elseif ($r) {
+if ($r) {
     $rFlag = "-r $r"
+} else {
+    $rFlag = Get-Content "$baseDir\sources-for-download\regular-issues.txt" -First 1
 }
 
 if ($l) {
