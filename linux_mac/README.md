@@ -5,7 +5,7 @@
 
 Downloads all the Mag Pi issues (a Raspberry Pi magazine) on Linux and Mac OS
 
-  `git clone https://github.com/joergi/MagPiDownloader.git`   
+  `git clone https://github.com/joergi/MagPiDownloader.git`
 
 Download the normal issues:  
   `bash magpi-issue-downloader.sh`
@@ -32,7 +32,7 @@ Descargue la traducción española:
   `bash  magpi-issue-downloader_hebrew.sh`
 
 All the issues are downloadable for free on <https://www.raspberrypi.org/magpi/issues/>  
-You can also buy all the paper versions of this issues on <http://swag.raspberrypi.org/collections/magpi>
+You can also buy all the paper versions of this issues on <http://swag.raspberrypi.org/collections/magpi>  
 
 ## You want to download it with Docker? [Go here for the Docker version](../)
 ## You don't have a Linux or Mac OS? [Go here for the Windows version](../windows/)
