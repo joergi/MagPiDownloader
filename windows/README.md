@@ -37,8 +37,8 @@ Descargue la traducción española:
 הורד את הבעיות מתורגמות העבריות:
   `./magpi-issue-downloader_hebrew.ps1`
 
-All the issues are downloadable for free on https://www.raspberrypi.org/magpi/issues/
-You can also buy all the paper versions of this issues on http://swag.raspberrypi.org/collections/magpi
+All the issues are downloadable for free on <https://www.raspberrypi.org/magpi/issues/>  
+You can also buy all the paper versions of this issues on <http://swag.raspberrypi.org/collections/magpi>
 
 ## You want to download it with Docker? [Go here for the Docker version](../)
 ## You don't have a Windows? [Go here for the Mac or Linux version](../linux_mac/)
