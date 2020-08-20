@@ -1,6 +1,7 @@
+# MagPiDownloader for Windows
+
 ![](https://travis-ci.org/joergi/MagPiDownloader.svg?branch=master) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/6148b12808964799910ed67ce82065ce)](https://www.codacy.com/app/joergi/MagPiDownloader?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=joergi/MagPiDownloader&amp;utm_campaign=Badge_Grade)
 
-# MagPiDownloader for Windows
 Downloads all the Mag Pi issues (a Raspberry Pi magazine) on Windows
 
 Open your Powershell as Administrator (right click on PowerShell -> Open as Administrator)
