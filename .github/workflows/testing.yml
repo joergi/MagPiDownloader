@@ -80,7 +80,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.3.2
-      - uses: actions/checkout@v2.3.2
       - name: Download Education Issues
         id: educationIssues
         run: bash ./linux_mac/magpi-education-downloader.sh
@@ -123,7 +122,6 @@ jobs:
   bash-macos:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v2.3.2
       - uses: actions/checkout@v2.3.2
       - name: Download Education Issues
         id: educationIssues
