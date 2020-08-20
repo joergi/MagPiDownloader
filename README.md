@@ -15,16 +15,16 @@ This project should save you time, and let you download all scripts together.
 If you have Docker installed, there is an easy way to download it by docker:   
 
 download all:
-```
+```bash
 docker run -v $(pwd)/issues:/app/issues/ joergi/mag-pi-downloader
 ```
 
 download specific range first to last (example: from 1 to 2
-```
+```bash
 docker run -v $(pwd)/issues:/app/issues/ joergi/mag-pi-downloader -f 1 -l 2
 ```
 ---
 (unfortunately the issues folder is root, so you have to change it to your user)
-```
+```bash
 sudo chown $USER:$USER -R issues/
 ```
