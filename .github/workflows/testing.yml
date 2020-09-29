@@ -39,11 +39,11 @@ jobs:
       - name: Download Issues with start and end limit
         id: normalIssuesWithRange
         shell: pwsh
-        run: ./windows/magpi-issue-downloader.ps1 -f 92 -l 93
+        run: ./windows/magpi-issue-downloader.ps1 -f 95 -l 96
       - name: Download Issues with start and end limit
         id: normalIssuesWithStartingLimit
         shell: pwsh
-        run: ./windows/magpi-issue-downloader.ps1 -f 94        
+        run: ./windows/magpi-issue-downloader.ps1 -f 97        
       - name: Download French Issues
         id: frenchIssues
         shell: pwsh
@@ -68,7 +68,7 @@ jobs:
         id: check_files
         uses: andstor/file-existence-action@v1
         with:
-          files: "issues/the-magpi-issue-3.pdf, issues/the-magpi-issue-96.pdf, issues/the-magpi-issue-95.pdf, french_issues/MagPi_Mini_French_01.pdf, italian_issues/MagPi_Mini_Italian_02.pdf, hebrew_issues/MagPi_Mini_Hebrew_01.pdf, spanish_issues/MagPi_Mini_Spanish_03.pdf, special_issues/Essentials_Games_v1.pdf"
+          files: "issues/the-magpi-issue-3.pdf, issues/the-magpi-issue-98.pdf, issues/the-magpi-issue-97.pdf, french_issues/MagPi_Mini_French_01.pdf, italian_issues/MagPi_Mini_Italian_02.pdf, hebrew_issues/MagPi_Mini_Hebrew_01.pdf, spanish_issues/MagPi_Mini_Spanish_03.pdf, special_issues/Essentials_Games_v1.pdf"
           allow_failure: false
       - name: lslah issues
         run: Get-ChildItem –path D:\a\MagPiDownloader\MagPiDownloader\issues,D:\a\MagPiDownloader\MagPiDownloader\french_issues,D:\a\MagPiDownloader\MagPiDownloader\italian_issues,D:\a\MagPiDownloader\MagPiDownloader\hebrew_issues,D:\a\MagPiDownloader\MagPiDownloader\spanish_issues,D:\a\MagPiDownloader\MagPiDownloader\special_issues
@@ -89,10 +89,10 @@ jobs:
         run: bash ./linux_mac/magpi-issue-downloader.sh -l 2
       - name: Download Issues with start limit
         id: normalIssuesWithStartLimit
-        run: bash ./linux_mac/magpi-issue-downloader.sh -f 95
+        run: bash ./linux_mac/magpi-issue-downloader.sh -f 97
       - name: Download Issues with start and end limit
         id: normalIssuesWithRange
-        run: bash ./linux_mac/magpi-issue-downloader.sh -f 92 -l 93                
+        run: bash ./linux_mac/magpi-issue-downloader.sh -f 95 -l 96                
       - name: Download French Issues
         id: frenchIssues
         run: bash ./linux_mac/magpi-issue-downloader_french.sh
@@ -113,7 +113,7 @@ jobs:
         id: check_files
         uses: andstor/file-existence-action@v1
         with:
-          files: "issues/MagPi02.pdf, issues/MagPi92.pdf, issues/MagPi96.pdf, french_issues/MagPi_Mini_French_01.pdf, italian_issues/MagPi_Mini_Italian_02.pdf, hebrew_issues/MagPi_Mini_Hebrew_01.pdf, spanish_issues/MagPi_Mini_Spanish_03.pdf, special_issues/MagPiSE1.pdf, special_issues/Projects_Book_v3.pdf, special_issues/Essentials_Camera_v1.pdf, special_issues/Retro_Gaming.pdf, special_issues/Camera-Guide.pdf"
+          files: "issues/MagPi02.pdf, issues/MagPi96.pdf, issues/MagPi98.pdf, french_issues/MagPi_Mini_French_01.pdf, italian_issues/MagPi_Mini_Italian_02.pdf, hebrew_issues/MagPi_Mini_Hebrew_01.pdf, spanish_issues/MagPi_Mini_Spanish_03.pdf, special_issues/MagPiSE1.pdf, special_issues/Projects_Book_v3.pdf, special_issues/Essentials_Camera_v1.pdf, special_issues/Retro_Gaming.pdf, special_issues/Camera-Guide.pdf"
           allow_failure: false
       - name: lslah
         run: ls -lah  issues/ french_issues/ italian_issues/ hebrew_issues/ spanish_issues/ special_issues/      
@@ -133,10 +133,10 @@ jobs:
         run: bash ./linux_mac/magpi-issue-downloader.sh -l 2
       - name: Download Issues with start limit
         id: normalIssuesWithStartLimit
-        run: bash ./linux_mac/magpi-issue-downloader.sh -f 95
+        run: bash ./linux_mac/magpi-issue-downloader.sh -f 97
       - name: Download Issues with start and end limit
         id: normalIssuesWithRange
-        run: bash ./linux_mac/magpi-issue-downloader.sh -f 92 -l 93                
+        run: bash ./linux_mac/magpi-issue-downloader.sh -f 95 -l 96             
       - name: Download French Issues
         id: frenchIssues
         run: bash ./linux_mac/magpi-issue-downloader_french.sh
@@ -157,7 +157,7 @@ jobs:
         id: check_files
         uses: andstor/file-existence-action@v1
         with:
-          files: "issues/MagPi02.pdf, issues/MagPi92.pdf, issues/MagPi96.pdf, french_issues/MagPi_Mini_French_01.pdf, italian_issues/MagPi_Mini_Italian_02.pdf, hebrew_issues/MagPi_Mini_Hebrew_01.pdf, spanish_issues/MagPi_Mini_Spanish_03.pdf, special_issues/MagPiSE1.pdf, special_issues/Projects_Book_v3.pdf, special_issues/Essentials_Camera_v1.pdf, special_issues/Retro_Gaming.pdf, special_issues/Camera-Guide.pdf"
+          files: "issues/MagPi02.pdf, issues/MagPi95.pdf, issues/MagPi98.pdf, french_issues/MagPi_Mini_French_01.pdf, italian_issues/MagPi_Mini_Italian_02.pdf, hebrew_issues/MagPi_Mini_Hebrew_01.pdf, spanish_issues/MagPi_Mini_Spanish_03.pdf, special_issues/MagPiSE1.pdf, special_issues/Projects_Book_v3.pdf, special_issues/Essentials_Camera_v1.pdf, special_issues/Retro_Gaming.pdf, special_issues/Camera-Guide.pdf"
           allow_failure: false
       - name: lslah
         run: ls -lah issues/ french_issues/ italian_issues/ hebrew_issues/ spanish_issues/ special_issues/  
