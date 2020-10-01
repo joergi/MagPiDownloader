@@ -30,6 +30,7 @@ Descargue la traducción española:
 הורד את הבעיות מתורגמות העבריות:
   `bash  magpi-issue-downloader_hebrew.sh`
 
+=======
 All the issues are downloadable for free on [https://www.raspberrypi.org/magpi/issues/](https://www.raspberrypi.org/magpi/issues/)  
 You can also buy all the paper versions of this issues on [https://swag.raspberrypi.org/collections/magpi](http://swag.raspberrypi.org/collections/magpi)  
 
