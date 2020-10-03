@@ -33,6 +33,7 @@ jobs:
         env:
            VALIDATE_ALL_CODEBASE: true
            VALIDATE_BASH: true
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   lint_docker:
     runs-on: ubuntu-latest
     name: Lint Docker Base
@@ -43,3 +44,4 @@ jobs:
         env:
            VALIDATE_ALL_CODEBASE: true
            VALIDATE_DOCKER: true
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
