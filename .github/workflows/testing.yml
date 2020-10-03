@@ -24,6 +24,7 @@ jobs:
     - run: echo $TEXT
       env:
         TEXT: ${{ steps.read_recent.outputs.text }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   powershell:
     runs-on: windows-latest
     steps:
