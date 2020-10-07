@@ -9,9 +9,6 @@
 # VERSION=0.1.2
 # USAGE="Usage: sh magpi-issue-downloader.sh [-f firstissue] [-l lastissue]"
 
-# shellcheck disable=SC1065
-# shellcheck disable=SC1036
-# shellcheck disable=SC1088
 Param(
     [string]$f,
     [string]$l
