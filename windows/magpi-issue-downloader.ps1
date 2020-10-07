@@ -1,4 +1,3 @@
-#!/bin/bash
 # ------------------------------------------------------------------
 # [Author] rubemlrm - https://github.com/joergi/MagPiDownloader
 #          downloader for all MagPi issues
