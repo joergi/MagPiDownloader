@@ -88,9 +88,9 @@ jobs:
 #      - name: Download Issues with end limit
 #        id: normalIssuesWithEndLimit
 #        run: bash ./linux_mac/magpi-issue-downloader.sh -l 2
-#      - name: Download Issues with start limit
-#        id: normalIssuesWithStartLimit
-#        run: bash ./linux_mac/magpi-issue-downloader.sh -f 97
+      - name: Download Issues with start limit
+        id: normalIssuesWithStartLimit
+        run: bash ./linux_mac/magpi-issue-downloader.sh -f 97
 #      - name: Download Issues with start and end limit
 #        id: normalIssuesWithRange
 #        run: bash ./linux_mac/magpi-issue-downloader.sh -f 95 -l 96
