@@ -81,16 +81,16 @@ jobs:
   bash-linux:
     runs-on: ubuntu-latest
     steps:
-#      - uses: actions/checkout@v2.3.2
-#      - uses: pCYSl5EDgo/cat@master
-#        id: read_recent
-#        with:
-#          path: issues.txt
-#          trim: true
-#      - run: echo $TEXT
-#        env:
-#          TEXT: ${{ steps.read_recent.outputs.text }}
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v2.3.2
+      - uses: pCYSl5EDgo/cat@master
+        id: read_recent
+        with:
+          path: issues.txt
+          trim: true
+      - run: echo $TEXT
+        env:
+          TEXT: ${{ steps.read_recent.outputs.text }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/checkout@v2.3.2
 #      - name: Download Education Issues
 #        id: educationIssues
