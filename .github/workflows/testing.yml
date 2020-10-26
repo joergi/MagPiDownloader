@@ -76,6 +76,8 @@ jobs:
       - run: echo $TEXT
         env:
           TEXT: ${{ steps.read_recent.outputs.text }}
+          MINUS_FIVE: $((${{steps.read_recent.outputs.text}}-5))
+          MINUS_SIX: $((${{steps.read_recent.outputs.text}}-6))
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/checkout@v2.3.2
       - name: Download Education Issues
@@ -110,7 +112,7 @@ jobs:
         id: check_files
         uses: andstor/file-existence-action@v1
         with:
-          files: "issues/MagPi02.pdf, issues/MagPi$((${{steps.read_recent.outputs.text}}-5)).pdf, issues/MagPi${{steps.read_recent.outputs.text}}.pdf, french_issues/MagPi_Mini_French_01.pdf, italian_issues/MagPi_Mini_Italian_02.pdf, hebrew_issues/MagPi_Mini_Hebrew_01.pdf, spanish_issues/MagPi_Mini_Spanish_03.pdf, special_issues/MagPiSE1.pdf, special_issues/Projects_Book_v3.pdf, special_issues/Essentials_Camera_v1.pdf, special_issues/Retro_Gaming.pdf, special_issues/Camera-Guide.pdf"
+          files: "issues/MagPi02.pdf, issues/MagPi${{MINUS_FIVE}}.pdf, issues/MagPi${{steps.read_recent.outputs.text}}.pdf, french_issues/MagPi_Mini_French_01.pdf, italian_issues/MagPi_Mini_Italian_02.pdf, hebrew_issues/MagPi_Mini_Hebrew_01.pdf, spanish_issues/MagPi_Mini_Spanish_03.pdf, special_issues/MagPiSE1.pdf, special_issues/Projects_Book_v3.pdf, special_issues/Essentials_Camera_v1.pdf, special_issues/Retro_Gaming.pdf, special_issues/Camera-Guide.pdf"
           allow_failure: false
       - name: lslah
         run: ls -lah  issues/  french_issues/ italian_issues/ hebrew_issues/ spanish_issues/ special_issues/
