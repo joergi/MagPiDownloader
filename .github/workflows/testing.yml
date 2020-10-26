@@ -79,6 +79,9 @@ jobs:
           MINUS_FIVE: $((${{steps.read_recent.outputs.text}}-5))
           MINUS_SIX: $((${{steps.read_recent.outputs.text}}-6))
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: echo $MINUS_FIVE
+        env:
+          MINUS_FIVE: $((${{steps.read_recent.outputs.text}}-5))
       - uses: actions/checkout@v2.3.2
       - name: Download Education Issues
         id: educationIssues
