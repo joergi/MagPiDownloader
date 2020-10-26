@@ -1,3 +1,4 @@
+https://magpi.raspberrypi.org/books/create-guis/pdf
 https://magpi.raspberrypi.org/books/se1/pdf
 https://magpi.raspberrypi.org/books/essentials-bash-vol1/pdf
 https://magpi.raspberrypi.org/books/projects-1/pdf
