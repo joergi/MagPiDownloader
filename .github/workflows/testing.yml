@@ -82,33 +82,33 @@ jobs:
         env:
           MINUSFIVE: $((${{steps.read_recent.outputs.text}}-5))
       - uses: actions/checkout@v2.3.2
-#      - name: Download Education Issues
-#        id: educationIssues
-#        run: bash ./linux_mac/magpi-education-downloader.sh
-#      - name: Download Issues with end limit
-#        id: normalIssuesWithEndLimit
-#        run: bash ./linux_mac/magpi-issue-downloader.sh -l 2
+      - name: Download Education Issues
+        id: educationIssues
+        run: bash ./linux_mac/magpi-education-downloader.sh
+      - name: Download Issues with end limit
+        id: normalIssuesWithEndLimit
+        run: bash ./linux_mac/magpi-issue-downloader.sh -l 2
       - name: Download Issues with start limit
         id: normalIssuesWithStartLimit
         run: bash ./linux_mac/magpi-issue-downloader.sh -f $((${{steps.read_recent.outputs.text}}-1))
       - name: Download Issues with start and end limit
         id: normalIssuesWithRange
         run: bash ./linux_mac/magpi-issue-downloader.sh -f $((${{steps.read_recent.outputs.text}}-6)) -l $((${{steps.read_recent.outputs.text}}-5))
-#      - name: Download French Issues
-#        id: frenchIssues
-#        run: bash ./linux_mac/magpi-issue-downloader_french.sh
-#      - name: Download Hebrew Issues
-#        id: hebrewIssues
-#        run: bash ./linux_mac/magpi-issue-downloader_hebrew.sh
-#      - name: Download Italian Issues
-#        id: italianIssues
-#        run: bash ./linux_mac/magpi-issue-downloader_italian.sh
-#      - name: Download Spanish Issues
-#        id: spanishIssues
-#        run: bash ./linux_mac/magpi-issue-downloader_spanish.sh
-#      - name: Download Special Issues
-#        id: specialIssues
-#        run: bash ./linux_mac/magpi-special-issue-downloader.sh
+      - name: Download French Issues
+        id: frenchIssues
+        run: bash ./linux_mac/magpi-issue-downloader_french.sh
+      - name: Download Hebrew Issues
+        id: hebrewIssues
+        run: bash ./linux_mac/magpi-issue-downloader_hebrew.sh
+      - name: Download Italian Issues
+        id: italianIssues
+        run: bash ./linux_mac/magpi-issue-downloader_italian.sh
+      - name: Download Spanish Issues
+        id: spanishIssues
+        run: bash ./linux_mac/magpi-issue-downloader_spanish.sh
+      - name: Download Special Issues
+        id: specialIssues
+        run: bash ./linux_mac/magpi-special-issue-downloader.sh
 # check if files are existing        
       - name: "Check file existence Linux"
         id: check_files
@@ -121,7 +121,6 @@ jobs:
       - name: File exists
         if: steps.check_files.outputs.files_exists == 'false'
         run: exit 1
-
 #  bash-macos:
 #    runs-on: macos-latest
 #    steps:
