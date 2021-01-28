@@ -1,4 +1,3 @@
-https://magpi.raspberrypi.org/books/create-guis/pdf
 https://magpi.raspberrypi.org/books/se1/pdf
 https://magpi.raspberrypi.org/books/essentials-bash-vol1/pdf
 https://magpi.raspberrypi.org/books/projects-1/pdf
@@ -25,3 +24,6 @@ https://magpi.raspberrypi.org/books/get-started/pdf
 https://magpi.raspberrypi.org/books/retro-gaming/pdf
 https://magpi.raspberrypi.org/books/projects-5/pdf
 https://magpi.raspberrypi.org/books/camera-guide/pdf
+https://magpi.raspberrypi.org/books/create-guis/pdf
+https://magpi.raspberrypi.org/books/beginners-guide-4th-ed/pdf
+https://magpi.raspberrypi.org/books/handbook-2021/pdf
