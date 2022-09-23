@@ -27,3 +27,10 @@ https://magpi.raspberrypi.org/books/camera-guide/pdf
 https://magpi.raspberrypi.org/books/create-guis/pdf
 https://magpi.raspberrypi.org/books/beginners-guide-4th-ed/pdf
 https://magpi.raspberrypi.org/books/handbook-2021/pdf
+https://magpi.raspberrypi.com/books/help-my-computer-is-broken/pdf
+https://magpi.raspberrypi.com/books/micropython-pico/pdf
+https://magpi.raspberrypi.com/books/computers-that-made-britain/pdf
+https://magpi.raspberrypi.com/books/handbook-2022/pdf
+https://magpi.raspberrypi.com/books/retro-gaming-raspberry-pi-2nd-edition/pdf
+https://magpi.raspberrypi.com/books/raspberry-pi-media-player/pdf
+https://magpi.raspberrypi.com/books/handbook-2023/pdf
