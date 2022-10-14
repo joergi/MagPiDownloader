@@ -1,3 +1,3 @@
 # MagpiDownloader
 
-this is the index for github page for the MagPi Downloader
+this is the index for GitHub page for the MagPi Downloader

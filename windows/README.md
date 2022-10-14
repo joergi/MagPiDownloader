@@ -7,7 +7,7 @@ Downloads all the Mag Pi issues (a Raspberry Pi magazine) on Windows
 Open your Powershell as Administrator (right click on PowerShell -> Open as Administrator)
 Enter: `set-executionpolicy remotesigned`
 and you are able to use the Powershell scripts.
-All Windows scripts are done by [github user Rubemlrm](https://github.com/Rubemlrm)
+All Windows scripts are done by [GitHub user Rubemlrm](https://github.com/Rubemlrm)
 
 
   `git clone https://github.com/joergi/MagPiDownloader.git`

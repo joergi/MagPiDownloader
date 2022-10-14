@@ -2,15 +2,17 @@
 
 name: LINTERS
 
-# Controls when the action will run. Triggers the workflow on push or pull request
+# Controls when the action will run.
+# Triggers the workflow on push or pull request
 # events but only for the main branch
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# A workflow run is made up of one or more jobs
+# that can run sequentially or in parallel
 jobs:
   lint_powershell:
     runs-on: ubuntu-latest

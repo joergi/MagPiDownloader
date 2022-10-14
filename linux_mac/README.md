@@ -1,8 +1,8 @@
-# MagPiDownloader on Linux or Mac OS
+# MagPiDownloader on Linux or macOS
 
 ![Travis Badge](https://travis-ci.org/joergi/MagPiDownloader.svg?branch=master) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/6148b12808964799910ed67ce82065ce)](https://www.codacy.com/app/joergi/MagPiDownloader?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=joergi/MagPiDownloader&amp;utm_campaign=Badge_Grade)
 
-Downloads all the Mag Pi issues (a Raspberry Pi magazine) on Linux and Mac OS
+Downloads all the Mag Pi issues (a Raspberry Pi magazine) on Linux and macOS
 
   `git clone https://github.com/joergi/MagPiDownloader.git`  
 
@@ -32,8 +32,8 @@ Descargue la traducción española:
 
 =======
 All the issues are downloadable for free on [https://www.raspberrypi.org/magpi/issues/](https://www.raspberrypi.org/magpi/issues/)  
-You can also buy all the paper versions of this issues on [https://swag.raspberrypi.org/collections/magpi](http://swag.raspberrypi.org/collections/magpi)  
+You can also buy all the paper versions of these issues on [https://swag.raspberrypi.org/collections/magpi](http://swag.raspberrypi.org/collections/magpi)  
 
 ## You want to download it with Docker? [Go here for the Docker version](../)
 
-## You don't have a Linux or Mac OS? [Go here for the Windows version](../windows/)
+## You don't have a Linux or macOS? [Go here for the Windows version](../windows/)
