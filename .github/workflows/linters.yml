@@ -40,7 +40,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3.1.0
       - name: Super-Linter
-        uses: docker://github/super-linter:v3
+        uses: docker://github/super-linter:v4
         env:
            VALIDATE_ALL_CODEBASE: true
            VALIDATE_DOCKER: true
