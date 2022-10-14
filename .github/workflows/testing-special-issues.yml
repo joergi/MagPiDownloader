@@ -12,28 +12,15 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  read_recent_issue:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@v3.1.0
-    - uses: pCYSl5EDgo/cat@master
-      id: read_recent
-      with:
-        path: issues.txt
-    - run: echo $TEXT
-      env:
-        TEXT: ${{ steps.read_recent.outputs.text }}
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   powershell:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3.1.0
-      - name: Download Special Issues
+      - name: Download Special Issues windows
         id: specialIssues
         shell: pwsh
         run: ./windows/magpi-special-issue-downloader.ps1
-      - name: "Check file existence Windows"
+      - name: "Check file existence Windows special"
         id: check_files
         uses: andstor/file-existence-action@v1.1.0
         with:
@@ -43,17 +30,17 @@ jobs:
         run: Get-ChildItem –path D:\a\MagPiDownloader\MagPiDownloader\special_issues
       - name: File exists
         if: steps.check_files.outputs.files_exists == 'false'
-        run: exit 1  
+        run: exit 1
 
   bash-linux:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3.1.0
-      - name: Download Special Issues
+      - name: Download Special Issues linux
         id: specialIssues
         run: bash ./linux_mac/magpi-special-issue-downloader.sh
-# check if files are existing        
-      - name: "Check file existence Linux"
+
+      - name: "Check file existence Linux special issues"
         id: check_files
         uses: andstor/file-existence-action@v1.1.0
         with:
@@ -63,16 +50,16 @@ jobs:
         run: ls -lah special_issues/
       - name: File exists
         if: steps.check_files.outputs.files_exists == 'false'
-        run: exit 1   
+        run: exit 1
   bash-macos:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3.1.0
-      - name: Download Special Issues
+      - name: Download Special Issues Mac
         id: specialIssues
         run: bash ./linux_mac/magpi-special-issue-downloader.sh
 # check if files are existing        
-      - name: "Check file existence MacOs"
+      - name: "Check file existence MacOs special issues"
         id: check_files
         uses: andstor/file-existence-action@v1.1.0
         with:
