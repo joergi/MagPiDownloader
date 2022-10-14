@@ -1,0 +1,70 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Testing educational issues
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the main branch
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  powershell:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3.1.0
+      - name: Download Education Issues
+        id: educationIssues
+        shell: pwsh
+        run: ./windows/magpi-education-downloader.ps1
+      - name: "Check file existence Windows"
+        id: check_files
+        uses: andstor/file-existence-action@v1.1.0
+        with:
+          files: "education_issues/MagPi-EduEdition02.pdf"
+          allow_failure: false
+      - name: lslah issues
+        run: Get-ChildItem –path D:\a\MagPiDownloader\MagPiDownloader\education_issues
+      - name: File exists
+        if: steps.check_files.outputs.files_exists == 'false'
+        run: exit 1
+
+  bash-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3.1.0
+      - name: Download Education Issues
+        id: educationIssues
+        run: bash ./linux_mac/magpi-education-downloader.sh
+      - name: "Check file existence Linux"
+        id: check_files
+        uses: andstor/file-existence-action@v1.1.0
+        with:
+          files: "education_issues/MagPi-EduEdition02.pdf"
+          allow_failure: false
+      - name: lslah
+        run: ls -lah  education_issues/
+      - name: File exists
+        if: steps.check_files.outputs.files_exists == 'false'
+        run: exit 1
+  bash-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3.1.0
+      - name: Download Education Issues
+        id: educationIssues
+        run: bash ./linux_mac/magpi-education-downloader.sh
+      - name: "Check file existence MacOs"
+        id: check_files
+        uses: andstor/file-existence-action@v1.1.0
+        with:
+          files: "education_issues/MagPi-EduEdition02.pdf"
+          allow_failure: false
+      - name: lslah
+        run: ls -lah education_issues
+      - name: File exists
+        if: steps.check_files.outputs.files_exists == 'false'
+        run: exit 1
