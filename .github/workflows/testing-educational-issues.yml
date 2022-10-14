@@ -39,31 +39,6 @@ jobs:
       - name: Download Education Issues
         id: educationIssues
         run: bash ./linux_mac/magpi-education-downloader.sh
-      - name: Download Issues with end limit
-        id: normalIssuesWithEndLimit
-        run: bash ./linux_mac/magpi-issue-downloader.sh -l 2
-      - name: Download Issues with start limit
-        id: normalIssuesWithStartLimit
-        run: bash ./linux_mac/magpi-issue-downloader.sh -f 99
-      - name: Download Issues with start and end limit
-        id: normalIssuesWithRange
-        run: bash ./linux_mac/magpi-issue-downloader.sh -f 95 -l 96
-      - name: Download French Issues
-        id: frenchIssues
-        run: bash ./linux_mac/magpi-issue-downloader_french.sh
-      - name: Download Hebrew Issues
-        id: hebrewIssues
-        run: bash ./linux_mac/magpi-issue-downloader_hebrew.sh
-      - name: Download Italian Issues
-        id: italianIssues
-        run: bash ./linux_mac/magpi-issue-downloader_italian.sh
-      - name: Download Spanish Issues
-        id: spanishIssues
-        run: bash ./linux_mac/magpi-issue-downloader_spanish.sh
-      - name: Download Special Issues
-        id: specialIssues
-        run: bash ./linux_mac/magpi-special-issue-downloader.sh
-      # check if files are existing
       - name: "Check file existence Linux"
         id: check_files
         uses: andstor/file-existence-action@v1.1.0
@@ -82,31 +57,6 @@ jobs:
       - name: Download Education Issues
         id: educationIssues
         run: bash ./linux_mac/magpi-education-downloader.sh
-      - name: Download Issues with end limit
-        id: normalIssuesWithEndLimit
-        run: bash ./linux_mac/magpi-issue-downloader.sh -l 2
-      - name: Download Issues with start limit
-        id: normalIssuesWithStartLimit
-        run: bash ./linux_mac/magpi-issue-downloader.sh -f 99
-      - name: Download Issues with start and end limit
-        id: normalIssuesWithRange
-        run: bash ./linux_mac/magpi-issue-downloader.sh -f 95 -l 96
-      - name: Download French Issues
-        id: frenchIssues
-        run: bash ./linux_mac/magpi-issue-downloader_french.sh
-      - name: Download Hebrew Issues
-        id: hebrewIssues
-        run: bash ./linux_mac/magpi-issue-downloader_hebrew.sh
-      - name: Download Italian Issues
-        id: italianIssues
-        run: bash ./linux_mac/magpi-issue-downloader_italian.sh
-      - name: Download Spanish Issues
-        id: spanishIssues
-        run: bash ./linux_mac/magpi-issue-downloader_spanish.sh
-      - name: Download Special Issues
-        id: specialIssues
-        run: bash ./linux_mac/magpi-special-issue-downloader.sh
-      # check if files are existing
       - name: "Check file existence MacOs"
         id: check_files
         uses: andstor/file-existence-action@v1.1.0
@@ -117,4 +67,4 @@ jobs:
         run: ls -lah education_issues
       - name: File exists
         if: steps.check_files.outputs.files_exists == 'false'
-        run: exit 1   
+        run: exit 1
