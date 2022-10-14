@@ -39,7 +39,7 @@ jobs:
           files: "french_issues/MagPi_Mini_French_01.pdf, italian_issues/MagPi_Mini_Italian_02.pdf, hebrew_issues/MagPi_Mini_Hebrew_01.pdf, spanish_issues/MagPi_Mini_Spanish_03.pdf"
           allow_failure: false
       - name: lslah issues
-        run: Get-ChildItem –path D:\a\MagPiDownloader\MagPiDownloader\issues,D:\a\MagPiDownloader\MagPiDownloader\french_issues,D:\a\MagPiDownloader\MagPiDownloader\italian_issues,D:\a\MagPiDownloader\MagPiDownloader\hebrew_issues,D:\a\MagPiDownloader\MagPiDownloader\spanish_issues,D:\a\MagPiDownloader\MagPiDownloader\special_issues
+        run: Get-ChildItem –path D:\a\MagPiDownloader\MagPiDownloader\french_issues,D:\a\MagPiDownloader\MagPiDownloader\italian_issues,D:\a\MagPiDownloader\MagPiDownloader\hebrew_issues,D:\a\MagPiDownloader\MagPiDownloader\spanish_issues
       - name: File exists
         if: steps.check_files.outputs.files_exists == 'false'
         run: exit 1
