@@ -22,7 +22,7 @@ jobs:
         run: ./windows/magpi-special-issue-downloader.ps1
       - name: "Check file existence Windows special"
         id: check_files
-        uses: andstor/file-existence-action@v1.1.0
+        uses: andstor/file-existence-action@v2.0.0
         with:
           files: "special_issues/Essentials_Games_v1.pdf"
           allow_failure: false
@@ -42,7 +42,7 @@ jobs:
 
       - name: "Check file existence Linux special issues"
         id: check_files
-        uses: andstor/file-existence-action@v1.1.0
+        uses: andstor/file-existence-action@v2.0.0
         with:
           files: "special_issues/MagPiSE1.pdf, special_issues/Projects_Book_v3.pdf, special_issues/Essentials_Camera_v1.pdf, special_issues/Retro_Gaming.pdf, special_issues/Camera-Guide.pdf"
           allow_failure: false
@@ -61,7 +61,7 @@ jobs:
 # check if files are existing        
       - name: "Check file existence MacOs special issues"
         id: check_files
-        uses: andstor/file-existence-action@v1.1.0
+        uses: andstor/file-existence-action@v2.0.0
         with:
           files: "special_issues/MagPiSE1.pdf, special_issues/Projects_Book_v3.pdf, special_issues/Essentials_Camera_v1.pdf, special_issues/Retro_Gaming.pdf, special_issues/Camera-Guide.pdf"
           allow_failure: false

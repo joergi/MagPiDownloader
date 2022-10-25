@@ -22,7 +22,7 @@ jobs:
         run: ./windows/magpi-education-downloader.ps1
       - name: "Check file existence Windows"
         id: check_files
-        uses: andstor/file-existence-action@v1.1.0
+        uses: andstor/file-existence-action@v2.0.0
         with:
           files: "education_issues/MagPi-EduEdition02.pdf"
           allow_failure: false
@@ -41,7 +41,7 @@ jobs:
         run: bash ./linux_mac/magpi-education-downloader.sh
       - name: "Check file existence Linux"
         id: check_files
-        uses: andstor/file-existence-action@v1.1.0
+        uses: andstor/file-existence-action@v2.0.0
         with:
           files: "education_issues/MagPi-EduEdition02.pdf"
           allow_failure: false
@@ -59,7 +59,7 @@ jobs:
         run: bash ./linux_mac/magpi-education-downloader.sh
       - name: "Check file existence MacOs"
         id: check_files
-        uses: andstor/file-existence-action@v1.1.0
+        uses: andstor/file-existence-action@v2.0.0
         with:
           files: "education_issues/MagPi-EduEdition02.pdf"
           allow_failure: false
