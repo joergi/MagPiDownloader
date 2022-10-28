@@ -51,6 +51,7 @@ jobs:
           path: sources-for-download/regular-issues.txt
       - run: |
           echo "ISSUE_NUMBER=${{ steps.read_recent.outputs.text }}" >> $GITHUB_ENV
+          echo "ISSUE_MINUS_FIVE=$((${{ env.ISSUE_NUMBER }}-5))" >> $GITHUB_ENV
 #      - name: Download all issues, no limit
 #        id: normalIssuesNoLimit
 #        run: bash ./linux_mac/magpi-issue-downloader.sh
@@ -58,6 +59,7 @@ jobs:
 #        id: normalIssuesWithEndLimit
 #        run: bash ./linux_mac/magpi-issue-downloader.sh -l 2
       - run: echo ${{ env.ISSUE_NUMBER }}
+      - run: echo ${{ env.ISSUE_MINUS_FIVE }}
 
       - name: Download Issues with start limit
         id: normalIssuesWithStartLimit
