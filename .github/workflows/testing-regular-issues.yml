@@ -12,22 +12,16 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-#  read_recent_issue:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v3.1.0
-#      - uses: pCYSl5EDgo/cat@master
-#        id: read_recent
-#        with:
-#          path: sources-for-download/regular-issues.txt
-#      - run: echo $TEXT
-#        env:
-#          TEXT: ${{ steps.read_recent.outputs.text }}
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#      - run: echo $MINUSFIVE
-#        id: minusfive
-#        env:
-#          MINUSFIVE: $((${{steps.read_recent.outputs.text}}-5))
+  read_recent_issue:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3.1.0
+      - uses: pCYSl5EDgo/cat@master
+        id: read_recent
+        with:
+          path: sources-for-download/regular-issues.txt
+      - run: |
+          echo "ISSUE_NUMBER=${{ steps.read_recent.outputs.text }}" >> $GITHUB_ENV
 
 #  powershell:
 #    runs-on: windows-latest
@@ -58,30 +52,24 @@ jobs:
 #        run: exit 1
 
   bash-linux:
+    needs: read_recent_issue
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3.1.0
-      - uses: pCYSl5EDgo/cat@master
-        id: read_recent
-        with:
-          path: sources-for-download/regular-issues.txt
-#      - run: echo $ISSUE_NUMBER
-#        env:
-#          ISSUE_NUMBER: ${{ steps.read_recent.outputs.text }}
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: |
-          echo "NEW_ISSUE_NUMBER=${{ steps.read_recent.outputs.text }}" >> $GITHUB_ENV
+
 #      - name: Download all issues, no limit
 #        id: normalIssuesNoLimit
 #        run: bash ./linux_mac/magpi-issue-downloader.sh
 #      - name: Download Issues with end limit
 #        id: normalIssuesWithEndLimit
 #        run: bash ./linux_mac/magpi-issue-downloader.sh -l 2
+      - run: echo ${{ needs.read_recent_issue.env.ISSUE_NUMBER }}
       - run: echo ${{ env.ISSUE_NUMBER }}
-      - run: echo ${{ env.NEW_ISSUE_NUMBER }}
-      - name: Download Issues with start limit
-        id: normalIssuesWithStartLimit
-        run: bash ./linux_mac/magpi-issue-downloader.sh -f $((${{ env.NEW_ISSUE_NUMBER }}-1))
+
+#      - name: Download Issues with start limit
+#        id: normalIssuesWithStartLimit
+#        run: bash ./linux_mac/magpi-issue-downloader.sh -f $((${{ env.NEW_ISSUE_NUMBER }}-1))
+
 #      - name: Download Issues with start and end limit
 #        id: normalIssuesWithRange
 #        run: bash ./linux_mac/magpi-issue-downloader.sh -f $((${{steps.read_recent.outputs.text}}-6)) -l $((${{steps.read_recent.outputs.text}}-5))
