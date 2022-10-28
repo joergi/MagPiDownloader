@@ -65,10 +65,10 @@ jobs:
         id: read_recent
         with:
           path: sources-for-download/regular-issues.txt
-      - run: echo $ISSUE_NUMBER
-        env:
-          ISSUE_NUMBER: ${{ steps.read_recent.outputs.text }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#      - run: echo $ISSUE_NUMBER
+#        env:
+#          ISSUE_NUMBER: ${{ steps.read_recent.outputs.text }}
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: |
           echo "NEW_ISSUE_NUMBER=${{ steps.read_recent.outputs.text }}" >> $GITHUB_ENV
 #      - name: Download all issues, no limit
