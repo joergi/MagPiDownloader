@@ -61,17 +61,17 @@ jobs:
 
       - name: Download Issues with start limit
         id: normalIssuesWithStartLimit
-        run: bash ./linux_mac/magpi-issue-downloader.sh -f $((${{ env.NEW_ISSUE_NUMBER }}-1))
+        run: bash ./linux_mac/magpi-issue-downloader.sh -f $((${{ env.ISSUE_NUMBER }}-1))
 
-#      - name: Download Issues with start and end limit
-#        id: normalIssuesWithRange
-#        run: bash ./linux_mac/magpi-issue-downloader.sh -f $((${{steps.read_recent.outputs.text}}-6)) -l $((${{steps.read_recent.outputs.text}}-5))
+      - name: Download Issues with start and end limit
+        id: normalIssuesWithRange
+        run: bash ./linux_mac/magpi-issue-downloader.sh -f $((${{ env.ISSUE_NUMBER }}-6)) -l $((${{ env.ISSUE_NUMBER }}-5))
       # check if files are existing
       - name: "Check file existence Linux"
         id: check_files
         uses: andstor/file-existence-action@v1.1.0
         with:
-          files: "issues/MagPi02.pdf, issues/MagPi96.pdf, issues/MagPi101.pdf"
+          files: "issues/MagPi$((${{ env.ISSUE_NUMBER }}-5)).pdf, issues/MagPi$((${{ env.ISSUE_NUMBER }}-6)).pdf, issues/MagPi$((${{ env.ISSUE_NUMBER }}-1)).pdf, issues/MagPi${{ env.ISSUE_NUMBER }}.pdf"
           allow_failure: false
       - name: lslah
         run: ls -lah  issues/
