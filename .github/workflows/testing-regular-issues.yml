@@ -12,40 +12,41 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  read_recent_issue:
-    runs-on: ubuntu-latest
-    
+
+  powershell:
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3.1.0
       - uses: pCYSl5EDgo/cat@master
         id: read_recent
         with:
-          path: issues.txt
-      - run: echo $TEXT
-        env:
-          TEXT: ${{ steps.read_recent.outputs.text }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  powershell:
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v3.1.0
+          path: sources-for-download/regular-issues.txt
+      - run: |
+          echo "ISSUE_NUMBER=${{ steps.read_recent.outputs.text }}" >> $GITHUB_ENV
+          echo "ISSUE_MINUS_ONE=$((${{ steps.read_recent.outputs.text }}-1))" >> $GITHUB_ENV
+          echo "ISSUE_MINUS_FIVE=$((${{ steps.read_recent.outputs.text }}-5))" >> $GITHUB_ENV
+          echo "ISSUE_MINUS_SIX=$((${{ steps.read_recent.outputs.text }}-6))" >> $GITHUB_ENV
+
       - name: Download Issues With end limit
         id: normalIssuesWithEndLimit
         shell: pwsh
         run: ./windows/magpi-issue-downloader.ps1 -l 3
+
       - name: Download Issues with start and end limit
         id: normalIssuesWithRange
         shell: pwsh
-        run: ./windows/magpi-issue-downloader.ps1 -f 95 -l 96
-      - name: Download Issues with start and end limit
+        run: ./windows/magpi-issue-downloader.ps1 -f ${{ env.ISSUE_MINUS_SIX }} -l ${{ env.ISSUE_MINUS_FIVE }}
+
+      - name: Download Issues with start limit
         id: normalIssuesWithStartingLimit
         shell: pwsh
-        run: ./windows/magpi-issue-downloader.ps1 -f 99
+        run: ./windows/magpi-issue-downloader.ps1 -f $((${{ env.ISSUE_NUMBER }}-1))
+
       - name: "Check file existence Windows"
         id: check_files
         uses: andstor/file-existence-action@v1.1.0
         with:
-          files: "issues/the-magpi-issue-3.pdf, issues/the-magpi-issue-96.pdf, issues/the-magpi-issue-101.pdf"
+          files: "issues/the-magpi-issue-1.pdf, issues/the-magpi-issue-1.pdf,, issues/the-magpi-issue-${{ env.ISSUE_MINUS_SIX }}.pdf, issues/the-magpi-issue-${{ env.ISSUE_MINUS_FIVE }}.pdf, issues/the-magpi-issue-${{ env.ISSUE_MINUS_ONE }}.pdf, issues/the-magpi-issue-${{ env.ISSUE_NUMBER }}.pdf"
           allow_failure: false
       - name: lslah issues
         run: Get-ChildItem –path D:\a\MagPiDownloader\MagPiDownloader\issues
@@ -57,21 +58,34 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3.1.0
+      - uses: pCYSl5EDgo/cat@master
+        id: read_recent
+        with:
+          path: sources-for-download/regular-issues.txt
+      - run: |
+          echo "ISSUE_NUMBER=${{ steps.read_recent.outputs.text }}" >> $GITHUB_ENV
+          echo "ISSUE_MINUS_ONE=$((${{ steps.read_recent.outputs.text }}-1))" >> $GITHUB_ENV
+          echo "ISSUE_MINUS_FIVE=$((${{ steps.read_recent.outputs.text }}-5))" >> $GITHUB_ENV
+          echo "ISSUE_MINUS_SIX=$((${{ steps.read_recent.outputs.text }}-6))" >> $GITHUB_ENV
+
       - name: Download Issues with end limit
         id: normalIssuesWithEndLimit
         run: bash ./linux_mac/magpi-issue-downloader.sh -l 2
+
       - name: Download Issues with start limit
         id: normalIssuesWithStartLimit
-        run: bash ./linux_mac/magpi-issue-downloader.sh -f 99
+        run: bash ./linux_mac/magpi-issue-downloader.sh -f $((${{ env.ISSUE_NUMBER }}-1))
+
       - name: Download Issues with start and end limit
         id: normalIssuesWithRange
-        run: bash ./linux_mac/magpi-issue-downloader.sh -f 95 -l 96
+        run: bash ./linux_mac/magpi-issue-downloader.sh -f ${{ env.ISSUE_MINUS_SIX }} -l ${{ env.ISSUE_MINUS_FIVE }}
+
       # check if files are existing
       - name: "Check file existence Linux"
         id: check_files
         uses: andstor/file-existence-action@v1.1.0
         with:
-          files: "issues/MagPi02.pdf, issues/MagPi96.pdf, issues/MagPi101.pdf"
+          files: "issues/MagPi01.pdf, issues/MagPi02.pdf, issues/MagPi${{ env.ISSUE_MINUS_SIX }}.pdf, issues/MagPi${{ env.ISSUE_MINUS_FIVE }}.pdf, issues/MagPi${{ env.ISSUE_MINUS_ONE }}.pdf, issues/MagPi${{ env.ISSUE_NUMBER }}.pdf"
           allow_failure: false
       - name: lslah
         run: ls -lah  issues/
@@ -82,24 +96,35 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3.1.0
+      - uses: pCYSl5EDgo/cat@master
+        id: read_recent
+        with:
+          path: sources-for-download/regular-issues.txt
+      - run: |
+          echo "ISSUE_NUMBER=${{ steps.read_recent.outputs.text }}" >> $GITHUB_ENV
+          echo "ISSUE_MINUS_ONE=$((${{ steps.read_recent.outputs.text }}-1))" >> $GITHUB_ENV
+          echo "ISSUE_MINUS_FIVE=$((${{ steps.read_recent.outputs.text }}-5))" >> $GITHUB_ENV
+          echo "ISSUE_MINUS_SIX=$((${{ steps.read_recent.outputs.text }}-6))" >> $GITHUB_ENV
+
       - name: Download Issues with end limit
         id: normalIssuesWithEndLimit
         run: bash ./linux_mac/magpi-issue-downloader.sh -l 2
+
       - name: Download Issues with start limit
         id: normalIssuesWithStartLimit
-        run: bash ./linux_mac/magpi-issue-downloader.sh -f 99
+        run: bash ./linux_mac/magpi-issue-downloader.sh -f $((${{ env.ISSUE_NUMBER }}-1))
       - name: Download Issues with start and end limit
         id: normalIssuesWithRange
-        run: bash ./linux_mac/magpi-issue-downloader.sh -f 95 -l 96
+        run: bash ./linux_mac/magpi-issue-downloader.sh -f ${{ env.ISSUE_MINUS_SIX }} -l ${{ env.ISSUE_MINUS_FIVE }}
       # check if files are existing
       - name: "Check file existence MacOs"
         id: check_files
         uses: andstor/file-existence-action@v1.1.0
         with:
-          files: "issues/MagPi02.pdf, issues/MagPi95.pdf, issues/MagPi101.pdf"
+          files: "issues/MagPi01.pdf, issues/MagPi02.pdf, issues/MagPi${{ env.ISSUE_MINUS_SIX }}.pdf, issues/MagPi${{ env.ISSUE_MINUS_FIVE }}.pdf, issues/MagPi${{ env.ISSUE_MINUS_ONE }}.pdf, issues/MagPi${{ env.ISSUE_NUMBER }}.pdf"
           allow_failure: false
       - name: lslah
         run: ls -lah issues/
       - name: File exists
         if: steps.check_files.outputs.files_exists == 'false'
-        run: exit 1   
+        run: exit 1

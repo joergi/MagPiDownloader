@@ -58,7 +58,7 @@ jobs:
       - name: Download Special Issues Mac
         id: specialIssues
         run: bash ./linux_mac/magpi-special-issue-downloader.sh
-# check if files are existing        
+# check if files are existing
       - name: "Check file existence MacOs special issues"
         id: check_files
         uses: andstor/file-existence-action@v1.1.0
@@ -69,4 +69,4 @@ jobs:
         run: ls -lah special_issues/
       - name: File exists
         if: steps.check_files.outputs.files_exists == 'false'
-        run: exit 1   
+        run: exit 1
