@@ -65,9 +65,9 @@ jobs:
         id: read_recent
         with:
           path: sources-for-download/regular-issues.txt
-      - run: echo $TEXT
+      - run: echo ISSUE_NUMBER
         env:
-          TEXT: ${{ steps.read_recent.outputs.text }}
+          ISSUE_NUMBER: ${{ steps.read_recent.outputs.text }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 #      - name: Download all issues, no limit
 #        id: normalIssuesNoLimit
@@ -75,8 +75,7 @@ jobs:
 #      - name: Download Issues with end limit
 #        id: normalIssuesWithEndLimit
 #        run: bash ./linux_mac/magpi-issue-downloader.sh -l 2
-
-      - run: echo $TEXT
+      - run: echo ${{ env.ISSUE_NUMBER }}
       - name: Download Issues with start limit
         id: normalIssuesWithStartLimit
         run: bash ./linux_mac/magpi-issue-downloader.sh -f $((${{steps.read_recent.outputs.text}}-1))
