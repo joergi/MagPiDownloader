@@ -81,7 +81,7 @@ jobs:
       - run: echo ${{ env.NEW_ISSUE_NUMBER }}
       - name: Download Issues with start limit
         id: normalIssuesWithStartLimit
-        run: bash ./linux_mac/magpi-issue-downloader.sh -f $((${{steps.read_recent.outputs.text}}-1))
+        run: bash ./linux_mac/magpi-issue-downloader.sh -f $((${{ env.NEW_ISSUE_NUMBER }}-1))
 #      - name: Download Issues with start and end limit
 #        id: normalIssuesWithRange
 #        run: bash ./linux_mac/magpi-issue-downloader.sh -f $((${{steps.read_recent.outputs.text}}-6)) -l $((${{steps.read_recent.outputs.text}}-5))
