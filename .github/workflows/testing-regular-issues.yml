@@ -15,20 +15,20 @@ jobs:
   read_recent_issue:
     runs-on: ubuntu-latest
     
-    steps:
-      - uses: actions/checkout@v3.1.0
-      - uses: pCYSl5EDgo/cat@master
-        id: read_recent
-        with:
-          path: sources-for-download/regular-issues.txt
-      - run: echo $TEXT
-        env:
-          TEXT: ${{ steps.read_recent.outputs.text }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: echo $MINUSFIVE
-        id: minusfive
-        env:
-          MINUSFIVE: $((${{steps.read_recent.outputs.text}}-5))
+#    steps:
+#      - uses: actions/checkout@v3.1.0
+#      - uses: pCYSl5EDgo/cat@master
+#        id: read_recent
+#        with:
+#          path: sources-for-download/regular-issues.txt
+#      - run: echo $TEXT
+#        env:
+#          TEXT: ${{ steps.read_recent.outputs.text }}
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#      - run: echo $MINUSFIVE
+#        id: minusfive
+#        env:
+#          MINUSFIVE: $((${{steps.read_recent.outputs.text}}-5))
 #  powershell:
 #    runs-on: windows-latest
 #    steps:
