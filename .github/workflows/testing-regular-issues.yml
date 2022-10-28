@@ -52,23 +52,26 @@ jobs:
 #        run: exit 1
 
   bash-linux:
-    needs: read_recent_issue
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3.1.0
-
+      - uses: pCYSl5EDgo/cat@master
+        id: read_recent
+        with:
+          path: sources-for-download/regular-issues.txt
+      - run: |
+          echo "ISSUE_NUMBER=${{ steps.read_recent.outputs.text }}" >> $GITHUB_ENV
 #      - name: Download all issues, no limit
 #        id: normalIssuesNoLimit
 #        run: bash ./linux_mac/magpi-issue-downloader.sh
 #      - name: Download Issues with end limit
 #        id: normalIssuesWithEndLimit
 #        run: bash ./linux_mac/magpi-issue-downloader.sh -l 2
-      - run: echo ${{ needs.read_recent_issue.env.ISSUE_NUMBER }}
       - run: echo ${{ env.ISSUE_NUMBER }}
 
-#      - name: Download Issues with start limit
-#        id: normalIssuesWithStartLimit
-#        run: bash ./linux_mac/magpi-issue-downloader.sh -f $((${{ env.NEW_ISSUE_NUMBER }}-1))
+      - name: Download Issues with start limit
+        id: normalIssuesWithStartLimit
+        run: bash ./linux_mac/magpi-issue-downloader.sh -f $((${{ env.NEW_ISSUE_NUMBER }}-1))
 
 #      - name: Download Issues with start and end limit
 #        id: normalIssuesWithRange
