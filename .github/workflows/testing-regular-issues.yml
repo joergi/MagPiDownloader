@@ -44,7 +44,7 @@ jobs:
 
       - name: "Check file existence Windows"
         id: check_files
-        uses: andstor/file-existence-action@v1.1.0
+        uses: andstor/file-existence-action@v2.0.0
         with:
           files: "issues/the-magpi-issue-1.pdf, issues/the-magpi-issue-1.pdf,, issues/the-magpi-issue-${{ env.ISSUE_MINUS_SIX }}.pdf, issues/the-magpi-issue-${{ env.ISSUE_MINUS_FIVE }}.pdf, issues/the-magpi-issue-${{ env.ISSUE_MINUS_ONE }}.pdf, issues/the-magpi-issue-${{ env.ISSUE_NUMBER }}.pdf"
           allow_failure: false
@@ -83,7 +83,7 @@ jobs:
       # check if files are existing
       - name: "Check file existence Linux"
         id: check_files
-        uses: andstor/file-existence-action@v1.1.0
+        uses: andstor/file-existence-action@v2.0.0
         with:
           files: "issues/MagPi01.pdf, issues/MagPi02.pdf, issues/MagPi${{ env.ISSUE_MINUS_SIX }}.pdf, issues/MagPi${{ env.ISSUE_MINUS_FIVE }}.pdf, issues/MagPi${{ env.ISSUE_MINUS_ONE }}.pdf, issues/MagPi${{ env.ISSUE_NUMBER }}.pdf"
           allow_failure: false
@@ -119,7 +119,7 @@ jobs:
       # check if files are existing
       - name: "Check file existence MacOs"
         id: check_files
-        uses: andstor/file-existence-action@v1.1.0
+        uses: andstor/file-existence-action@v2.0.0
         with:
           files: "issues/MagPi01.pdf, issues/MagPi02.pdf, issues/MagPi${{ env.ISSUE_MINUS_SIX }}.pdf, issues/MagPi${{ env.ISSUE_MINUS_FIVE }}.pdf, issues/MagPi${{ env.ISSUE_MINUS_ONE }}.pdf, issues/MagPi${{ env.ISSUE_NUMBER }}.pdf"
           allow_failure: false
