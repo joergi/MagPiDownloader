@@ -43,7 +43,7 @@ jobs:
         run: ./windows/magpi-issue-downloader.ps1 -f 99
       - name: "Check file existence Windows"
         id: check_files
-        uses: andstor/file-existence-action@v1.1.0
+        uses: andstor/file-existence-action@v2.0.0
         with:
           files: "issues/the-magpi-issue-3.pdf, issues/the-magpi-issue-96.pdf, issues/the-magpi-issue-101.pdf"
           allow_failure: false
@@ -69,7 +69,7 @@ jobs:
       # check if files are existing
       - name: "Check file existence Linux"
         id: check_files
-        uses: andstor/file-existence-action@v1.1.0
+        uses: andstor/file-existence-action@v2.0.0
         with:
           files: "issues/MagPi02.pdf, issues/MagPi96.pdf, issues/MagPi101.pdf"
           allow_failure: false
@@ -94,7 +94,7 @@ jobs:
       # check if files are existing
       - name: "Check file existence MacOs"
         id: check_files
-        uses: andstor/file-existence-action@v1.1.0
+        uses: andstor/file-existence-action@v2.0.0
         with:
           files: "issues/MagPi02.pdf, issues/MagPi95.pdf, issues/MagPi101.pdf"
           allow_failure: false
