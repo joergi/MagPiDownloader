@@ -70,7 +70,7 @@ jobs:
           ISSUE_NUMBER: ${{ steps.read_recent.outputs.text }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: |
-          echo "NEW_ISSUE_NUMBER=12" >> $GITHUB_ENV
+          echo "NEW_ISSUE_NUMBER=${{ steps.read_recent.outputs.text }}" >> $GITHUB_ENV
 #      - name: Download all issues, no limit
 #        id: normalIssuesNoLimit
 #        run: bash ./linux_mac/magpi-issue-downloader.sh
