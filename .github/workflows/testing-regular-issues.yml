@@ -67,6 +67,8 @@ jobs:
 #      - name: Download Issues with end limit
 #        id: normalIssuesWithEndLimit
 #        run: bash ./linux_mac/magpi-issue-downloader.sh -l 2
+
+      - run: echo $TEXT
       - name: Download Issues with start limit
         id: normalIssuesWithStartLimit
         run: bash ./linux_mac/magpi-issue-downloader.sh -f $((${{steps.read_recent.outputs.text}}-1))
