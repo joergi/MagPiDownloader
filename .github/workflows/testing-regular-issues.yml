@@ -51,15 +51,19 @@ jobs:
           path: sources-for-download/regular-issues.txt
       - run: |
           echo "ISSUE_NUMBER=${{ steps.read_recent.outputs.text }}" >> $GITHUB_ENV
+          echo "ISSUE_MINUS_ONE=$((${{ steps.read_recent.outputs.text }}-1))" >> $GITHUB_ENV
           echo "ISSUE_MINUS_FIVE=$((${{ steps.read_recent.outputs.text }}-5))" >> $GITHUB_ENV
+          echo "ISSUE_MINUS_SIX=$((${{ steps.read_recent.outputs.text }}-6))" >> $GITHUB_ENV
 #      - name: Download all issues, no limit
 #        id: normalIssuesNoLimit
 #        run: bash ./linux_mac/magpi-issue-downloader.sh
-#      - name: Download Issues with end limit
-#        id: normalIssuesWithEndLimit
-#        run: bash ./linux_mac/magpi-issue-downloader.sh -l 2
+      - name: Download Issues with end limit
+        id: normalIssuesWithEndLimit
+        run: bash ./linux_mac/magpi-issue-downloader.sh -l 2
       - run: echo ${{ env.ISSUE_NUMBER }}
+      - run: echo ${{ env.ISSUE_MINUS_ONE }}
       - run: echo ${{ env.ISSUE_MINUS_FIVE }}
+      - run: echo ${{ env.ISSUE_MINUS_SIX }}
 
       - name: Download Issues with start limit
         id: normalIssuesWithStartLimit
@@ -67,13 +71,13 @@ jobs:
 
       - name: Download Issues with start and end limit
         id: normalIssuesWithRange
-        run: bash ./linux_mac/magpi-issue-downloader.sh -f $((${{ env.ISSUE_NUMBER }}-6)) -l $((${{ env.ISSUE_NUMBER }}-5))
+        run: bash ./linux_mac/magpi-issue-downloader.sh -f ${{ env.ISSUE_MINUS_SIX }} -l ${{ env.ISSUE_MINUS_FIVE }}
       # check if files are existing
       - name: "Check file existence Linux"
         id: check_files
         uses: andstor/file-existence-action@v1.1.0
         with:
-          files: "issues/MagPi$((${{ env.ISSUE_NUMBER }}-5)).pdf, issues/MagPi$((${{ env.ISSUE_NUMBER }}-6)).pdf, issues/MagPi$((${{ env.ISSUE_NUMBER }}-1)).pdf, issues/MagPi${{ env.ISSUE_NUMBER }}.pdf"
+          files: "issues/MagPi01.pdf, issues/MagPi02.pdf, issues/MagPi${{ env.ISSUE_MINUS_SIX }}.pdf, issues/MagPi${{ env.ISSUE_MINUS_FIVE }}.pdf, issues/MagPi${{ env.ISSUE_MINUS_ONE }}.pdf, issues/MagPi${{ env.ISSUE_NUMBER }}.pdf"
           allow_failure: false
       - name: lslah
         run: ls -lah  issues/
