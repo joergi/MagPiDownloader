@@ -61,6 +61,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3.1.0
+      - uses: pCYSl5EDgo/cat@master
+        id: read_recent
+        with:
+          path: sources-for-download/regular-issues.txt
+      - run: echo $TEXT
+        env:
+          TEXT: ${{ steps.read_recent.outputs.text }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 #      - name: Download all issues, no limit
 #        id: normalIssuesNoLimit
 #        run: bash ./linux_mac/magpi-issue-downloader.sh
