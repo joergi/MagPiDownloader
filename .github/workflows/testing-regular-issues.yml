@@ -69,6 +69,8 @@ jobs:
         env:
           ISSUE_NUMBER: ${{ steps.read_recent.outputs.text }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: |
+          echo "NEW_ISSUE_NUMBER=12" >> $GITHUB_ENV
 #      - name: Download all issues, no limit
 #        id: normalIssuesNoLimit
 #        run: bash ./linux_mac/magpi-issue-downloader.sh
@@ -76,6 +78,7 @@ jobs:
 #        id: normalIssuesWithEndLimit
 #        run: bash ./linux_mac/magpi-issue-downloader.sh -l 2
       - run: echo ${{ env.ISSUE_NUMBER }}
+      - run: echo ${{ env.NEW_ISSUE_NUMBER }}
       - name: Download Issues with start limit
         id: normalIssuesWithStartLimit
         run: bash ./linux_mac/magpi-issue-downloader.sh -f $((${{steps.read_recent.outputs.text}}-1))
