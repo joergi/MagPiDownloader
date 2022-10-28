@@ -64,15 +64,15 @@ jobs:
 #      - name: Download all issues, no limit
 #        id: normalIssuesNoLimit
 #        run: bash ./linux_mac/magpi-issue-downloader.sh
-      - name: Download Issues with end limit
-        id: normalIssuesWithEndLimit
-        run: bash ./linux_mac/magpi-issue-downloader.sh -l 2
+#      - name: Download Issues with end limit
+#        id: normalIssuesWithEndLimit
+#        run: bash ./linux_mac/magpi-issue-downloader.sh -l 2
       - name: Download Issues with start limit
         id: normalIssuesWithStartLimit
         run: bash ./linux_mac/magpi-issue-downloader.sh -f $((${{steps.read_recent.outputs.text}}-1))
-      - name: Download Issues with start and end limit
-        id: normalIssuesWithRange
-        run: bash ./linux_mac/magpi-issue-downloader.sh -f $((${{steps.read_recent.outputs.text}}-6)) -l $((${{steps.read_recent.outputs.text}}-5))
+#      - name: Download Issues with start and end limit
+#        id: normalIssuesWithRange
+#        run: bash ./linux_mac/magpi-issue-downloader.sh -f $((${{steps.read_recent.outputs.text}}-6)) -l $((${{steps.read_recent.outputs.text}}-5))
       # check if files are existing
       - name: "Check file existence Linux"
         id: check_files
