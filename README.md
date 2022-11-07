@@ -7,36 +7,9 @@ You can also buy all the paper versions of this issues on [http://swag.raspberry
 
 This project should save you time, and let you download all scripts together.
 
-## Windows user: [here is your tuturial](windows/)
-
 ## Linux and Mac user: [here is your tutorial](linux_mac/)
 
-## Docker
+## ~~Windows user: [here is your tuturial](windows/)~~
+## The script for Windows powershell is broken - HELP NEEDED -> [issue](https://github.com/joergi/MagPiDownloader/issues/83) 
 
-If you have Docker installed, there is an easy way to download it by docker:  
-
-download all:  
-
-```bash
-docker run -v $(pwd)/issues:/app/issues/ joergi/mag-pi-downloader
-```
-
-download specific range first to last (example: from 1 to 2
-
-```bash
-docker run -v $(pwd)/issues:/app/issues/ joergi/mag-pi-downloader -f 1 -l 2
-```
-
-
-(unfortunately the issues folder is root, so you have to change it to your user)
-
-=======
-
-```bash
-docker run -v $(pwd)/issues:/app/issues/ joergi/mag-pi-downloader -f 1 -l 2
-```
-
-
-```bash
-sudo chown $USER:$USER -R issues/
-```
+## Docker - needs to be fixed - issue [[89](https://github.com/joergi/MagPiDownloader/issues/89), [26](https://github.com/joergi/MagPiDownloader/issues/26), [25](https://github.com/joergi/MagPiDownloader/issues/25), [42](https://github.com/joergi/MagPiDownloader/issues/42)]
