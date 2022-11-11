@@ -28,10 +28,12 @@ jobs:
           "ISSUE_MINUS_SIX=(($steps.read_recent.outputs.text)-6)" >> $GITHUB_ENV
           echo $env.VAR
           echo $GITHUB_ENV
+
       - name: print out vars
         id: printOutVars
         shell: pwsh
-        run: echo ${{env}}
+        run: env
+
       - name: Download Issues With end limit
         id: normalIssuesWithEndLimit
         shell: pwsh
@@ -71,7 +73,7 @@ jobs:
           echo "ISSUE_MINUS_SIX=$((${{ steps.read_recent.outputs.text }}-6))" >> $GITHUB_ENV
       - name: print vars
         id: printVars
-        run: echo ${{env}}
+        run: env
 
 #      - name: Download Issues with end limit
 #        id: normalIssuesWithEndLimit
