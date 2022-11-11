@@ -27,8 +27,10 @@ jobs:
           echo $Env
           echo $GITHUB_ENV
           echo "ISSUE_MINUS_ONE=${{steps.read_recent.outputs.text}}-1" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf8 -Append
-          echo "ISSUE_MINUS_FIVE=$((${{steps.read_recent.outputs.text}}-5))" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf8 -Append
-          echo "ISSUE_MINUS_SIX=$((${{steps.read_recent.outputs.text}}-6))" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf8 -Append
+          echo "ISSUE_MINUS_FIVE=${{steps.read_recent.outputs.text}}-5" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf8 -Append
+          echo "ISSUE_MINUS_SIX=${{steps.read_recent.outputs.text}}-6" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf8 -Append
+          echo $Env
+          echo $GITHUB_ENV
       - name: Download Issues With end limit
         id: normalIssuesWithEndLimit
         shell: pwsh
