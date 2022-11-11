@@ -22,10 +22,10 @@ jobs:
         with:
           path: sources-for-download/regular-issues.txt
       - run: |
-          "ISSUE_NUMBER=($steps.read_recent.outputs.text)" >> $env:GITHUB_ENV
-          "ISSUE_MINUS_ONE=(($steps.read_recent.outputs.text)-1)" >> $GITHUB_ENV
-          "ISSUE_MINUS_FIVE=(($steps.read_recent.outputs.text)-5)" >> $GITHUB_ENV
-          "ISSUE_MINUS_SIX=(($steps.read_recent.outputs.text)-6)" >> $GITHUB_ENV
+          "ISSUE_NUMBER=(${{steps.read_recent.outputs.text}})" >> $env:GITHUB_ENV
+          "ISSUE_MINUS_ONE=(($steps.read_recent.outputs.text)-1)" >> $env:GITHUB_ENV
+          "ISSUE_MINUS_FIVE=(($steps.read_recent.outputs.text)-5)" >> $env:GITHUB_ENV
+          "ISSUE_MINUS_SIX=(($steps.read_recent.outputs.text)-6)" >> $env:GITHUB_ENV
           echo $env.VAR
           echo $GITHUB_ENV
 
