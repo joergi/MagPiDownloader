@@ -22,11 +22,11 @@ jobs:
         with:
           path: sources-for-download/regular-issues.txt
       - run: |
-          echo "ISSUE_NUMBER=${{steps.read_recent.outputs.text}}" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf8 -Append
-          echo "ISSUE_MINUS_ONE=${{steps.read_recent.outputs.text}}-1" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf8 -Append
-          echo "ISSUE_MINUS_FIVE=${{steps.read_recent.outputs.text}}-5" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf8 -Append
-          echo "ISSUE_MINUS_SIX=${{steps.read_recent.outputs.text}}-6" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf8 -Append
-
+          "VAR=TEST" >> $env:GITHUB_ENV
+          "ISSUE_NUMBER=${{steps.read_recent.outputs.text}}" >> $env:GITHUB_ENV
+          "ISSUE_MINUS_ONE=${{steps.read_recent.outputs.text}}-1" >> $GITHUB_ENV
+          "ISSUE_MINUS_FIVE=${{steps.read_recent.outputs.text}}-5" >> $GITHUB_ENV
+          "ISSUE_MINUS_SIX=${{steps.read_recent.outputs.text}}-6" >> $GITHUB_ENV
       - name: Download Issues With end limit
         id: normalIssuesWithEndLimit
         shell: pwsh
