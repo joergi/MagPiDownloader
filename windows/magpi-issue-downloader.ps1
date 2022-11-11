@@ -28,7 +28,7 @@ if (!(Test-Path -Path $downloadDir)) {
     $null = New-Item -ItemType Directory -Path $downloadDir -ErrorAction Stop
 }
 
-$ProgressPreference = "SilentlyContinue"
+#$ProgressPreference = "SilentlyContinue"
 $errorCount = 0
 foreach($issue in $FirstIssue..$LastIssue) {
     $uri = [uri]::new($baseurl,"{0:00}/pdf" -f $issue)
