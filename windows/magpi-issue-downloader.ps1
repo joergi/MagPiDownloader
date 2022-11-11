@@ -6,7 +6,9 @@
     or you can buy the paper issues under: http://swag.raspberrypi.org/collections/magpi
 .NOTES
     This script is under GNU GENERAL PUBLIC LICENSE
-    [Author] rubemlrm - https://github.com/joergi/MagPiDownloader
+    Orignal author: Rubemlrm - https://github.com/Rubemlrm
+    The new rewritten code is now programmed by [Author](https://github.com/Jaykul)
+    Script is part of https://github.com/joergi/MagPiDownloader
 #>
 [CmdletBinding()]
 param(
