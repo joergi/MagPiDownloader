@@ -28,7 +28,6 @@ if (!(Test-Path -Path $downloadDir)) {
     $null = New-Item -ItemType Directory -Path $downloadDir -ErrorAction Stop
 }
 
-#$ProgressPreference = "SilentlyContinue"
 $errorCount = 0
 foreach($issue in $FirstIssue..$LastIssue) {
     $uri = [uri]::new($baseurl,"{0:00}/pdf" -f $issue)
@@ -37,6 +36,7 @@ foreach($issue in $FirstIssue..$LastIssue) {
         $uri = [uri]::new($baseurl, $link)
         try {
             Write-Information "Downloading $uri"
+            echo "Downloading $uri"
             Invoke-WebRequest $uri -OutFile (Join-Path $downloadDir $uri.Segments[-1]) -ErrorAction Stop
             Write-Verbose -Message "Downloaded $uri"
         } catch {
