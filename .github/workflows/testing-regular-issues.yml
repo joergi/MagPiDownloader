@@ -22,7 +22,7 @@ jobs:
         with:
           path: sources-for-download/regular-issues.txt
       - run: |
-          "ISSUE_NUMBER=$steps.read_recent.outputs.text" >> $env:GITHUB_ENV
+          "ISSUE_NUMBER=($steps.read_recent.outputs.text)" >> $env:GITHUB_ENV
           "ISSUE_MINUS_ONE=(($steps.read_recent.outputs.text)-1)" >> $GITHUB_ENV
           "ISSUE_MINUS_FIVE=(($steps.read_recent.outputs.text)-5)" >> $GITHUB_ENV
           "ISSUE_MINUS_SIX=(($steps.read_recent.outputs.text)-6)" >> $GITHUB_ENV
@@ -56,20 +56,23 @@ jobs:
         if: steps.check_files.outputs.files_exists == 'false'
         run: exit 1
 #
-#  bash-linux:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v3.1.0
-#      - uses: pCYSl5EDgo/cat@master
-#        id: read_recent
-#        with:
-#          path: sources-for-download/regular-issues.txt
-#      - run: |
-#          echo "ISSUE_NUMBER=${{ steps.read_recent.outputs.text }}" >> $GITHUB_ENV
-#          echo "ISSUE_MINUS_ONE=$((${{ steps.read_recent.outputs.text }}-1))" >> $GITHUB_ENV
-#          echo "ISSUE_MINUS_FIVE=$((${{ steps.read_recent.outputs.text }}-5))" >> $GITHUB_ENV
-#          echo "ISSUE_MINUS_SIX=$((${{ steps.read_recent.outputs.text }}-6))" >> $GITHUB_ENV
-#
+  bash-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3.1.0
+      - uses: pCYSl5EDgo/cat@master
+        id: read_recent
+        with:
+          path: sources-for-download/regular-issues.txt
+      - run: |
+          echo "ISSUE_NUMBER=${{ steps.read_recent.outputs.text }}" >> $GITHUB_ENV
+          echo "ISSUE_MINUS_ONE=$((${{ steps.read_recent.outputs.text }}-1))" >> $GITHUB_ENV
+          echo "ISSUE_MINUS_FIVE=$((${{ steps.read_recent.outputs.text }}-5))" >> $GITHUB_ENV
+          echo "ISSUE_MINUS_SIX=$((${{ steps.read_recent.outputs.text }}-6))" >> $GITHUB_ENV
+      - name: print vars
+        id: printVars
+        run: echo ${{env}}
+
 #      - name: Download Issues with end limit
 #        id: normalIssuesWithEndLimit
 #        run: bash ./linux_mac/magpi-issue-downloader.sh -l 2
