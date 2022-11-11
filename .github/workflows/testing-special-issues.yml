@@ -1,72 +1,72 @@
-## This is a basic workflow to help you get started with Actions
-#
-#name: Testing special issues
-#
-## Controls when the action will run. Triggers the workflow on push or pull request
-## events but only for the main branch
-#on:
-#  push:
-#    branches: [ main ]
-#  pull_request:
-#    branches: [ main ]
-#
-## A workflow run is made up of one or more jobs that can run sequentially or in parallel
-#jobs:
-#  powershell:
-#    runs-on: windows-latest
-#    steps:
-#      - uses: actions/checkout@v3.1.0
-#      - name: Download Special Issues windows
-#        id: specialIssues
-#        shell: pwsh
-#        run: ./windows/magpi-special-issue-downloader.ps1
-#      - name: "Check file existence Windows special"
-#        id: check_files
-#        uses: andstor/file-existence-action@v2.0.0
-#        with:
-#          files: "special_issues/Essentials_Games_v1.pdf"
-#          allow_failure: false
-#      - name: lslah issues
-#        run: Get-ChildItem –path D:\a\MagPiDownloader\MagPiDownloader\special_issues
-#      - name: File exists
-#        if: steps.check_files.outputs.files_exists == 'false'
-#        run: exit 1
-#
-#  bash-linux:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v3.1.0
-#      - name: Download Special Issues linux
-#        id: specialIssues
-#        run: bash ./linux_mac/magpi-special-issue-downloader.sh
-#
-#      - name: "Check file existence Linux special issues"
-#        id: check_files
-#        uses: andstor/file-existence-action@v2.0.0
-#        with:
-#          files: "special_issues/MagPiSE1.pdf, special_issues/Projects_Book_v3.pdf, special_issues/Essentials_Camera_v1.pdf, special_issues/Retro_Gaming.pdf, special_issues/Camera-Guide.pdf"
-#          allow_failure: false
-#      - name: lslah
-#        run: ls -lah special_issues/
-#      - name: File exists
-#        if: steps.check_files.outputs.files_exists == 'false'
-#        run: exit 1
-#  bash-macos:
-#    runs-on: macos-latest
-#    steps:
-#      - uses: actions/checkout@v3.1.0
-#      - name: Download Special Issues Mac
-#        id: specialIssues
-#        run: bash ./linux_mac/magpi-special-issue-downloader.sh
-## check if files are existing
-#      - name: "Check file existence MacOs special issues"
-#        id: check_files
-#        uses: andstor/file-existence-action@v2.0.0
-#        with:
-#          files: "special_issues/MagPiSE1.pdf, special_issues/Projects_Book_v3.pdf, special_issues/Essentials_Camera_v1.pdf, special_issues/Retro_Gaming.pdf, special_issues/Camera-Guide.pdf"
-#          allow_failure: false
-#      - name: lslah
-#        run: ls -lah special_issues/
-#      - name: File exists
-#        if: steps.check_files.outputs.files_exists == 'false'
-#        run: exit 1
+# This is a basic workflow to help you get started with Actions
+
+name: Testing special issues
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the main branch
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  powershell:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3.1.0
+      - name: Download Special Issues windows
+        id: specialIssues
+        shell: pwsh
+        run: ./windows/magpi-special-issue-downloader.ps1
+      - name: "Check file existence Windows special"
+        id: check_files
+        uses: andstor/file-existence-action@v2.0.0
+        with:
+          files: "special_issues/Essentials_Games_v1.pdf"
+          allow_failure: false
+      - name: lslah issues
+        run: Get-ChildItem –path D:\a\MagPiDownloader\MagPiDownloader\special_issues
+      - name: File exists
+        if: steps.check_files.outputs.files_exists == 'false'
+        run: exit 1
+
+  bash-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3.1.0
+      - name: Download Special Issues linux
+        id: specialIssues
+        run: bash ./linux_mac/magpi-special-issue-downloader.sh
+
+      - name: "Check file existence Linux special issues"
+        id: check_files
+        uses: andstor/file-existence-action@v2.0.0
+        with:
+          files: "special_issues/MagPiSE1.pdf, special_issues/Projects_Book_v3.pdf, special_issues/Essentials_Camera_v1.pdf, special_issues/Retro_Gaming.pdf, special_issues/Camera-Guide.pdf"
+          allow_failure: false
+      - name: lslah
+        run: ls -lah special_issues/
+      - name: File exists
+        if: steps.check_files.outputs.files_exists == 'false'
+        run: exit 1
+  bash-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3.1.0
+      - name: Download Special Issues Mac
+        id: specialIssues
+        run: bash ./linux_mac/magpi-special-issue-downloader.sh
+# check if files are existing
+      - name: "Check file existence MacOs special issues"
+        id: check_files
+        uses: andstor/file-existence-action@v2.0.0
+        with:
+          files: "special_issues/MagPiSE1.pdf, special_issues/Projects_Book_v3.pdf, special_issues/Essentials_Camera_v1.pdf, special_issues/Retro_Gaming.pdf, special_issues/Camera-Guide.pdf"
+          allow_failure: false
+      - name: lslah
+        run: ls -lah special_issues/
+      - name: File exists
+        if: steps.check_files.outputs.files_exists == 'false'
+        run: exit 1
