@@ -26,10 +26,17 @@ jobs:
           echo "ISSUE_MINUS_ONE=$((${{ steps.read_recent.outputs.text }}-1))" >> $GITHUB_ENV
           echo "ISSUE_MINUS_FIVE=$((${{ steps.read_recent.outputs.text }}-5))" >> $GITHUB_ENV
           echo "ISSUE_MINUS_SIX=$((${{ steps.read_recent.outputs.text }}-6))" >> $GITHUB_ENV
+        shell: bash
+
+      - name: print out vars
+        id: printOutVars
+        shell: pwsh
+        run: env
+
       - name: Download Issues With end limit
         id: normalIssuesWithEndLimit
         shell: pwsh
-        run: ./windows/magpi-issue-downloader.ps1 -l 3
+        run: ./windows/magpi-issue-downloader.ps1 -l 2
       - name: Download Issues with start and end limit
         id: normalIssuesWithRange
         shell: pwsh
@@ -42,14 +49,14 @@ jobs:
         id: check_files
         uses: andstor/file-existence-action@v2.0.0
         with:
-          files: "issues/the-magpi-issue-1.pdf, issues/the-magpi-issue-1.pdf,, issues/the-magpi-issue-${{ env.ISSUE_MINUS_SIX }}.pdf, issues/the-magpi-issue-${{ env.ISSUE_MINUS_FIVE }}.pdf, issues/the-magpi-issue-${{ env.ISSUE_MINUS_ONE }}.pdf, issues/the-magpi-issue-${{ env.ISSUE_NUMBER }}.pdf"
+          files: "issues/MagPi01.pdf, issues/MagPi02.pdf, issues/MagPi${{ env.ISSUE_MINUS_SIX }}.pdf, issues/MagPi${{ env.ISSUE_MINUS_FIVE }}.pdf, issues/MagPi${{ env.ISSUE_MINUS_ONE }}.pdf, issues/MagPi${{ env.ISSUE_NUMBER }}.pdf"
           allow_failure: false
       - name: lslah issues
         run: Get-ChildItem -path D:\a\MagPiDownloader\MagPiDownloader\issues
       - name: File exists
         if: steps.check_files.outputs.files_exists == 'false'
         run: exit 1
-
+#
   bash-linux:
     runs-on: ubuntu-latest
     steps:
@@ -63,7 +70,6 @@ jobs:
           echo "ISSUE_MINUS_ONE=$((${{ steps.read_recent.outputs.text }}-1))" >> $GITHUB_ENV
           echo "ISSUE_MINUS_FIVE=$((${{ steps.read_recent.outputs.text }}-5))" >> $GITHUB_ENV
           echo "ISSUE_MINUS_SIX=$((${{ steps.read_recent.outputs.text }}-6))" >> $GITHUB_ENV
-
       - name: Download Issues with end limit
         id: normalIssuesWithEndLimit
         run: bash ./linux_mac/magpi-issue-downloader.sh -l 2
