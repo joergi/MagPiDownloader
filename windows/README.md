@@ -1,14 +1,12 @@
-# ~~MagPiDownloader for Windows~~
-# The script for Windows powershell is broken - HELP NEEDED -> [issue](https://github.com/joergi/MagPiDownloader/issues/83)
-
-
+# MagPiDownloader for Windows
 
 Downloads all the Mag Pi issues (a Raspberry Pi magazine) on Windows
 
 Open your Powershell as Administrator (right click on PowerShell -> Open as Administrator)
 Enter: `set-executionpolicy remotesigned`
 and you are able to use the Powershell scripts.
-All Windows scripts are done by [GitHub user Rubemlrm](https://github.com/Rubemlrm)
+The original Windows scripts was programmed by [GitHub user Rubemlrm](https://github.com/Rubemlrm)
+The new rewritten code is now programmed by [Github user Jaykul](https://github.com/Jaykul)
 
 
   `git clone https://github.com/joergi/MagPiDownloader.git`

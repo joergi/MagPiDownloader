@@ -9,7 +9,6 @@ This project should save you time, and let you download all scripts together.
 
 ## Linux and Mac user: [here is your tutorial](linux_mac/)
 
-## ~~Windows user: [here is your tuturial](windows/)~~
-## The script for Windows powershell is broken - HELP NEEDED -> [issue](https://github.com/joergi/MagPiDownloader/issues/83) 
+## Windows user: [here is your tuturial](windows/)
 
 ## Docker - needs to be fixed - issue [[89](https://github.com/joergi/MagPiDownloader/issues/89), [26](https://github.com/joergi/MagPiDownloader/issues/26), [25](https://github.com/joergi/MagPiDownloader/issues/25), [42](https://github.com/joergi/MagPiDownloader/issues/42)]
