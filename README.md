@@ -1,6 +1,6 @@
 # MagPiDownloader for Windows, Mac, Linux and Docker
 
-[![HitCount](http://hits.dwyl.com/joergi/MagPiDownloader.svg)](http://hits.dwyl.com/joergi/MagPiDownloader) ![Test Scripts](https://github.com/joergi/MagPiDownloader/workflows/Test%20Scripts/badge.svg)
+[![HitCount](http://hits.dwyl.com/joergi/MagPiDownloader.svg)](http://hits.dwyl.com/joergi/MagPiDownloader) ![Regular issues](https://github.com/joergi/MagPiDownloader/workflows/Testing%20regular%20issues/badge.svg) ![Special Issues](https://github.com/joergi/MagPiDownloader/workflows/Testing%20special%20issues/badge.svg)  ![Language issues](https://github.com/joergi/MagPiDownloader/workflows/Testing%20language%20issues/badge.svg) ![Educational Issues](https://github.com/joergi/MagPiDownloader/workflows/Testing%20educational%20issues/badge.svg)
 
 All the issues are downloadable for free on [https://www.raspberrypi.org/magpi/issues/](https://www.raspberrypi.org/magpi/issues/)  
 You can also buy all the paper versions of this issues on [http://swag.raspberrypi.org/collections/magpi](http://swag.raspberrypi.org/collections/magpi)
