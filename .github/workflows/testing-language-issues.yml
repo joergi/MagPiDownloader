@@ -15,7 +15,7 @@ jobs:
   powershell:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v3.1.0
+      - uses: actions/checkout@v3.2.0
       - name: Download French Issues
         id: frenchIssues
         shell: pwsh
@@ -47,7 +47,7 @@ jobs:
   bash-linux:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3.1.0
+      - uses: actions/checkout@v3.2.0
       - name: Download French Issues
         id: frenchIssues
         run: bash ./linux_mac/magpi-issue-downloader_french.sh
@@ -74,7 +74,7 @@ jobs:
   bash-macos:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v3.1.0
+      - uses: actions/checkout@v3.2.0
       - name: Download French Issues
         id: frenchIssues
         run: bash ./linux_mac/magpi-issue-downloader_french.sh

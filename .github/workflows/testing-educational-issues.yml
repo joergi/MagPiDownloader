@@ -15,7 +15,7 @@ jobs:
   powershell:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v3.1.0
+      - uses: actions/checkout@v3.2.0
       - name: Download Education Issues
         id: educationIssues
         shell: pwsh
@@ -35,7 +35,7 @@ jobs:
   bash-linux:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3.1.0
+      - uses: actions/checkout@v3.2.0
       - name: Download Education Issues
         id: educationIssues
         run: bash ./linux_mac/magpi-education-downloader.sh
@@ -53,7 +53,7 @@ jobs:
   bash-macos:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v3.1.0
+      - uses: actions/checkout@v3.2.0
       - name: Download Education Issues
         id: educationIssues
         run: bash ./linux_mac/magpi-education-downloader.sh
