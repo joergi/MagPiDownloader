@@ -34,3 +34,4 @@ https://magpi.raspberrypi.com/books/handbook-2022/pdf
 https://magpi.raspberrypi.com/books/retro-gaming-raspberry-pi-2nd-edition/pdf
 https://magpi.raspberrypi.com/books/raspberry-pi-media-player/pdf
 https://magpi.raspberrypi.com/books/handbook-2023/pdf
+https://magpi.raspberrypi.com/books/c-gui-programming-2/pdf
