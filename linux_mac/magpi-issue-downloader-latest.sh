@@ -20,6 +20,7 @@ echo "Latest Issues is " "$latest_issues"
 file="$BASEDIR/sources-for-download/regular-issues.txt";
 echo "$latest_issues" >"$file"
 
+# shellcheck disable=SC2046
 bash $(dirname "$0")/magpi-issue-downloader.sh -f "$latest_issues" -l "$latest_issues"
 
 exit 0
