@@ -9,15 +9,15 @@
 # USAGE="Usage: bash magpi-issue-downloader-latest.sh"
 
 MAGPI_URL="https://magpi.raspberrypi.com"
-BASEDIR=`dirname $0`/..
+BASEDIR=$(dirname "$0")/..
 
 \printf -v page_url "$MAGPI_URL/issues"
-latest_issues=`curl -sf $page_url | grep "Download Free PDF" | sed 's/^.*issues\///' | sed 's/\/pdf.*$//'`
-echo "Latest Issues is " $latest_issues
+latest_issues=$(curl -sf "$page_url" | grep "Download Free PDF" | sed 's/^.*issues\///' | sed 's/\/pdf.*$//')
+echo "Latest Issues is " "$latest_issues"
 
 file="$BASEDIR/sources-for-download/regular-issues.txt";
-echo $latest_issues >$file
+echo "$latest_issues" >"$file"
 
-bash `dirname $0`/magpi-issue-downloader.sh -f $latest_issues -l $latest_issues
+bash $(dirname "$0")/magpi-issue-downloader.sh -f "$latest_issues" -l "$latest_issues"
 
 exit 0
