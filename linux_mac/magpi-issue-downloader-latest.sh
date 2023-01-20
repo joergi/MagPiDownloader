@@ -11,7 +11,9 @@
 MAGPI_URL="https://magpi.raspberrypi.com"
 BASEDIR=$(dirname "$0")/..
 
-\printf -v page_url "$MAGPI_URL/issues"
+#printf -v page_url "$MAGPI_URL/issues"
+page_url=$(printf '%s\n' "$MAGPI_URL/issues")
+
 latest_issues=$(curl -sf "$page_url" | grep "Download Free PDF" | sed 's/^.*issues\///' | sed 's/\/pdf.*$//')
 echo "Latest Issues is " "$latest_issues"
 
