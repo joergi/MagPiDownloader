@@ -63,7 +63,7 @@ jobs:
         id: check_files
         uses: andstor/file-existence-action@v2.0.0
         with:
-          files: "special_issues/MagPiSE1.pdf, special_issues/Projects_Book_v3.pdf, special_issues/Essentials_Camera_v1.pdf, special_issues/Retro_Gaming.pdf, special_issues/Camera-Guide.pdf"
+          files: "special_issues/MagPiSE1.pdf, special_issues/Projects_Book_v3.pdf, special_issues/Essentials_Camera_v1.pdf, special_issues/Retro_Gaming.pdf"
           allow_failure: false
       - name: lslah
         run: ls -lah special_issues/
