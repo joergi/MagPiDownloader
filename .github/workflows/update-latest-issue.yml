@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3.3.0
+      - name: gitCheckout
+        run: git checkout -b update_issues
       - name: update issues
         id: updateIssues
         run: bash ./sources-for-download/script-for-using-latest-version.sh
@@ -25,4 +27,4 @@ jobs:
       - name: gitStatus
         run: git status
       - name: gitPush
-        run: git push origin main --force
+        run: git push
