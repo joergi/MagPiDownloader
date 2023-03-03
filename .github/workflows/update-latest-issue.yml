@@ -12,10 +12,6 @@ jobs:
       - name: update issues
         id: updateIssues
         run: bash ./sources-for-download/script-for-using-latest-version.sh
-      - name: gitStatus
-        run: git status
-      - name: catIssue
-        run: cat ./sources-for-download/regular-issues.txt
       - name: config git
         run: |
           git config --local user.email "1439809+joergi@users.noreply.github.com"
