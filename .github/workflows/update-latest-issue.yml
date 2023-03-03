@@ -31,11 +31,9 @@ jobs:
           delete-branch: true
           labels: "automerge"
       - name: Auto-merge Pull Request
-        uses: pascalgn/automerge-action@v0.15.0
-        with:
-          method: merge
-          delete-branch: true
-          merge_unstable: true
-          pull_request_author: "joergi"
+        uses: pascalgn/automerge-action@v0.15.6
+        MERGE_READY_STATE: unstable
+        MERGE_DELETE_BRANCH: true
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+          MERGE_LABELS: "automerge
