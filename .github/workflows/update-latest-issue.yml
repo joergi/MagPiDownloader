@@ -31,5 +31,6 @@ jobs:
         with:
           title: Automated Pull Request
           body: Automated pull request created by GitHub Actions
-          branch: update_issues
+          branch: automated_PR_for_update_issues
+          branch-suffix: timestamp
           delete-branch: true
