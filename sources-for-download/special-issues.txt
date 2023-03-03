@@ -23,7 +23,6 @@ https://magpi.raspberrypi.com/books/beginners-guide-3rd-ed/pdf
 https://magpi.raspberrypi.com/books/get-started/pdf
 https://magpi.raspberrypi.com/books/retro-gaming/pdf
 https://magpi.raspberrypi.com/books/projects-5/pdf
-https://magpi.raspberrypi.com/books/camera-guide/pdf
 https://magpi.raspberrypi.com/books/create-guis/pdf
 https://magpi.raspberrypi.com/books/beginners-guide-4th-ed/pdf
 https://magpi.raspberrypi.com/books/handbook-2021/pdf
