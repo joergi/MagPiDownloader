@@ -16,6 +16,10 @@ jobs:
         run: git status
       - name: catIssue
         run: cat ./sources-for-download/regular-issues.txt
+      - name: config git
+        run: |
+          git config --local user.email "1439809+joergi@users.noreply.github.com"
+          git config --local user.name "Joergi via GitHub Actions"
       - name: gitCommit
         run: git commit -am "update use latest version"
       - name: gitStatus
