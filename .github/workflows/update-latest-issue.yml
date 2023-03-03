@@ -41,7 +41,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
           NUMBER: ${{ steps.createAutoPR.outputs.pull-request-number }}
       - name: printnumber
-        run: echo ${{NUMBER}} - ${{ steps.autoApprove.NUMBER }}
+        run: echo ${{ steps.autoApprove.NUMBER }}
       - name: Enable Pull Request Automerge
         if: steps.createAutoPR.outputs.pull-request-operation == 'created'
         uses: peter-evans/enable-pull-request-automerge@v2
