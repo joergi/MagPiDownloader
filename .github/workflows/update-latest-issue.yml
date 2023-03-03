@@ -25,4 +25,4 @@ jobs:
       - name: gitStatus
         run: git status
       - name: gitPush
-        run: git push
+        run: git push origin HEAD:100_update_latest_issue_automatically
