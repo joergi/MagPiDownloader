@@ -30,6 +30,7 @@ jobs:
           branch: automated_PR_for_update_issues
           branch-suffix: timestamp
           delete-branch: true
+          labels: "automerge"
       - name: Auto-merge Pull Request
         uses: pascalgn/automerge-action@v0.15.0
         with:
