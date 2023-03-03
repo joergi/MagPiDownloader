@@ -9,10 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3.3.0
-      - name: gitDeleteAndCheckout
-        run: |
-          git push origin --delete update_issues
-          git checkout -b update_issues
       - name: update issues
         id: updateIssues
         run: bash ./sources-for-download/script-for-using-latest-version.sh
@@ -25,7 +21,7 @@ jobs:
           git config --local user.email "1439809+joergi@users.noreply.github.com"
           git config --local user.name "Joergi via GitHub Actions"
           git commit -am "update to use latest version"
-          git push --set-upstream origin update_issues
+#          git push --set-upstream origin update_issues
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
