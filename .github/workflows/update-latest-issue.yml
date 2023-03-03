@@ -3,9 +3,11 @@ name: Update latest issues
 on:
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
-  bash-linux:
+  update-latest-issues:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3.3.0
@@ -27,8 +29,6 @@ jobs:
           branch-suffix: timestamp
           delete-branch: true
           labels: "automerge"
-      - name: pring number
-        run: echo ${{ steps.createAutoPR.outputs.pull-request-number }}
       - name: Auto approve
         id: autoApprove
         if: steps.createAutoPR.outputs.pull-request-operation == 'created'
