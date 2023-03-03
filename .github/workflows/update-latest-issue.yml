@@ -14,5 +14,11 @@ jobs:
         run: bash ./sources-for-download/script-for-using-latest-version.sh
       - name: gitStatus
         run: git status
-      - name: gitStatus
+      - name: catIssue
         run: cat ./sources-for-download/regular-issues.txt
+      - name: gitCommit
+        run: git commit -am "update use latest version"
+      - name: gitStatus
+        run: git status
+      - name: gitPush
+        run: git push
