@@ -12,7 +12,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  powershell:
+  special-powershell:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3.3.0
@@ -32,7 +32,7 @@ jobs:
         if: steps.check_files.outputs.files_exists == 'false'
         run: exit 1
 
-  bash-linux:
+  special-bash-linux:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3.3.0
@@ -51,7 +51,7 @@ jobs:
       - name: File exists
         if: steps.check_files.outputs.files_exists == 'false'
         run: exit 1
-  bash-macos:
+  special-bash-macos:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3.3.0
