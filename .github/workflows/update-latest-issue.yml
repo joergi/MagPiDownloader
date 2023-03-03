@@ -27,4 +27,4 @@ jobs:
       - name: gitStatus
         run: git status
       - name: gitPush
-        run: git push
+        run: git push --set-upstream origin update_issues
