@@ -46,3 +46,4 @@ jobs:
           merge-method: squash
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+          PULL_REQUEST_NUMBER: ${{ steps.createAutoPR.outputs.pull-request-number }}
