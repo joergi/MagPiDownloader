@@ -47,5 +47,5 @@ jobs:
         uses: peter-evans/enable-pull-request-automerge@v2
         with:
           token: ${{ secrets.MY_GITHUB_TOKEN }}
-          pull-request-number: ${{ steps.autoApprove.NUMBER }}
+          pull-request-number: ${{ steps.createAutoPR.outputs.pull-request-number }}
 
