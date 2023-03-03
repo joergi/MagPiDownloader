@@ -33,6 +33,7 @@ jobs:
       - name: Auto-merge Pull Request
         uses: pascalgn/automerge-action@v0.15.0
         with:
-          github-token: ${{ secrets.MY_GITHUB_TOKEN }}
           method: merge
           delete-branch: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
