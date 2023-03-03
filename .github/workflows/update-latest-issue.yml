@@ -31,12 +31,17 @@ jobs:
           branch-suffix: timestamp
           delete-branch: true
           labels: "automerge"
+      - name: pring number
+        run: echo ${{ steps.createAutoPR.outputs.pull-request-number }}
       - name: Auto approve
+        id: autoApprove
         if: steps.createAutoPR.outputs.pull-request-operation == 'created'
         uses: juliangruber/approve-pull-request-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
           NUMBER: ${{ steps.createAutoPR.outputs.pull-request-number }}
+      - name: printnumber
+        run: echo ${{NUMBER}} - ${{ steps.autoApprove.NUMBER }}
       - name: Enable Pull Request Automerge
         if: steps.createAutoPR.outputs.pull-request-operation == 'created'
         uses: peter-evans/enable-pull-request-automerge@v2
