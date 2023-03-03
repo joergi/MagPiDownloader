@@ -32,8 +32,8 @@ jobs:
           labels: "automerge"
       - name: Auto-merge Pull Request
         uses: pascalgn/automerge-action@v0.15.6
-        MERGE_READY_STATE: unstable
-        MERGE_DELETE_BRANCH: true
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
           MERGE_LABELS: "automerge"
+          MERGE_READY_STATE: unstable
+          MERGE_DELETE_BRANCH: true
