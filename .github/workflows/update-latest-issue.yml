@@ -21,7 +21,6 @@ jobs:
           git config --local user.email "1439809+joergi@users.noreply.github.com"
           git config --local user.name "Joergi via GitHub Actions"
           git commit -am "update to use latest version"
-#          git push --set-upstream origin update_issues
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
