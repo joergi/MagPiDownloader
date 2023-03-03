@@ -31,6 +31,10 @@ jobs:
           branch-suffix: timestamp
           delete-branch: true
           labels: "automerge"
+      - name: Wait for 3 minutes
+        uses: actions/wait-for-duration@v1
+        with:
+          seconds: 240
       - name: Auto-merge Pull Request
         uses: pascalgn/automerge-action@v0.15.0
         with:
