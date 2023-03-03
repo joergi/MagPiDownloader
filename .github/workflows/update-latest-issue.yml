@@ -22,6 +22,7 @@ jobs:
           git config --local user.name "Joergi via GitHub Actions"
           git commit -am "update to use latest version"
       - name: Create Pull Request
+        id: createAutoPR
         uses: peter-evans/create-pull-request@v4
         with:
           title: Automated Pull Request
@@ -30,14 +31,18 @@ jobs:
           branch-suffix: timestamp
           delete-branch: true
           labels: "automerge"
-      - name: Auto-merge Pull Request
-        uses: pascalgn/automerge-action@v0.15.6
+      - name: Auto approve
+        if: steps.createAutoPR.outputs.pull-request-operation == 'created'
+        uses: juliangruber/approve-pull-request-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
-          MERGE_LABELS: "automerge"
-          MERGE_READY_STATE: "unstable"
-          MERGE_DELETE_BRANCH: "true"
-          MERGE_FILTER_AUTHOR: "joergi"
-          MERGE_RETRIES: "6"
-          MERGE_RETRY_SLEEP: "30000"
-
+          NUMBER: ${{ steps.createAutoPR.outputs.pull-request-number }}
+      - name: Enable Pull Request Automerge
+        if: steps.createAutoPR.outputs.pull-request-operation == 'created'
+        uses: peter-evans/enable-pull-request-automerge@v2
+        with:
+          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+          pull-request-number: ${{ steps.createAutoPR.outputs.pull-request-number }}
+          merge-method: squash
+        env:
+          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
