@@ -2,9 +2,7 @@ name: Update latest issues
 
 on:
   push:
-    branches: [ main ]
   pull_request:
-    branches: [ main ]
 
 jobs:
   update-latest-issues:
