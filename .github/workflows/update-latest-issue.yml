@@ -35,5 +35,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
           MERGE_LABELS: "automerge"
-          MERGE_READY_STATE: unstable
-          MERGE_DELETE_BRANCH: true
+          MERGE_READY_STATE: "unstable"
+          MERGE_DELETE_BRANCH: "true"
+          MERGE_FILTER_AUTHOR: "joerg"
+          MERGE_RETRIES: "6"
+          MERGE_RETRY_SLEEP: "30000"
+
