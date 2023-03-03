@@ -9,9 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3.3.0
+      - name: gitCheckout
+        run: git checkout 100_update_latest_issue_automatically
       - name: update issues
         id: updateIssues
         run: bash ./sources-for-download/script-for-using-latest-version.sh
+
       - name: gitStatus
         run: git status
       - name: catIssue
@@ -25,5 +28,5 @@ jobs:
       - name: gitStatus
         run: git status
       - name: gitPush
-        run: git push origin 100_update_latest_issue_automatically 
+        run: git push
 
