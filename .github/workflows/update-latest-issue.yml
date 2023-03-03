@@ -40,18 +40,12 @@ jobs:
         with:
           github-token: ${{ secrets.MY_GITHUB_TOKEN }}
           number: ${{ steps.createAutoPR.outputs.pull-request-number }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
-          NUMBER: ${{ steps.createAutoPR.outputs.pull-request-number }}
       - name: printnumber
         run: echo ${{ steps.autoApprove.NUMBER }}
       - name: Enable Pull Request Automerge
         if: steps.createAutoPR.outputs.pull-request-operation == 'created'
         uses: peter-evans/enable-pull-request-automerge@v2
         with:
-          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+          token: ${{ secrets.MY_GITHUB_TOKEN }}
           pull-request-number: ${{ steps.autoApprove.NUMBER }}
-          merge-method: squash
-        env:
-          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
-          PULL_REQUEST_NUMBER: ${{ steps.autoApprove.NUMBER }}
+
