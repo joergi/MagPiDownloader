@@ -31,14 +31,12 @@ jobs:
           branch-suffix: timestamp
           delete-branch: true
           labels: "automerge"
-      - name: Wait for 3 minutes
-        uses: kibertoad/wait-action@1.0.1
-        with:
-          time: '240s'
       - name: Auto-merge Pull Request
         uses: pascalgn/automerge-action@v0.15.0
         with:
           method: merge
           delete-branch: true
+          merge_unstable: true
+          pull_request_author: "joergi"
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
