@@ -22,9 +22,12 @@ jobs:
         run: |
           git config --local user.email "1439809+joergi@users.noreply.github.com"
           git config --local user.name "Joergi via GitHub Actions"
-      - name: gitCommit
-        run: git commit -am "update use latest version"
-      - name: gitStatus
-        run: git status
-      - name: gitPush
-        run: git push --set-upstream origin update_issues
+          git commit -am "update to use latest version"
+          git push --set-upstream origin update_issues
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          title: Automated Pull Request
+          body: Automated pull request created by GitHub Actions
+          branch: update_issues
+          delete-branch: true
