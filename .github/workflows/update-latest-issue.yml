@@ -1,8 +1,8 @@
 name: Update latest issues
 
 on:
-  push:
-    branches: [ main ]
+  schedule:
+    - cron: '0 12 * * *'  # every day at noon
 
 jobs:
   update-latest-issues:
@@ -27,6 +27,7 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           title: new Issue ${{ env.ISSUE_NUMBER }} - Automated PR
+          commit-message: new Issue ${{ env.ISSUE_NUMBER }} - Automated PR
           token: ${{ secrets.MY_GITHUB_TOKEN }}
           body: Automated pull request for issue ${{ env.ISSUE_NUMBER }} created by GitHub Actions
           branch: automated_PR_for_update_issues
