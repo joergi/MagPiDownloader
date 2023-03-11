@@ -12,6 +12,12 @@ jobs:
       - name: update issues
         id: updateIssues
         run: bash ./sources-for-download/script-for-using-latest-version.sh
+      - uses: pCYSl5EDgo/cat@master
+        id: read_recent
+        with:
+          path: sources-for-download/regular-issues.txt
+      - run: |
+          echo "ISSUE_NUMBER=${{ steps.read_recent.outputs.text }}" >> $GITHUB_ENV
       - name: config git
         run: |
           git config --local user.email "1439809+joergi@users.noreply.github.com"
@@ -20,9 +26,9 @@ jobs:
         id: createAutoPR
         uses: peter-evans/create-pull-request@v4
         with:
-          title: Automated Pull Request
+          title: new Issue ${{ env.ISSUE_NUMBER }} - Automated PR
           token: ${{ secrets.MY_GITHUB_TOKEN }}
-          body: Automated pull request created by GitHub Actions
+          body: Automated pull request for issue ${{ env.ISSUE_NUMBER }} created by GitHub Actions
           branch: automated_PR_for_update_issues
           branch-suffix: timestamp
           base: main
