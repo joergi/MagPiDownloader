@@ -2,11 +2,7 @@ name: Update latest issues
 
 on:
   push:
-    branches:
-      - '**'
-  pull_request:
-    branches:
-      - '**'
+    branches: [ main ]
 
 jobs:
   update-latest-issues:
@@ -35,7 +31,7 @@ jobs:
       - name: debug1
         run: echo ${{ steps.createAutoPR.outputs.pull-request-number }}
       - name: debug2
-        run: echo ${{ steps.createAutoPR.outputs.pull-request-operation }}
+        run: echo ${{ steps.createAutoPR.outputs.pull-request-operation == 'created' }}
       - name: Auto approve
         id: autoApprove
         if: steps.createAutoPR.outputs.pull-request-operation == 'created'
