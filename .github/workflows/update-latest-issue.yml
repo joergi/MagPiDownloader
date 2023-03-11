@@ -33,7 +33,7 @@ jobs:
         if: steps.createAutoPR.outputs.pull-request-operation == 'created'
         uses: juliangruber/approve-pull-request-action@v2
         with:
-          github-token: ${{ secrets.MY_GITHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           number: ${{ steps.createAutoPR.outputs.pull-request-number }}
       - name: Enable Pull Request Automerge
         if: steps.createAutoPR.outputs.pull-request-operation == 'created'
