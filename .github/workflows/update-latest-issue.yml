@@ -22,6 +22,7 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           title: Automated Pull Request
+          token: ${{ secrets.MY_GITHUB_TOKEN }}
           body: Automated pull request created by GitHub Actions
           branch: automated_PR_for_update_issues
           branch-suffix: timestamp
