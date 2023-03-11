@@ -28,10 +28,6 @@ jobs:
           base: main
           delete-branch: true
           labels: "automerge"
-      - name: debug1
-        run: echo ${{ steps.createAutoPR.outputs.pull-request-number }}
-      - name: debug2
-        run: echo ${{ steps.createAutoPR.outputs.pull-request-operation == 'created' }}
       - name: Auto approve
         id: autoApprove
         if: steps.createAutoPR.outputs.pull-request-operation == 'created'
@@ -39,8 +35,6 @@ jobs:
         with:
           github-token: ${{ secrets.MY_GITHUB_TOKEN }}
           number: ${{ steps.createAutoPR.outputs.pull-request-number }}
-      - name: printnumber
-        run: echo ${{ steps.autoApprove.NUMBER }}
       - name: Enable Pull Request Automerge
         if: steps.createAutoPR.outputs.pull-request-operation == 'created'
         uses: peter-evans/enable-pull-request-automerge@v2
