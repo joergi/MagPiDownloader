@@ -49,7 +49,7 @@ jobs:
         uses: andstor/file-existence-action@v2.0.0
         with:
           files: "issues/MagPi01.pdf, issues/MagPi02.pdf, issues/MagPi${{ env.ISSUE_MINUS_SIX }}.pdf, issues/MagPi${{ env.ISSUE_MINUS_FIVE }}.pdf, issues/MagPi${{ env.ISSUE_MINUS_ONE }}.pdf, issues/MagPi${{ env.ISSUE_NUMBER }}.pdf"
-          allow_failure: false
+          fail: true
       - name: lslah issues
         run: Get-ChildItem -path D:\a\MagPiDownloader\MagPiDownloader\issues
       - name: File exists
@@ -87,7 +87,7 @@ jobs:
         uses: andstor/file-existence-action@v2.0.0
         with:
           files: "issues/MagPi01.pdf, issues/MagPi02.pdf, issues/MagPi${{ env.ISSUE_MINUS_SIX }}.pdf, issues/MagPi${{ env.ISSUE_MINUS_FIVE }}.pdf, issues/MagPi${{ env.ISSUE_MINUS_ONE }}.pdf, issues/MagPi${{ env.ISSUE_NUMBER }}.pdf"
-          allow_failure: false
+          fail: true
       - name: lslah
         run: ls -lah  issues/
       - name: File exists
@@ -124,7 +124,7 @@ jobs:
         uses: andstor/file-existence-action@v2.0.0
         with:
           files: "issues/MagPi01.pdf, issues/MagPi02.pdf, issues/MagPi${{ env.ISSUE_MINUS_SIX }}.pdf, issues/MagPi${{ env.ISSUE_MINUS_FIVE }}.pdf, issues/MagPi${{ env.ISSUE_MINUS_ONE }}.pdf, issues/MagPi${{ env.ISSUE_NUMBER }}.pdf"
-          allow_failure: false
+          fail: true
       - name: lslah
         run: ls -lah issues/
       - name: File exists
