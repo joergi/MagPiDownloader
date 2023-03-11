@@ -13,20 +13,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3.3.0
-      - name: ls_before_change
-        run: cat ./sources-for-download/regular-issues.txt
       - name: update issues
         id: updateIssues
         run: bash ./sources-for-download/script-for-using-latest-version.sh
-      - name: ls_after_change
-        run: cat ./sources-for-download/regular-issues.txt
       - name: config git
         run: |
           git config --local user.email "1439809+joergi@users.noreply.github.com"
           git config --local user.name "Joergi via GitHub Actions"
-#          git status
-#          git commit -am "update to use latest version"
-#          git status
       - name: Create Pull Request
         id: createAutoPR
         uses: peter-evans/create-pull-request@v4
@@ -39,6 +32,10 @@ jobs:
           base: main
           delete-branch: true
           labels: "automerge"
+      - name: debug1
+        run: echo ${{ steps.createAutoPR.outputs.pull-request-number }}
+      - name: debug2
+        run: echo ${{ steps.createAutoPR.outputs.pull-request-operation }}
       - name: Auto approve
         id: autoApprove
         if: steps.createAutoPR.outputs.pull-request-operation == 'created'
