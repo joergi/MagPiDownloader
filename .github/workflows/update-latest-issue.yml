@@ -36,6 +36,7 @@ jobs:
           body: Automated pull request created by GitHub Actions
           branch: automated_PR_for_update_issues
           branch-suffix: timestamp
+          base: main
           delete-branch: true
           labels: "automerge"
       - name: Auto approve
