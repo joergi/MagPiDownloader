@@ -2,6 +2,8 @@ name: Update latest issues
 
 on:
   push:
+    branches: [ main ]
+  pull_request:
 
 jobs:
   update-latest-issues:
