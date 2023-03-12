@@ -2,7 +2,7 @@ name: Update latest issues
 
 on:
   schedule:
-    - cron: '0 12 * * *'  # every day at noon
+    - cron: '0 0 40 * *'  # every day at noon
 
 jobs:
   update-latest-issues:
