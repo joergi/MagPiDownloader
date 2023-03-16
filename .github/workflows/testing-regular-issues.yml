@@ -15,7 +15,7 @@ jobs:
   regular-powershell:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v3.3.0
+      - uses: actions/checkout@v3.4.0
       - uses: pCYSl5EDgo/cat@master
         id: read_recent
         with:
@@ -59,7 +59,7 @@ jobs:
   regular-bash-linux:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3.3.0
+      - uses: actions/checkout@v3.4.0
       - uses: pCYSl5EDgo/cat@master
         id: read_recent
         with:
@@ -97,7 +97,7 @@ jobs:
   regular-bash-macos:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v3.3.0
+      - uses: actions/checkout@v3.4.0
       - uses: pCYSl5EDgo/cat@master
         id: read_recent
         with:
