@@ -9,7 +9,6 @@ https://magpi.raspberrypi.com/books/essentials-minecraft-v1/pdf
 https://magpi.raspberrypi.com/books/essentials-gpio-zero-v1/pdf
 https://magpi.raspberrypi.com/books/essentials-c-v1/pdf
 https://magpi.raspberrypi.com/books/projects-2/pdf
-https://magpi.raspberrypi.com/books/essentials_camera_v1/pdf
 https://magpi.raspberrypi.com/books/essentials-aiy-v1/pdf
 https://magpi.raspberrypi.com/books/projects-3/pdf
 https://magpi.raspberrypi.com/books/beginners-1/pdf
