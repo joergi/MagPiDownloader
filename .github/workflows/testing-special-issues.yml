@@ -21,7 +21,7 @@ jobs:
         shell: pwsh
         run: ./windows/magpi-special-issue-downloader.ps1
       - name: lslah issues
-        run: Get-ChildItem –path D:\a\MagPiDownloader\MagPiDownloader
+        run: Get-ChildItem –path D:\a\MagPiDownloader\MagPiDownloader\windows
       - name: "Check file existence Windows special"
         id: check_files
         uses: andstor/file-existence-action@v2.0.0
