@@ -14,27 +14,11 @@ The new rewritten code is now programmed by [Github user Jaykul](https://github.
 Download the normal issues:
   `./magpi-issue-downloader.ps1`
 
-~~Download a specific range of normal issues:
-  `./magpi-issue-downloader.ps1 -f 42 -l 52`~~
-  (not working yet, will be fixed soon)
+Download a specific range of normal issues:
+  `./magpi-issue-downloader.ps1 -f 42 -l 52`
 
 Download the special issues / books
   `./magpi-special-issue-downloader.ps1`
-
-Download the education issues
-  `./magpi-education-downloader.ps1`
-
-Télécharger les traductions françaises:
-  `./magpi-issue-downloader_french.ps1`
-
-Scarica i temi tradotti traduzione:
-  `./magpi-issue-downloader_french.ps1`
-
-Descargue la traducción española:
-  `./magpi-issue-downloader_spanish.ps1`
-
-הורד את הבעיות מתורגמות העבריות:
-  `./magpi-issue-downloader_hebrew.ps1`
 
 =======
 All the issues are downloadable for free on [https://www.raspberrypi.org/magpi/issues/](https://www.raspberrypi.org/magpi/issues/)
