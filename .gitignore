@@ -3,3 +3,4 @@
 issues/
 *.pdf
 .idea
+windows/downloader.ps1
