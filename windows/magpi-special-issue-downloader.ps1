@@ -28,10 +28,15 @@ if (!(Test-Path $OUTDIR -PathType Container)) {
 }
 
 $file = Join-Path $BASEDIR "../sources-for-download/special-issues.txt"
+Invoke-WebRequest -Uri https://raw.githubusercontent.com/joergi/downloader/main/windows/downloader.ps1 -OutFile downloader.ps1
+
 Get-Content $file | ForEach-Object {
-    $downloaderScript = Invoke-WebRequest https://raw.githubusercontent.com/joergi/downloader/main/windows/downloader.ps1 -UseBasicParsing
-    $downloaderScriptContent = $downloaderScript.Content
-    & pwsh -Command "& {$downloaderScriptContent} -downloadUrl $_ -outputDir $OUTDIR"
+    pwsh -Command ./downloader.ps1 -downloadUrl $_ -outputDir $OUTDIR
+
+#    $downloaderScript = Invoke-WebRequest https://raw.githubusercontent.com/joergi/downloader/main/windows/downloader.ps1 -UseBasicParsing
+#    $downloaderScriptContent = $downloaderScript.Content
+#    & pwsh -Command "& {$downloaderScriptContent -downloadUrl $_ -outputDir $OUTDIR}"
+#    pwsh -Command Invoke-WebRequest -Uri "https://raw.githubusercontent.com/joergi/downloader/main/windows/downloader.ps1 -downloadUrl $_ -outputDir $OUTDIR" -UseBasicParsing
 }
 Exit 0
 
