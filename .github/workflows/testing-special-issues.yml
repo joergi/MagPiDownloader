@@ -20,14 +20,14 @@ jobs:
         id: specialIssues
         shell: pwsh
         run: ./windows/magpi-special-issue-downloader.ps1
+      - name: lslah issues
+        run: Get-ChildItem –path D:\a\MagPiDownloader\MagPiDownloader\special_issues
       - name: "Check file existence Windows special"
         id: check_files
         uses: andstor/file-existence-action@v2.0.0
         with:
           files: "special_issues/Essentials_Games_v1.pdf"
           fail: true
-      - name: lslah issues
-        run: Get-ChildItem –path D:\a\MagPiDownloader\MagPiDownloader\special_issues
       - name: File exists
         if: steps.check_files.outputs.files_exists == 'false'
         run: exit 1
