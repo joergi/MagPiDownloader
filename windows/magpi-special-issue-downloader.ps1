@@ -31,7 +31,7 @@ $file = Join-Path $BASEDIR "../sources-for-download/special-issues.txt"
 Get-Content $file | ForEach-Object {
     $downloaderScript = Invoke-WebRequest https://raw.githubusercontent.com/joergi/downloader/main/windows/downloader.ps1 -UseBasicParsing
     $downloaderScriptContent = $downloaderScript.Content
-    & pwsh -Command "& {$downloaderScriptContent  } -downloadUrl  $_ -outputDir  $OUTDIR"
+    & pwsh -Command "& {$downloaderScriptContent} -downloadUrl $_ -outputDir $OUTDIR"
 }
 Exit 0
 
