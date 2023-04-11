@@ -1,4 +1,6 @@
 #!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
 
 # ------------------------------------------------------------------
 # based on the script Kenichi Nagai https://github.com/keni-n/

@@ -1,4 +1,6 @@
 #!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
 # ------------------------------------------------------------------
 # [Author] Kenichi Nagai https://github.com/keni-n/
 #          downloader for all MagPi latest issues
