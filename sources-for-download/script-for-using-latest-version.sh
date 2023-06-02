@@ -19,8 +19,8 @@ BASEDIR=$(dirname "$0")/..
 #printf -v page_url "$MAGPI_URL/issues"
 page_url=$(printf '%s\n' "$MAGPI_URL/issues")
 
-latest_issues=$(curl -sf "$page_url" | grep "Download PDF" | sed 's/^.*issues\///' | sed 's/\/pdf.*$//')
-echo "Latest Issues is " "$latest_issues"
+latest_issue=$(curl -sf "$page_url" | grep "Download PDF" | head -n 1 | sed 's/^.*issues\///' | sed 's/\/pdf.*$//')
+echo "Latest Issue is " "$latest_issue"
 
 file="$BASEDIR/sources-for-download/regular-issues.txt";
-echo "$latest_issues" >"$file"
+echo "$latest_issue" >"$file"
