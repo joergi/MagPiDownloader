@@ -1,6 +1,9 @@
 #!/bin/bash
-set -euo pipefail
+set -o errexit
+#set -o pipefail
+set -o nounset
 IFS=$'\n\t'
+
 # ------------------------------------------------------------------
 # based on the script Kenichi Nagai https://github.com/keni-n/
 # https://github.com/joergi/MagPiDownloader/blob/main/linux_mac/magpi-issue-downloader-latest.sh
