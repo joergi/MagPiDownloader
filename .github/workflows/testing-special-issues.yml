@@ -15,7 +15,7 @@ jobs:
   special-powershell:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v3.5.2
+      - uses: actions/checkout@v3.5.3
       - name: Download Special Issues windows
         id: specialIssues
         shell: pwsh
@@ -35,7 +35,7 @@ jobs:
   special-bash-linux:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3.5.2
+      - uses: actions/checkout@v3.5.3
       - name: Download Special Issues linux
         id: specialIssues
         run: bash ./linux_mac/magpi-special-issue-downloader.sh
@@ -44,7 +44,7 @@ jobs:
         id: check_files
         uses: andstor/file-existence-action@v2.0.0
         with:
-          files: "special_issues/MagPiSE1.pdf, special_issues/Projects_Book_v3.pdf, special_issues/Retro_Gaming.pdf, special_issues/C &amp; GUI Programming 2nd Edition.pdf"
+          files: "special_issues/MagPiSE1.pdf, special_issues/Projects_Book_v3.pdf, special_issues/Retro_Gaming.pdf, special_issues/C_and_GUI_Programming_2nd_Edition.pdf"
           fail: true
       - name: lslah
         run: ls -lah special_issues/
@@ -54,7 +54,7 @@ jobs:
   special-bash-macos:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v3.5.2
+      - uses: actions/checkout@v3.5.3
       - name: Download Special Issues Mac
         id: specialIssues
         run: bash ./linux_mac/magpi-special-issue-downloader.sh
@@ -63,7 +63,7 @@ jobs:
         id: check_files
         uses: andstor/file-existence-action@v2.0.0
         with:
-          files: "special_issues/MagPiSE1.pdf, special_issues/Projects_Book_v3.pdf, special_issues/Retro_Gaming.pdf, special_issues/C &amp; GUI Programming 2nd Edition.pdf"
+          files: "special_issues/MagPiSE1.pdf, special_issues/Projects_Book_v3.pdf, special_issues/Retro_Gaming.pdf, special_issues/C_and_GUI_Programming_2nd_Edition.pdf"
           fail: true
       - name: lslah
         run: ls -lah special_issues/

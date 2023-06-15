@@ -8,7 +8,7 @@ jobs:
   update-latest-issues:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3.5.2
+      - uses: actions/checkout@v3.5.3
       - name: update issues
         id: updateIssues
         run: bash ./sources-for-download/script-for-using-latest-version.sh
