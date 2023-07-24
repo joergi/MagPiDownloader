@@ -24,7 +24,7 @@ if [ ! -d "$OUTDIR" ]; then
  mkdir "$OUTDIR"
 fi
 
-downloadUrl="https://magpi.raspberrypi.com/issues/%02d/pdf"
+downloadUrl="https://magpi.raspberrypi.com/issues/%02d/pdf/download"
 
 file="$BASEDIR/sources-for-download/regular-issues.txt";
 recentIssue=$(cat "$file");
