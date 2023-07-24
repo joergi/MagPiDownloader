@@ -3,6 +3,7 @@ name: Update latest issues
 on:
   schedule:
     - cron: '0 12 * * *'  # every day at noon
+  workflow_dispatch: {}
 
 jobs:
   update-latest-issues:
