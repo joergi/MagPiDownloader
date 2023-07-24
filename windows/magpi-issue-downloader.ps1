@@ -32,7 +32,7 @@ if (!(Test-Path -Path $downloadDir)) {
 
 $errorCount = 0
 foreach($issue in $FirstIssue..$LastIssue) {
-    $uri = [uri]::new($baseurl,"{0:00}/pdf" -f $issue)
+    $uri = [uri]::new($baseurl,"{0:00}/pdf/download" -f $issue)
     Write-Verbose -Message "Downloading $uri"
     if (($link = (Invoke-WebRequest -UseBasicParsing $uri).Links.Where{ $_.class -eq "c-link" }.href)) {
         $uri = [uri]::new($baseurl, $link)
