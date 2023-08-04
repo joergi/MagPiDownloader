@@ -14,6 +14,7 @@ docker run -v $(pwd)/issues:/app/issues/ joergi/mag-pi-downloader
 download specific range first to last (example: from 1 to 2
 
 ```bash
+docker run -v $(pwd)/issues:/app/issues/ -u $(id -u):$(id -g) magpidownloader -f 1 -l 2
 docker run -v $(pwd)/issues:/app/issues/ joergi/mag-pi-downloader -f 1 -l 2
 ```
 
