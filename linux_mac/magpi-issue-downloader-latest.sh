@@ -1,7 +1,7 @@
 #!/bin/bash
-#set -o errexit
+set -o errexit
 #set -o pipefail
-#set -o nounset
+set -o nounset
 IFS=$'\n\t'
 
 # ------------------------------------------------------------------
