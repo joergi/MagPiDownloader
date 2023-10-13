@@ -24,12 +24,12 @@ echo "Latest Issue is " "$latest_issue"
 
 file="$BASEDIR/sources-for-download/regular-issues.txt";
 
-if bash ../linux_mac/magpi-issue-downloader.sh -f "$latest_issue" -l "$latest_issue"; then
+if bash "$BASEDIR"/linux_mac/magpi-issue-downloader.sh -f "$latest_issue" -l "$latest_issue"; then
   echo "Download was successful."
   echo "$latest_issue" > "$file"
 else
   echo "Download failed."
-  rm ../issues/MagPi_"$latest_issue".pdf
+  rm "$BASEDIR"/issues/MagPi_"$latest_issue".pdf
 fi
 
 exit 0
