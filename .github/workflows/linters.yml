@@ -37,14 +37,14 @@ jobs:
            VALIDATE_ALL_CODEBASE: true
            VALIDATE_BASH: true
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#  lint_docker:
-#    runs-on: ubuntu-latest
-#    name: Lint Docker Base
-#    steps:
-#      - uses: actions/checkout@v4.1.0
-#      - name: Super-Linter
-#        uses: docker://github/super-linter:v4
-#        env:
-#           VALIDATE_ALL_CODEBASE: true
-#           VALIDATE_DOCKER: true
-#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  lint_docker:
+    runs-on: ubuntu-latest
+    name: Lint Docker Base
+    steps:
+      - uses: actions/checkout@v4.1.0
+      - name: Super-Linter
+        uses: docker://github/super-linter:v4
+        env:
+           VALIDATE_ALL_CODEBASE: true
+           VALIDATE_DOCKER: true
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
