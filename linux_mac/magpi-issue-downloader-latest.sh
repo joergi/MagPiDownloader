@@ -23,9 +23,13 @@ latest_issues=$(curl -sf "$page_url" | grep "Get PDF" | head -n 1 | sed 's/^.*is
 echo "Latest Issues is " "$latest_issues"
 
 file="$BASEDIR/sources-for-download/regular-issues.txt";
-echo "$latest_issues" >"$file"
 
-# shellcheck disable=SC2046
-bash $(dirname "$0")/magpi-issue-downloader.sh -f "$latest_issues" -l "$latest_issues"
+if bash "$(dirname "$0")"/magpi-issue-downloader.sh -f "$latest_issues" -l "$latest_issues"; then
+  echo "Download was successful."
+  echo "$latest_issues" > "$file"
+else
+  echo "Download failed."
+  rm ../issues/MagPi_"$latest_issues".pdf
+fi
 
 exit 0

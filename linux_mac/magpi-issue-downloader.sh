@@ -17,6 +17,7 @@ IFS=$'\n\t'
 # VERSION=0.2.0
 # USAGE="Usage: bash magpi-issue-downloader.sh [-f firstissue] [-l lastissue]"
 
+echo "in magpi downloader"
 BASEDIR=$(dirname "$0")/..
 OUTDIR=$BASEDIR/issues
 
