@@ -24,9 +24,9 @@ FROM ubuntu:latest
 ARG UID=1000
 ARG GID=1000
 
-#RUN addgroup -g ${GID} myuser && adduser -u ${UID} -G myuser -D myuser
 RUN groupadd -g ${GID} myuser && useradd -u ${UID} -g myuser -m myuser
 RUN apt-get update && apt-get install -y curl wget
+
 # Create the 'issues' directory with desired ownership inside the container
 RUN mkdir -p /app/issues \
     && chown -R myuser:myuser /app/issues
