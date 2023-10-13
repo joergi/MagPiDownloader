@@ -6,7 +6,7 @@ Open your Powershell as Administrator (right click on PowerShell -> Open as Admi
 Enter: `set-executionpolicy remotesigned`
 and you are able to use the Powershell scripts.
 The original Windows scripts was programmed by [GitHub user Rubemlrm](https://github.com/Rubemlrm)
-The new rewritten code is now programmed by [Github user Jaykul](https://github.com/Jaykul)
+The new rewritten code is now programmed by [GitHub user Jaykul](https://github.com/Jaykul)
 
 
   `git clone https://github.com/joergi/MagPiDownloader.git`
