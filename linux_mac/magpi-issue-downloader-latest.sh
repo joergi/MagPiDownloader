@@ -24,7 +24,7 @@ echo "Latest Issues is " "$latest_issues"
 
 file="$BASEDIR/sources-for-download/regular-issues.txt";
 
-if bash $(dirname "$0")/magpi-issue-downloader.sh -f "$latest_issues" -l "$latest_issues"; then
+if bash "$(dirname "$0")"/magpi-issue-downloader.sh -f "$latest_issues" -l "$latest_issues"; then
   echo "Download was successful."
   echo "$latest_issues" > "$file"
 else
