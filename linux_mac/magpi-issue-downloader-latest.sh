@@ -1,7 +1,7 @@
 #!/bin/bash
-set -o errexit
+#set -o errexit
 #set -o pipefail
-set -o nounset
+#set -o nounset
 IFS=$'\n\t'
 
 # ------------------------------------------------------------------
@@ -23,9 +23,19 @@ latest_issues=$(curl -sf "$page_url" | grep "Get PDF" | head -n 1 | sed 's/^.*is
 echo "Latest Issues is " "$latest_issues"
 
 file="$BASEDIR/sources-for-download/regular-issues.txt";
-echo "$latest_issues" >"$file"
 
 # shellcheck disable=SC2046
 bash $(dirname "$0")/magpi-issue-downloader.sh -f "$latest_issues" -l "$latest_issues"
+
+# check filesize of downloaded file
+# if it wasn't working its 0
+filename=MagPi_"$latest_issues".pdf
+
+# shellcheck disable=SC2002
+filesize=$(cat ../issues/"$filename" | wc -c)
+
+if [[ $filesize -gt 0 ]] ; then
+  echo "$latest_issues" >"$file"
+fi
 
 exit 0
