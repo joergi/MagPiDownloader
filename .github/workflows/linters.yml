@@ -49,4 +49,4 @@ jobs:
            VALIDATE_DOCKER: true
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
            LINTER_RULES_PATH: "/.github/workflows"
-           ACTIONS_RUNNER_DEBUG: true
+           ACTIONS_RUNNER_DEBUG: false
