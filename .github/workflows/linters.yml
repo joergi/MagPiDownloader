@@ -48,3 +48,5 @@ jobs:
            VALIDATE_ALL_CODEBASE: true
            VALIDATE_DOCKER: true
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+           LINTER_RULES_PATH: "/.github/linters/"
+           ACTIONS_RUNNER_DEBUG: true
