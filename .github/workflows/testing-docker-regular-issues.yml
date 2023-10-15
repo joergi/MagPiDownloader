@@ -29,11 +29,7 @@ jobs:
           echo "ISSUE_MINUS_SIX=$((${{ steps.read_recent.outputs.text }}-6))" >> $GITHUB_ENV
 
       - name: mkdir issues
-        run: |
-          pwd
-          ls -lah
-          mkdir issues
-          ls -lah
+        run: mkdir issues
 
       - name: Download Issues with end limit
         id: normalIssuesWithEndLimit
