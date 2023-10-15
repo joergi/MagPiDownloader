@@ -37,15 +37,15 @@ jobs:
 
       - name: Download Issues with end limit
         id: normalIssuesWithEndLimit
-        run: docker run --privileged -u root -v $(pwd):/app/issues/ joergi/mag-pi-downloader -l 2
+        run: docker run --privileged -u root -v $(pwd)/issues:/app/issues/ joergi/mag-pi-downloader -l 2
 
       - name: Download Issues with start limit
         id: normalIssuesWithStartLimit
-        run: docker run -v $(pwd)/issues:/app/issues/ joergi/mag-pi-downloader -f $((${{ env.ISSUE_NUMBER }}-1))
+        run: docker run  --privileged -u root -v $(pwd)/issues:/app/issues/ joergi/mag-pi-downloader -f $((${{ env.ISSUE_NUMBER }}-1))
 
       - name: Download Issues with start and end limit
         id: normalIssuesWithRange
-        run: docker run -v $(pwd)/issues:/app/issues/ joergi/mag-pi-downloader -f ${{ env.ISSUE_MINUS_SIX }} -l ${{ env.ISSUE_MINUS_FIVE }}
+        run: docker run  --privileged -u root -v $(pwd)/issues:/app/issues/ joergi/mag-pi-downloader -f ${{ env.ISSUE_MINUS_SIX }} -l ${{ env.ISSUE_MINUS_FIVE }}
 
       # check if files are existing
       - name: "Check file existence Linux"
