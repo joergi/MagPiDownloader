@@ -27,28 +27,30 @@ jobs:
           echo "ISSUE_MINUS_ONE=$((${{ steps.read_recent.outputs.text }}-1))" >> $GITHUB_ENV
           echo "ISSUE_MINUS_FIVE=$((${{ steps.read_recent.outputs.text }}-5))" >> $GITHUB_ENV
           echo "ISSUE_MINUS_SIX=$((${{ steps.read_recent.outputs.text }}-6))" >> $GITHUB_ENV
+      - name: mkdir issues
+        run: mkdir issues
+
       - name: Download Issues with end limit
         id: normalIssuesWithEndLimit
-        run: bash ./linux_mac/magpi-issue-downloader.sh -l 2
-#
-#      - name: Download Issues with start limit
-#        id: normalIssuesWithStartLimit
-#        run: bash ./linux_mac/magpi-issue-downloader.sh -f $((${{ env.ISSUE_NUMBER }}-1))
-#
-#      - name: Download Issues with start and end limit
-#        id: normalIssuesWithRange
-#        run: bash ./linux_mac/magpi-issue-downloader.sh -f ${{ env.ISSUE_MINUS_SIX }} -l ${{ env.ISSUE_MINUS_FIVE }}
-#
-#
-#      # check if files are existing
-#      - name: "Check file existence Linux"
-#        id: check_files
-#        uses: andstor/file-existence-action@v2.0.0
-#        with:
-#          files: "issues/MagPi_1.pdf, issues/MagPi_2.pdf, issues/MagPi_${{ env.ISSUE_MINUS_SIX }}.pdf, issues/MagPi_${{ env.ISSUE_MINUS_FIVE }}.pdf, issues/MagPi_${{ env.ISSUE_MINUS_ONE }}.pdf, issues/MagPi_${{ env.ISSUE_NUMBER }}.pdf"
-#          fail: true
-#      - name: lslah
-#        run: ls -lah  issues/
-#      - name: File exists
-#        if: steps.check_files.outputs.files_exists == 'false'
-#        run: exit 1
+        run: docker run -v $(pwd)/issues:/app/issues/ joergi/mag-pi-downloader -l 2
+
+      - name: Download Issues with start limit
+        id: normalIssuesWithStartLimit
+        run: docker run -v $(pwd)/issues:/app/issues/ joergi/mag-pi-downloader -f $((${{ env.ISSUE_NUMBER }}-1))
+
+      - name: Download Issues with start and end limit
+        id: normalIssuesWithRange
+        run: docker run -v $(pwd)/issues:/app/issues/ joergi/mag-pi-downloader -f ${{ env.ISSUE_MINUS_SIX }} -l ${{ env.ISSUE_MINUS_FIVE }}
+
+      # check if files are existing
+      - name: "Check file existence Linux"
+        id: check_files
+        uses: andstor/file-existence-action@v2.0.0
+        with:
+          files: "issues/MagPi_1.pdf, issues/MagPi_2.pdf, issues/MagPi_${{ env.ISSUE_MINUS_SIX }}.pdf, issues/MagPi_${{ env.ISSUE_MINUS_FIVE }}.pdf, issues/MagPi_${{ env.ISSUE_MINUS_ONE }}.pdf, issues/MagPi_${{ env.ISSUE_NUMBER }}.pdf"
+          fail: true
+      - name: lslah
+        run: ls -lah  issues/
+      - name: File exists
+        if: steps.check_files.outputs.files_exists == 'false'
+        run: exit 1
