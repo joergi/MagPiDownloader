@@ -37,7 +37,7 @@ jobs:
 
       - name: Download Issues with end limit
         id: normalIssuesWithEndLimit
-        run: sudo docker run -v $(pwd):/app/issues/ joergi/mag-pi-downloader -l 2
+        run: sudo docker --privileged run -v $(pwd):/app/issues/ joergi/mag-pi-downloader -l 2
 
       - name: Download Issues with start limit
         id: normalIssuesWithStartLimit
