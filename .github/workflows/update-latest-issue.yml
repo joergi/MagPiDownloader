@@ -1,51 +1,51 @@
-#name: Update latest issues
-#
-#on:
-#  schedule:
-#    - cron: '0 12 * * *'  # every day at noon
-#  workflow_dispatch: {}
-#
-#jobs:
-#  update-latest-issues:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v4.1.0
-#      - name: update issues
-#        id: updateIssues
-#        run: bash ./sources-for-download/script-for-using-latest-version.sh
-#      - uses: pCYSl5EDgo/cat@master
-#        id: read_recent
-#        with:
-#          path: sources-for-download/regular-issues.txt
-#      - run: |
-#          echo "ISSUE_NUMBER=${{ steps.read_recent.outputs.text }}" >> $GITHUB_ENV
-#      - name: config git
-#        run: |
-#          git config --local user.email "1439809+joergi@users.noreply.github.com"
-#          git config --local user.name "Joergi via GitHub Actions"
-#      - name: Create Pull Request
-#        id: createAutoPR
-#        uses: peter-evans/create-pull-request@v5
-#        with:
-#          title: new Issue ${{ env.ISSUE_NUMBER }} - Automated PR
-#          commit-message: new Issue ${{ env.ISSUE_NUMBER }} - Automated PR
-#          token: ${{ secrets.MY_GITHUB_TOKEN }}
-#          body: Automated pull request for issue ${{ env.ISSUE_NUMBER }} created by GitHub Actions
-#          branch: automated_PR_for_update_issues
-#          branch-suffix: timestamp
-#          base: main
-#          delete-branch: true
-#          labels: "automerge"
-#      - name: Auto approve
-#        id: autoApprove
-#        if: steps.createAutoPR.outputs.pull-request-operation == 'created'
-#        uses: juliangruber/approve-pull-request-action@v2
-#        with:
-#          github-token: ${{ secrets.GITHUB_TOKEN }}
-#          number: ${{ steps.createAutoPR.outputs.pull-request-number }}
-#      - name: Enable Pull Request Automerge
-#        if: steps.createAutoPR.outputs.pull-request-operation == 'created'
-#        uses: peter-evans/enable-pull-request-automerge@v2
-#        with:
-#          token: ${{ secrets.MY_GITHUB_TOKEN }}
-#          pull-request-number: ${{ steps.createAutoPR.outputs.pull-request-number }}
+name: Update latest issues
+
+on:
+  schedule:
+    - cron: '0 12 * * *'  # every day at noon
+  workflow_dispatch: {}
+
+jobs:
+  update-latest-issues:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.1.0
+      - name: update issues
+        id: updateIssues
+        run: bash ./sources-for-download/script-for-using-latest-version.sh
+      - uses: pCYSl5EDgo/cat@master
+        id: read_recent
+        with:
+          path: sources-for-download/regular-issues.txt
+      - run: |
+          echo "ISSUE_NUMBER=${{ steps.read_recent.outputs.text }}" >> $GITHUB_ENV
+      - name: config git
+        run: |
+          git config --local user.email "1439809+joergi@users.noreply.github.com"
+          git config --local user.name "Joergi via GitHub Actions"
+      - name: Create Pull Request
+        id: createAutoPR
+        uses: peter-evans/create-pull-request@v5
+        with:
+          title: new Issue ${{ env.ISSUE_NUMBER }} - Automated PR
+          commit-message: new Issue ${{ env.ISSUE_NUMBER }} - Automated PR
+          token: ${{ secrets.MY_GITHUB_TOKEN }}
+          body: Automated pull request for issue ${{ env.ISSUE_NUMBER }} created by GitHub Actions
+          branch: automated_PR_for_update_issues
+          branch-suffix: timestamp
+          base: main
+          delete-branch: true
+          labels: "automerge"
+      - name: Auto approve
+        id: autoApprove
+        if: steps.createAutoPR.outputs.pull-request-operation == 'created'
+        uses: juliangruber/approve-pull-request-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          number: ${{ steps.createAutoPR.outputs.pull-request-number }}
+      - name: Enable Pull Request Automerge
+        if: steps.createAutoPR.outputs.pull-request-operation == 'created'
+        uses: peter-evans/enable-pull-request-automerge@v2
+        with:
+          token: ${{ secrets.MY_GITHUB_TOKEN }}
+          pull-request-number: ${{ steps.createAutoPR.outputs.pull-request-number }}
