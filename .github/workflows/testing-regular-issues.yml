@@ -22,10 +22,12 @@ jobs:
         with:
           path: sources-for-download/regular-issues.txt
       - run: |
-          echo "ISSUE_NUMBER=${{ steps.read_recent.outputs.text }}" >> $GITHUB_ENV
-          echo "ISSUE_MINUS_ONE=$((${{ steps.read_recent.outputs.text }}-1))" >> $GITHUB_ENV
-          echo "ISSUE_MINUS_FIVE=$((${{ steps.read_recent.outputs.text }}-5))" >> $GITHUB_ENV
-          echo "ISSUE_MINUS_SIX=$((${{ steps.read_recent.outputs.text }}-6))" >> $GITHUB_ENV
+          {
+            echo "ISSUE_NUMBER=\"${{ steps.read_recent.outputs.text }}\""
+            echo "ISSUE_MINUS_ONE=\"$((${{ steps.read_recent.outputs.text }}-1))\""
+            echo "ISSUE_MINUS_FIVE=\"$((${{ steps.read_recent.outputs.text }}-5))\""
+            echo "ISSUE_MINUS_SIX=\"$((${{ steps.read_recent.outputs.text }}-6))\""
+          } >> $GITHUB_ENV
         shell: bash
 
       - name: print out vars
@@ -66,10 +68,12 @@ jobs:
         with:
           path: sources-for-download/regular-issues.txt
       - run: |
-          echo "ISSUE_NUMBER=${{ steps.read_recent.outputs.text }}" >> $GITHUB_ENV
-          echo "ISSUE_MINUS_ONE=$((${{ steps.read_recent.outputs.text }}-1))" >> $GITHUB_ENV
-          echo "ISSUE_MINUS_FIVE=$((${{ steps.read_recent.outputs.text }}-5))" >> $GITHUB_ENV
-          echo "ISSUE_MINUS_SIX=$((${{ steps.read_recent.outputs.text }}-6))" >> $GITHUB_ENV
+          {
+            echo "ISSUE_NUMBER=\"${{ steps.read_recent.outputs.text }}\""
+            echo "ISSUE_MINUS_ONE=\"$((${{ steps.read_recent.outputs.text }}-1))\""
+            echo "ISSUE_MINUS_FIVE=\"$((${{ steps.read_recent.outputs.text }}-5))\""
+            echo "ISSUE_MINUS_SIX=\"$((${{ steps.read_recent.outputs.text }}-6))\""
+          } >> $GITHUB_ENV
       - name: Download Issues with end limit
         id: normalIssuesWithEndLimit
         run: bash ./linux_mac/magpi-issue-downloader.sh -l 2
@@ -104,11 +108,12 @@ jobs:
         with:
           path: sources-for-download/regular-issues.txt
       - run: |
-          echo "ISSUE_NUMBER=${{ steps.read_recent.outputs.text }}" >> $GITHUB_ENV
-          echo "ISSUE_MINUS_ONE=$((${{ steps.read_recent.outputs.text }}-1))" >> $GITHUB_ENV
-          echo "ISSUE_MINUS_FIVE=$((${{ steps.read_recent.outputs.text }}-5))" >> $GITHUB_ENV
-          echo "ISSUE_MINUS_SIX=$((${{ steps.read_recent.outputs.text }}-6))" >> $GITHUB_ENV
-
+          {
+            echo "ISSUE_NUMBER=\"${{ steps.read_recent.outputs.text }}\""
+            echo "ISSUE_MINUS_ONE=\"$((${{ steps.read_recent.outputs.text }}-1))\""
+            echo "ISSUE_MINUS_FIVE=\"$((${{ steps.read_recent.outputs.text }}-5))\""
+            echo "ISSUE_MINUS_SIX=\"$((${{ steps.read_recent.outputs.text }}-6))\""
+          } >> $GITHUB_ENV
       - name: Download Issues with end limit
         id: normalIssuesWithEndLimit
         run: bash ./linux_mac/magpi-issue-downloader.sh -l 2
