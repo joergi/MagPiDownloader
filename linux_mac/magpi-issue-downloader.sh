@@ -27,7 +27,13 @@ fi
 downloadUrl="https://magpi.raspberrypi.com/issues/%02d/pdf/download"
 
 file="$BASEDIR/sources-for-download/regular-issues.txt";
-recentIssue=$(cat "$file");
+
+if [ "${IS_DOCKER:-false}" == "true" ]; then
+    remote_url="https://raw.githubusercontent.com/joergi/MagPiDownloader/main/sources-for-download/regular-issues.txt"
+    recentIssue=$(curl -s "$remote_url")
+else
+    recentIssue=$(cat "$file")
+fi
 
 # workaround for a known limitation in bash 3.x: http://lists.gnu.org/archive/html/bug-bash/2006-01/msg00018.html
 # stackoverflow: https://stackoverflow.com/questions/32596123/why-source-command-doesnt-work-with-process-substitution-in-bash-3-2/32596626#32596626
