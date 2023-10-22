@@ -6,3 +6,4 @@ From the checked out path:
 docker build -f Dockerfile . -t magpidownloader
 ```
 
+For pushing it to a docker hub see [my blogpost](https://blog.joergi.io/docker/registry/howto/2020/10/04/pushing-container-to-DockerHub.html)
