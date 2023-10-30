@@ -18,6 +18,12 @@ docker run -v $(pwd)/issues:/app/issues/ -u $(id -u):$(id -g) magpidownloader -f
 docker run -v $(pwd)/issues:/app/issues/ joergi/mag-pi-downloader -f 1 -l 2
 ```
 
+To download special issues (books), the type argument can be used:
+
+```bash
+docker run -v $(pwd)/special_issues:/app/issues/ -u $(id -u):$(id -g) magpidownloader -t special
+docker run -v $(pwd)/special_issues:/app/issues/ joergi/mag-pi-downloader -t special
+```
 
 (unfortunately the issues folder is root, so you have to change it to your user)
 
