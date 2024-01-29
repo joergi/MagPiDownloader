@@ -46,7 +46,7 @@ jobs:
       # check if files are existing
       - name: "Check file existence Linux"
         id: check_files
-        uses: andstor/file-existence-action@v2.0.0
+        uses: andstor/file-existence-action@v3.0.0
         with:
           files: "issues/MagPi_1.pdf, issues/MagPi_2.pdf, issues/MagPi_${{ env.ISSUE_MINUS_SIX }}.pdf, issues/MagPi_${{ env.ISSUE_MINUS_FIVE }}.pdf, issues/MagPi_${{ env.ISSUE_MINUS_ONE }}.pdf, issues/MagPi_${{ env.ISSUE_NUMBER }}.pdf"
           fail: true

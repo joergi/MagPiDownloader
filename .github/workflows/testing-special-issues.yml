@@ -25,7 +25,7 @@ jobs:
         run: Get-ChildItem –path D:\a\MagPiDownloader\MagPiDownloader\windows\special_issues
       - name: "Check file existence Windows special"
         id: check_files
-        uses: andstor/file-existence-action@v2.0.0
+        uses: andstor/file-existence-action@v3.0.0
         with:
           files: "./windows/special_issues/Essentials_Games_v1.pdf"
           fail: true
@@ -43,7 +43,7 @@ jobs:
 
       - name: "Check file existence Linux special issues"
         id: check_files
-        uses: andstor/file-existence-action@v2.0.0
+        uses: andstor/file-existence-action@v3.0.0
         with:
           files: "special_issues/MagPiSE1.pdf, special_issues/Projects_Book_v3.pdf, special_issues/Retro_Gaming.pdf, special_issues/C_and_GUI_Programming_2nd_Edition.pdf"
           fail: true
@@ -62,7 +62,7 @@ jobs:
 # check if files are existing
       - name: "Check file existence MacOs special issues"
         id: check_files
-        uses: andstor/file-existence-action@v2.0.0
+        uses: andstor/file-existence-action@v3.0.0
         with:
           files: "special_issues/MagPiSE1.pdf, special_issues/Projects_Book_v3.pdf, special_issues/Retro_Gaming.pdf, special_issues/C_and_GUI_Programming_2nd_Edition.pdf"
           fail: true
