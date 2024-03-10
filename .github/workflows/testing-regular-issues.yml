@@ -49,7 +49,7 @@ jobs:
         id: check_files
         uses: andstor/file-existence-action@v3.0.0
         with:
-          files: "issues/MagPi01.pdf, issues/MagPi02.pdf, issues/MagPi${{ env.ISSUE_MINUS_SIX }}.pdf, issues/MagPi${{ env.ISSUE_MINUS_FIVE }}.pdf, issues/MagPi${{ env.ISSUE_MINUS_ONE }}.pdf, issues/MagPi${{ env.ISSUE_NUMBER }}.pdf"
+          files: "issues/MagPi_1.pdf, issues/MagPi_2.pdf, issues/MagPi_${{ env.ISSUE_MINUS_SIX }}.pdf, issues/MagPi_${{ env.ISSUE_MINUS_FIVE }}.pdf, issues/MagPi_${{ env.ISSUE_MINUS_ONE }}.pdf, issues/MagPi_${{ env.ISSUE_NUMBER }}.pdf"
           fail: true
       - name: lslah issues
         run: Get-ChildItem -path D:\a\MagPiDownloader\MagPiDownloader\issues

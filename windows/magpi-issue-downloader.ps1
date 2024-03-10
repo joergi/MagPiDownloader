@@ -39,8 +39,7 @@ foreach($issue in $FirstIssue..$LastIssue) {
         try {
             Write-Information "Downloading $uri"
             Write-Output "Downloading $uri"
-            Invoke-WebRequest $uri -OutFile (Join-Path $downloadDir $uri.Segments[-1]) -ErrorAction Stop
-            Write-Verbose -Message "Downloaded $uri"
+            Invoke-WebRequest $uri -OutFile (Join-Path $downloadDir "MagPi_$issue.pdf") -ErrorAction Stop
         } catch {
             Write-Warning "Failed downloading $uri"
             Get-Error | Out-String | Write-Verbose -Verbose
