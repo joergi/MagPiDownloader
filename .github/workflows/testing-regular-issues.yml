@@ -72,17 +72,17 @@ jobs:
           echo "ISSUE_MINUS_SIX=$((${{ steps.read_recent.outputs.text }}-6))" >> $GITHUB_ENV
       - name: Download Issues with end limit
         id: normalIssuesWithEndLimit
-        shell: pwsh
+        shell: bash
         run: bash ./linux_mac/magpi-issue-downloader.sh -l 2
 
       - name: Download Issues with start limit
         id: normalIssuesWithStartLimit
-        shell: pwsh
+        shell: bash
         run: bash ./linux_mac/magpi-issue-downloader.sh -f $((${{ env.ISSUE_NUMBER }}-1))
 
       - name: Download Issues with start and end limit
         id: normalIssuesWithRange
-        shell: pwsh
+        shell: bash
         run: bash ./linux_mac/magpi-issue-downloader.sh -f ${{ env.ISSUE_MINUS_SIX }} -l ${{ env.ISSUE_MINUS_FIVE }}
 
       # check if files are existing
@@ -93,7 +93,7 @@ jobs:
           files: "issues/MagPi_1.pdf, issues/MagPi_2.pdf, issues/MagPi_${{ env.ISSUE_MINUS_SIX }}.pdf, issues/MagPi_${{ env.ISSUE_MINUS_FIVE }}.pdf, issues/MagPi_${{ env.ISSUE_MINUS_ONE }}.pdf, issues/MagPi_${{ env.ISSUE_NUMBER }}.pdf"
           fail: true
       - name: lslah
-        shell: pwsh
+        shell: bash
         run: ls -lah  issues/
       - name: File exists
         if: steps.check_files.outputs.files_exists == 'false'
