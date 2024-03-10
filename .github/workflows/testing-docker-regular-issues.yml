@@ -43,6 +43,9 @@ jobs:
         id: normalIssuesWithRange
         run: docker run  --privileged -u root -v $(pwd)/issues:/app/issues/ joergi/mag-pi-downloader -f ${{ env.ISSUE_MINUS_SIX }} -l ${{ env.ISSUE_MINUS_FIVE }}
 
+      - name: lslah
+        run: ls -lah issues/
+
       # check if files are existing
       - name: "Check file existence Linux"
         id: check_files
@@ -50,8 +53,7 @@ jobs:
         with:
           files: "issues/MagPi_1.pdf, issues/MagPi_2.pdf, issues/MagPi_${{ env.ISSUE_MINUS_SIX }}.pdf, issues/MagPi_${{ env.ISSUE_MINUS_FIVE }}.pdf, issues/MagPi_${{ env.ISSUE_MINUS_ONE }}.pdf, issues/MagPi_${{ env.ISSUE_NUMBER }}.pdf"
           fail: true
-      - name: lslah
-        run: ls -lah issues/
+
       - name: File exists
         if: steps.check_files.outputs.files_exists == 'false'
         run: exit 1
