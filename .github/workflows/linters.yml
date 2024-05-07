@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Lint Powershell Code Base
     steps:
-      - uses: actions/checkout@v4.1.4
+      - uses: actions/checkout@v4.1.5
       - name: Super-Linter
         uses: docker://github/super-linter:v4
         env:
@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Lint Bash Base
     steps:
-      - uses: actions/checkout@v4.1.4
+      - uses: actions/checkout@v4.1.5
       - name: Super-Linter
         uses: docker://github/super-linter:v4
         env:
@@ -41,7 +41,7 @@ jobs:
 #    runs-on: ubuntu-latest
 #    name: Lint Docker Base
 #    steps:
-#      - uses: actions/checkout@v4.1.4
+#      - uses: actions/checkout@v4.1.5
 #      - name: Super-Linter
 #        uses: docker://github/super-linter:v4
 #        env:
