@@ -21,19 +21,22 @@ jobs:
       pull-requests: write
     steps:
       - uses: actions/checkout@v4.1.4
+
       - name: find_branch_name
         id: find_branch_name
         run: |
           gh repo view --json nameWithOwner,defaultBranchRef | jq -r '.defaultBranchRef.name'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: echo branch name
         run: echo ${{ steps.find_branch_name.outputs }}
+
       - name: Find Pull Request
         uses: juliangruber/find-pull-request-action@v1
         id: find-pull-request
         with:
-          branch: my-branch-name
+          branch: ${{ steps.find_branch_name.outputs }}
       - run: echo "Pull Request ${number} "
         env:
           number: ${{ steps.find-pull-request.outputs.number }}
