@@ -29,19 +29,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: echo branch name
-        run: echo ${{ steps.find_branch_name.outputs.text }}
-
       - name: Find Pull Request
         uses: juliangruber/find-pull-request-action@v1
         id: find-pull-request
         with:
           branch: ${{ steps.find_branch_name.outputs.text }}
-
-
-      - run: echo "Pull Request ${number} "
-        env:
-          number: ${{ steps.find-pull-request.outputs.number }}
 
       - name: Auto approve
         id: autoApprove
@@ -49,7 +41,6 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           number: ${{ steps.find-pull-request.outputs.number }}
-
 
       - name: Enable auto-merge
         run: |
