@@ -20,6 +20,7 @@ jobs:
       contents: write
       pull-requests: write
     steps:
+      - uses: actions/checkout@v4.1.4
       - name: find_branch_name
         id: find_branch_name
         run: |
