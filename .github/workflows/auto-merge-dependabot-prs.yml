@@ -24,6 +24,8 @@ jobs:
         id: find_branch_name
         run: |
           gh repo view --json nameWithOwner,defaultBranchRef | jq -r '.defaultBranchRef.name'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: echo branch name
         run: echo ${{ steps.find_branch_name.outputs }}
       - name: Find Pull Request
