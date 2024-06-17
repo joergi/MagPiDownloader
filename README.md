@@ -12,7 +12,7 @@ This project should save you time, and let you download all scripts together.
 
 ## Windows user: [here is your tuturial](windows/)
 
-## Docker - needs to be fixed - issue [[89](https://github.com/joergi/MagPiDownloader/issues/89), [26](https://github.com/joergi/MagPiDownloader/issues/26), [25](https://github.com/joergi/MagPiDownloader/issues/25), [42](https://github.com/joergi/MagPiDownloader/issues/42)]
+## Docker - needs to be fixed - issue [[25](https://github.com/joergi/MagPiDownloader/issues/25)]
 
 ---
 # This project was done by this lovely people, thank you!!!
