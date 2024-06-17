@@ -16,7 +16,7 @@ jobs:
   regular-powershell:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4.1.6
+      - uses: actions/checkout@v4.1.7
       - uses: pCYSl5EDgo/cat@master
         id: read_recent
         with:
