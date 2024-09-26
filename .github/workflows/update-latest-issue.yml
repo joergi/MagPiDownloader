@@ -25,7 +25,7 @@ jobs:
           git config --local user.name "Joergi via GitHub Actions"
       - name: Create Pull Request
         id: createAutoPR
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v7
         with:
           title: new Issue ${{ env.ISSUE_NUMBER }} - Automated PR
           commit-message: new Issue ${{ env.ISSUE_NUMBER }} - Automated PR
