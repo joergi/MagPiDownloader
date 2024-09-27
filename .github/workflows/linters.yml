@@ -19,9 +19,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Lint Powershell Code Base
     steps:
-      - uses: actions/checkout@v4.2.0
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - name: Super-Linter
-        uses: docker://github/super-linter:v4
+        uses: docker://index.docker.io/github/super-linter@sha256:249a4426fdf5b7b6fdd3658229b68ec9e02f2f417ea911f3ffdcd97edea1015a # v4
         env:
            VALIDATE_ALL_CODEBASE: true
            VALIDATE_POWERSHELL: true
@@ -30,9 +30,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Lint Bash Base
     steps:
-      - uses: actions/checkout@v4.2.0
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - name: Super-Linter
-        uses: docker://github/super-linter:v4
+        uses: docker://index.docker.io/github/super-linter@sha256:249a4426fdf5b7b6fdd3658229b68ec9e02f2f417ea911f3ffdcd97edea1015a # v4
         env:
            VALIDATE_ALL_CODEBASE: true
            VALIDATE_BASH: true
@@ -41,7 +41,7 @@ jobs:
 #    runs-on: ubuntu-latest
 #    name: Lint Docker Base
 #    steps:
-#      - uses: actions/checkout@v4.2.0
+#      - uses: actions/checkout@v4.1.7
 #      - name: Super-Linter
 #        uses: docker://github/super-linter:v4
 #        env:

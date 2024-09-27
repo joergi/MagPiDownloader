@@ -16,7 +16,7 @@ jobs:
   regular-powershell:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4.2.0
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - uses: pCYSl5EDgo/cat@master
         id: read_recent
         with:
@@ -60,7 +60,7 @@ jobs:
   regular-bash-linux:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.2.0
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - uses: pCYSl5EDgo/cat@master
         id: read_recent
         with:
@@ -85,7 +85,7 @@ jobs:
       # check if files are existing
       - name: "Check file existence Linux"
         id: check_files
-        uses: andstor/file-existence-action@v3.0.0
+        uses: andstor/file-existence-action@076e0072799f4942c8bc574a82233e1e4d13e9d6 # v3.0.0
         with:
           files: "issues/MagPi_1.pdf, issues/MagPi_2.pdf, issues/MagPi_${{ env.ISSUE_MINUS_SIX }}.pdf, issues/MagPi_${{ env.ISSUE_MINUS_FIVE }}.pdf, issues/MagPi_${{ env.ISSUE_MINUS_ONE }}.pdf, issues/MagPi_${{ env.ISSUE_NUMBER }}.pdf"
           fail: true
@@ -98,7 +98,7 @@ jobs:
   regular-bash-macos:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v4.2.0
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - uses: pCYSl5EDgo/cat@master
         id: read_recent
         with:
@@ -122,7 +122,7 @@ jobs:
       # check if files are existing
       - name: "Check file existence MacOs"
         id: check_files
-        uses: andstor/file-existence-action@v3.0.0
+        uses: andstor/file-existence-action@076e0072799f4942c8bc574a82233e1e4d13e9d6 # v3.0.0
         with:
           files: "issues/MagPi_1.pdf, issues/MagPi_2.pdf, issues/MagPi_${{ env.ISSUE_MINUS_SIX }}.pdf, issues/MagPi_${{ env.ISSUE_MINUS_FIVE }}.pdf, issues/MagPi_${{ env.ISSUE_MINUS_ONE }}.pdf, issues/MagPi_${{ env.ISSUE_NUMBER }}.pdf"
           fail: true
