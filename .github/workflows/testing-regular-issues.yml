@@ -99,39 +99,3 @@ jobs:
         if: steps.check_files.outputs.files_exists == 'false'
         run: exit 1
 
-#  regular-bash-macos:
-#    runs-on: macos-latest
-#    steps:
-#      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
-#      - uses: pCYSl5EDgo/cat@master
-#        id: read_recent
-#        with:
-#          path: sources-for-download/regular-issues.txt
-#      - run: |
-#          echo "ISSUE_NUMBER=${{ steps.read_recent.outputs.text }}" >> $GITHUB_ENV
-#          echo "ISSUE_MINUS_ONE=$((${{ steps.read_recent.outputs.text }}-1))" >> $GITHUB_ENV
-#          echo "ISSUE_MINUS_FIVE=$((${{ steps.read_recent.outputs.text }}-5))" >> $GITHUB_ENV
-#          echo "ISSUE_MINUS_SIX=$((${{ steps.read_recent.outputs.text }}-6))" >> $GITHUB_ENV
-#
-#      - name: Download Issues with end limit
-#        id: normalIssuesWithEndLimit
-#        run: bash ./linux_mac/magpi-issue-downloader.sh -l 2
-#
-#      - name: Download Issues with start limit
-#        id: normalIssuesWithStartLimit
-#        run: bash ./linux_mac/magpi-issue-downloader.sh -f $((${{ env.ISSUE_NUMBER }}-1))
-#      - name: Download Issues with start and end limit
-#        id: normalIssuesWithRange
-#        run: bash ./linux_mac/magpi-issue-downloader.sh -f ${{ env.ISSUE_MINUS_SIX }} -l ${{ env.ISSUE_MINUS_FIVE }}
-#      # check if files are existing
-#      - name: "Check file existence MacOs"
-#        id: check_files
-#        uses: andstor/file-existence-action@076e0072799f4942c8bc574a82233e1e4d13e9d6 # v3.0.0
-#        with:
-#          files: "issues/MagPi_1.pdf, issues/MagPi_2.pdf, issues/MagPi_${{ env.ISSUE_MINUS_SIX }}.pdf, issues/MagPi_${{ env.ISSUE_MINUS_FIVE }}.pdf, issues/MagPi_${{ env.ISSUE_MINUS_ONE }}.pdf, issues/MagPi_${{ env.ISSUE_NUMBER }}.pdf"
-#          fail: true
-#      - name: lslah
-#        run: ls -lah issues/
-#      - name: File exists
-#        if: steps.check_files.outputs.files_exists == 'false'
-#        run: exit 1
