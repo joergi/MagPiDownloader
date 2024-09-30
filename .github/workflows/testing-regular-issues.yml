@@ -51,31 +51,31 @@ jobs:
         id: printOutVars
         shell: bash
         run: env
-      - name: Download Issues with end limit
-        id: normalIssuesWithEndLimit
-        run: ./${{ env.OS_PATH }}/magpi-issue-downloader.${{ env.OS_FILE_EXTENSION }} -l 2
-        shell: ${{ env.OS_SHELL }}
-
-      - name: Download Issues with start limit
-        id: normalIssuesWithStartLimit
-        run: ./${{ env.OS_PATH }}/magpi-issue-downloader.${{ env.OS_FILE_EXTENSION }} -f $((${{ env.ISSUE_NUMBER }}-1))
-        shell: ${{ env.OS_SHELL }}
-
-      - name: Download Issues with start and end limit
-        id: normalIssuesWithRange
-        run: ./${{ env.OS_PATH }}/magpi-issue-downloader.${{ env.OS_FILE_EXTENSION }} -f ${{ env.ISSUE_MINUS_SIX }} -l ${{ env.ISSUE_MINUS_FIVE }}
-        shell: ${{ env.OS_SHELL }}
-
-      # check if files are existing
-      - name: "Check file existence"
-        id: check_files
-        uses: andstor/file-existence-action@076e0072799f4942c8bc574a82233e1e4d13e9d6 # v3.0.0
-        with:
-          files: "issues/MagPi_1.pdf, issues/MagPi_2.pdf, issues/MagPi_${{ env.ISSUE_MINUS_SIX }}.pdf, issues/MagPi_${{ env.ISSUE_MINUS_FIVE }}.pdf, issues/MagPi_${{ env.ISSUE_MINUS_ONE }}.pdf, issues/MagPi_${{ env.ISSUE_NUMBER }}.pdf"
-          fail: true
-      - name: lslah
-        run: ls -lah  issues/
-      - name: File exists
-        if: steps.check_files.outputs.files_exists == 'false'
-        run: exit 1
-
+#      - name: Download Issues with end limit
+#        id: normalIssuesWithEndLimit
+#        run: ./${{ env.OS_PATH }}/magpi-issue-downloader.${{ env.OS_FILE_EXTENSION }} -l 2
+#        shell: ${{ env.OS_SHELL }}
+#
+#      - name: Download Issues with start limit
+#        id: normalIssuesWithStartLimit
+#        run: ./${{ env.OS_PATH }}/magpi-issue-downloader.${{ env.OS_FILE_EXTENSION }} -f $((${{ env.ISSUE_NUMBER }}-1))
+#        shell: ${{ env.OS_SHELL }}
+#
+#      - name: Download Issues with start and end limit
+#        id: normalIssuesWithRange
+#        run: ./${{ env.OS_PATH }}/magpi-issue-downloader.${{ env.OS_FILE_EXTENSION }} -f ${{ env.ISSUE_MINUS_SIX }} -l ${{ env.ISSUE_MINUS_FIVE }}
+#        shell: ${{ env.OS_SHELL }}
+#
+#      # check if files are existing
+#      - name: "Check file existence"
+#        id: check_files
+#        uses: andstor/file-existence-action@076e0072799f4942c8bc574a82233e1e4d13e9d6 # v3.0.0
+#        with:
+#          files: "issues/MagPi_1.pdf, issues/MagPi_2.pdf, issues/MagPi_${{ env.ISSUE_MINUS_SIX }}.pdf, issues/MagPi_${{ env.ISSUE_MINUS_FIVE }}.pdf, issues/MagPi_${{ env.ISSUE_MINUS_ONE }}.pdf, issues/MagPi_${{ env.ISSUE_NUMBER }}.pdf"
+#          fail: true
+#      - name: lslah
+#        run: ls -lah  issues/
+#      - name: File exists
+#        if: steps.check_files.outputs.files_exists == 'false'
+#        run: exit 1
+#
