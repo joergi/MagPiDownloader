@@ -57,7 +57,8 @@ jobs:
       - name: Download Special Issues linux
         id: specialIssues
         run: ./${{ env.OS_PATH }}/magpi-special-issue-downloader.${{ env.OS_FILE_EXTENSION }}
-
+      - name: lslah
+        run: ls -lah
       - name: "Check file existence Linux special issues"
         id: check_files
         uses: andstor/file-existence-action@076e0072799f4942c8bc574a82233e1e4d13e9d6 # v3.0.0
