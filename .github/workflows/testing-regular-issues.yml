@@ -55,13 +55,13 @@ jobs:
       - name: test echo
         run: |
           echo ${{ env.OS_PATH }}
-          echo ${{ env.OS_SHELL }}
+#          echo ${{ env.OS_SHELL }}
           echo ${{ env.OS_FILE_EXTENSION }}
         shell: bash
       - name: Download Issues with end limit
         id: normalIssuesWithEndLimit
         run: ./${{ env.OS_PATH }}/magpi-issue-downloader.${{ env.OS_FILE_EXTENSION }} -l 2
-#        shell: ${{ env.OS_SHELL }}
+        shell: pwsh
 
       - name: Download Issues with start limit
         id: normalIssuesWithStartLimit
