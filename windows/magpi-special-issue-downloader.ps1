@@ -21,7 +21,8 @@
 # USAGE="Usage: pwshl magpi-special-issue-downloader.ps1"
 
 $BASEDIR = Split-Path $MyInvocation.MyCommand.Path -Parent
-$OUTDIR = Join-Path $BASEDIR "special_issues"
+$PARENTDIR = Split-Path $BASEDIR -Parent
+$OUTDIR = Join-Path $PARENTDIR "special_issues"
 
 if (!(Test-Path $OUTDIR -PathType Container)) {
     New-Item -ItemType Directory -Path $OUTDIR | Out-Null

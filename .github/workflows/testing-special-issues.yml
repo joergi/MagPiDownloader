@@ -1,5 +1,3 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Testing special issues
 
 # Controls when the action will run. Triggers the workflow on push or pull request
@@ -13,39 +11,32 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  special-powershell:
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
-      - name: Download Special Issues windows
-        id: specialIssues
-        shell: pwsh
-        run: ./windows/magpi-special-issue-downloader.ps1
-      - name: lslah issues
-        run: Get-ChildItem –path D:\a\MagPiDownloader\MagPiDownloader\windows\special_issues
-      - name: "Check file existence Windows special"
-        id: check_files
-        uses: andstor/file-existence-action@v3.0.0
-        with:
-          files: "./windows/special_issues/Essentials_Games_v1.pdf"
-          fail: true
-      - name: File exists
-        if: steps.check_files.outputs.files_exists == 'false'
-        run: exit 1
-
   special-issues:
     strategy:
       matrix:
-        os: [ macos, ubuntu ]
+        os: [ macos, ubuntu, windows]
       fail-fast: false # Allows to see results from other combinations
     runs-on: ${{ matrix.os }}-latest
     steps:
       - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+      - name: Set OS-specific variables for Windows
+        if: matrix.os == 'windows'
+        run: |
+          echo "OS_PATH=windows" >> $GITHUB_ENV
+          echo "OS_FILE_EXTENSION=ps1" >> $GITHUB_ENV
+        shell: bash
+
+      - name: Set OS-specific variables for macOS and Ubuntu
+        if: matrix.os != 'windows'
+        run: |
+          echo "OS_PATH=linux_mac" >> $GITHUB_ENV
+          echo "OS_FILE_EXTENSION=sh" >> $GITHUB_ENV
+        shell: bash
       - name: Download Special Issues linux
         id: specialIssues
-        run: bash ./linux_mac/magpi-special-issue-downloader.sh
+        run: ./${{ env.OS_PATH }}/magpi-special-issue-downloader.${{ env.OS_FILE_EXTENSION }}
 
-      - name: "Check file existence Linux special issues"
+      - name: "Check file existence for special issues"
         id: check_files
         uses: andstor/file-existence-action@076e0072799f4942c8bc574a82233e1e4d13e9d6 # v3.0.0
         with:
@@ -53,6 +44,7 @@ jobs:
           fail: true
       - name: lslah
         run: ls -lah special_issues/
+        shell: bash
       - name: File exists
         if: steps.check_files.outputs.files_exists == 'false'
         run: exit 1
