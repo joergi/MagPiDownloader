@@ -40,7 +40,7 @@ jobs:
           echo "OS_FILE_EXTENSION=ps" >> $GITHUB_ENV
           echo "OS_SHELL=pwsh" >> $GITHUB_ENV
       - name: some NON Windows specifc variables
-        if: !contains(matrix.os, 'windows')
+        if: contains(matrix.os, 'ubuntu') || contains(matrix.os, 'macos')
         shell: bash
         run: |
           echo "in NON windows if"
