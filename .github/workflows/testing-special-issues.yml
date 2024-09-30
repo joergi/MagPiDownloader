@@ -16,7 +16,7 @@ jobs:
   special-powershell:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4.1.7
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - name: Download Special Issues windows
         id: specialIssues
         shell: pwsh
@@ -33,36 +33,21 @@ jobs:
         if: steps.check_files.outputs.files_exists == 'false'
         run: exit 1
 
-  special-bash-linux:
-    runs-on: ubuntu-latest
+  special-issues:
+    strategy:
+      matrix:
+        os: [ macos, ubuntu ]
+      fail-fast: false # Allows to see results from other combinations
+    runs-on: ${{ matrix.os }}-latest
     steps:
-      - uses: actions/checkout@v4.1.7
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - name: Download Special Issues linux
         id: specialIssues
         run: bash ./linux_mac/magpi-special-issue-downloader.sh
 
       - name: "Check file existence Linux special issues"
         id: check_files
-        uses: andstor/file-existence-action@v3.0.0
-        with:
-          files: "special_issues/MagPiSE1.pdf, special_issues/Projects_Book_v3.pdf, special_issues/Retro_Gaming.pdf, special_issues/C_and_GUI_Programming_2nd_Edition.pdf"
-          fail: true
-      - name: lslah
-        run: ls -lah special_issues/
-      - name: File exists
-        if: steps.check_files.outputs.files_exists == 'false'
-        run: exit 1
-  special-bash-macos:
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v4.1.7
-      - name: Download Special Issues Mac
-        id: specialIssues
-        run: bash ./linux_mac/magpi-special-issue-downloader.sh
-# check if files are existing
-      - name: "Check file existence MacOs special issues"
-        id: check_files
-        uses: andstor/file-existence-action@v3.0.0
+        uses: andstor/file-existence-action@076e0072799f4942c8bc574a82233e1e4d13e9d6 # v3.0.0
         with:
           files: "special_issues/MagPiSE1.pdf, special_issues/Projects_Book_v3.pdf, special_issues/Retro_Gaming.pdf, special_issues/C_and_GUI_Programming_2nd_Edition.pdf"
           fail: true
