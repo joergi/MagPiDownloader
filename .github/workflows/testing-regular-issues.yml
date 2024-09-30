@@ -34,38 +34,36 @@ jobs:
       - name: some Windows specifc variables
         if: contains(matrix.os, 'windows')
         shell: bash
-        run: |-
+        run: |
           echo "in windows if"
           echo "OS_PATH=windows" >> $GITHUB_ENV
-          echo "OS_FILE_EXTENTION=ps" >> $GITHUB_ENV
+          echo "OS_FILE_EXTENSION=ps" >> $GITHUB_ENV
           echo "OS_SHELL=pwsh" >> $GITHUB_ENV
-
       - name: some NON Windows specifc variables
         if: !contains(matrix.os, 'windows')
         shell: bash
-        run: |-
+        run: |
           echo "in NON windows if"
           echo "OS_PATH=linux_mac" >> $GITHUB_ENV
-          echo "OS_FILE_EXTENTION=sh" >> $GITHUB_ENV
+          echo "OS_FILE_EXTENSION=sh" >> $GITHUB_ENV
           echo "OS_SHELL=bash" >> $GITHUB_ENV
-
       - name: print out vars
         id: printOutVars
         shell: ${{ env.OS_SHELL }}
         run: env
       - name: Download Issues with end limit
         id: normalIssuesWithEndLimit
-        run: ./${{ env.OS_PATH }}/magpi-issue-downloader.${{ env.OS_FILE_EXTENTION }} -l 2
+        run: ./${{ env.OS_PATH }}/magpi-issue-downloader.${{ env.OS_FILE_EXTENSION }} -l 2
         shell: ${{ env.OS_SHELL }}
 
       - name: Download Issues with start limit
         id: normalIssuesWithStartLimit
-        run: ./${{ env.OS_PATH }}/magpi-issue-downloader.${{ env.OS_FILE_EXTENTION }} -f $((${{ env.ISSUE_NUMBER }}-1))
+        run: ./${{ env.OS_PATH }}/magpi-issue-downloader.${{ env.OS_FILE_EXTENSION }} -f $((${{ env.ISSUE_NUMBER }}-1))
         shell: ${{ env.OS_SHELL }}
 
       - name: Download Issues with start and end limit
         id: normalIssuesWithRange
-        run: ./${{ env.OS_PATH }}/magpi-issue-downloader.${{ env.OS_FILE_EXTENTION }} -f ${{ env.ISSUE_MINUS_SIX }} -l ${{ env.ISSUE_MINUS_FIVE }}
+        run: ./${{ env.OS_PATH }}/magpi-issue-downloader.${{ env.OS_FILE_EXTENSION }} -f ${{ env.ISSUE_MINUS_SIX }} -l ${{ env.ISSUE_MINUS_FIVE }}
         shell: ${{ env.OS_SHELL }}
 
       # check if files are existing
