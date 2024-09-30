@@ -36,8 +36,7 @@ jobs:
         if: matrix.os == 'windows'
         run: |
           echo "OS_PATH=windows" >> $GITHUB_ENV
-          echo "OS_FILE_EXTENSION=ps" >> $GITHUB_ENV
-#          echo "OS_SHELL=pwsh" >> $GITHUB_ENV
+          echo "OS_FILE_EXTENSION=ps1" >> $GITHUB_ENV
         shell: bash
 
       - name: Set OS-specific variables for macOS and Ubuntu
@@ -45,7 +44,6 @@ jobs:
         run: |
           echo "OS_PATH=linux_mac" >> $GITHUB_ENV
           echo "OS_FILE_EXTENSION=sh" >> $GITHUB_ENV
-#          echo "OS_SHELL=bash" >> $GITHUB_ENV
         shell: bash
 
       - name: print out vars
@@ -60,17 +58,14 @@ jobs:
       - name: Download Issues with end limit
         id: normalIssuesWithEndLimit
         run: ./${{ env.OS_PATH }}/magpi-issue-downloader.${{ env.OS_FILE_EXTENSION }} -l 2
-        shell: pwsh
 
       - name: Download Issues with start limit
         id: normalIssuesWithStartLimit
         run: ./${{ env.OS_PATH }}/magpi-issue-downloader.${{ env.OS_FILE_EXTENSION }} -f $((${{ env.ISSUE_NUMBER }}-1))
-#        shell: ${{ env.OS_SHELL }}
 
       - name: Download Issues with start and end limit
         id: normalIssuesWithRange
         run: ./${{ env.OS_PATH }}/magpi-issue-downloader.${{ env.OS_FILE_EXTENSION }} -f ${{ env.ISSUE_MINUS_SIX }} -l ${{ env.ISSUE_MINUS_FIVE }}
-#        shell: ${{ env.OS_SHELL }}
 
       # check if files are existing
       - name: "Check file existence"
