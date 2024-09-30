@@ -76,6 +76,7 @@ jobs:
           fail: true
       - name: lslah
         run: ls -lah  issues/
+        shell: bash
       - name: File exists
         if: steps.check_files.outputs.files_exists == 'false'
         run: exit 1
