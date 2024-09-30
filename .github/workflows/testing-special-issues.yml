@@ -58,7 +58,7 @@ jobs:
         id: specialIssues
         run: ./${{ env.OS_PATH }}/magpi-special-issue-downloader.${{ env.OS_FILE_EXTENSION }}
       - name: lslah
-        run: ls -lahs
+        run: ls -lahs ../
         shell: bash
       - name: "Check file existence Linux special issues"
         id: check_files
