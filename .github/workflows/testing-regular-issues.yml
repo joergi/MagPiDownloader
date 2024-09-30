@@ -33,20 +33,22 @@ jobs:
         shell: bash
       - name: some Windows specifc variables
         if: contains(matrix.os, 'windows')
+        shell: bash
         run: |-
           echo "in windows if"
           echo "OS_PATH=windows" >> $GITHUB_ENV
           echo "OS_FILE_EXTENTION=ps" >> $GITHUB_ENV
           echo "OS_SHELL=pwsh" >> $GITHUB_ENV
-        shell: bash
+
       - name: some NON Windows specifc variables
         if: !contains(matrix.os, 'windows')
+        shell: bash
         run: |-
           echo "in NON windows if"
           echo "OS_PATH=linux_mac" >> $GITHUB_ENV
           echo "OS_FILE_EXTENTION=sh" >> $GITHUB_ENV
           echo "OS_SHELL=bash" >> $GITHUB_ENV
-        shell: bash
+
       - name: print out vars
         id: printOutVars
         shell: ${{ env.OS_SHELL }}
