@@ -47,10 +47,10 @@ jobs:
           echo "OS_PATH=linux_mac" >> $GITHUB_ENV
           echo "OS_FILE_EXTENSION=sh" >> $GITHUB_ENV
           echo "OS_SHELL=bash" >> $GITHUB_ENV
-      - name: print out vars
-        id: printOutVars
-        shell: ${{ env.OS_SHELL }}
-        run: env
+#      - name: print out vars
+#        id: printOutVars
+#        shell: ${{ env.OS_SHELL }}
+#        run: env
       - name: Download Issues with end limit
         id: normalIssuesWithEndLimit
         run: ./${{ env.OS_PATH }}/magpi-issue-downloader.${{ env.OS_FILE_EXTENSION }} -l 2
