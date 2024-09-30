@@ -59,11 +59,12 @@ jobs:
         id: printOutVars
         shell: bash
         run: env
-      - test echo
-      - run:
+      - name: test echo
+        run: |
           echo ${{ env.OS_PATH }}
           echo ${{ env.OS_SHELL }}
           echo ${{ env.OS_FILE_EXTENSION }}
+        shell: bash
       - name: Download Issues with end limit
         id: normalIssuesWithEndLimit
         run: ./${{ env.OS_PATH }}/magpi-issue-downloader.${{ env.OS_FILE_EXTENSION }} -l 2
