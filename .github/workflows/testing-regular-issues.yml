@@ -31,14 +31,6 @@ jobs:
           echo "ISSUE_MINUS_FIVE=$((${{ steps.read_recent.outputs.text }}-5))" >> $GITHUB_ENV
           echo "ISSUE_MINUS_SIX=$((${{ steps.read_recent.outputs.text }}-6))" >> $GITHUB_ENV
         shell: bash
-      - name: some Windows specifc variables
-        if: contains(matrix.os, 'windows')
-        shell: bash
-        run: |
-          echo "in windows if"
-          echo "OS_PATH=windows" >> $GITHUB_ENV
-          echo "OS_FILE_EXTENSION=ps" >> $GITHUB_ENV
-          echo "OS_SHELL=pwsh" >> $GITHUB_ENV
 
       - name: Set OS-specific variables for Windows
         if: matrix.os == 'windows'
@@ -55,6 +47,7 @@ jobs:
           echo "OS_FILE_EXTENSION=sh" >> $GITHUB_ENV
           echo "OS_SHELL=bash" >> $GITHUB_ENV
         shell: bash
+
       - name: print out vars
         id: printOutVars
         shell: bash
