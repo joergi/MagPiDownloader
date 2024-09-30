@@ -40,14 +40,21 @@ jobs:
           echo "OS_FILE_EXTENSION=ps" >> $GITHUB_ENV
           echo "OS_SHELL=pwsh" >> $GITHUB_ENV
 
-      - name: some NON Windows specifc variables
-        if: contains(matrix.os, 'ubuntu') || contains(matrix.os, 'macos')
-        shell: bash
+      - name: Set OS-specific variables for Windows
+        if: matrix.os == 'windows'
         run: |
-          echo "in NON windows if"
+          echo "OS_PATH=windows" >> $GITHUB_ENV
+          echo "OS_FILE_EXTENSION=ps" >> $GITHUB_ENV
+          echo "OS_SHELL=pwsh" >> $GITHUB_ENV
+        shell: bash
+
+      - name: Set OS-specific variables for macOS and Ubuntu
+        if: matrix.os != 'windows'
+        run: |
           echo "OS_PATH=linux_mac" >> $GITHUB_ENV
           echo "OS_FILE_EXTENSION=sh" >> $GITHUB_ENV
           echo "OS_SHELL=bash" >> $GITHUB_ENV
+        shell: bash
       - name: print out vars
         id: printOutVars
         shell: bash
