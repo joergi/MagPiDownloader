@@ -24,7 +24,7 @@ jobs:
       - name: curl remote file output
         id: read_recent
         run: |
-          echo "ISSUE_NUMBER=sources-for-download/regular-issues.txt" >> $GITHUB_ENV
+          echo "ISSUE_NUMBER=$(cat sources-for-download/regular-issues.txt)" >> $GITHUB_ENV
         shell: bash
       - run: |
           echo "ISSUE_MINUS_ONE=$((${{ env.ISSUE_NUMBER }}-1))" >> $GITHUB_ENV
