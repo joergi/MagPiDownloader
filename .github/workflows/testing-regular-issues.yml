@@ -21,15 +21,15 @@ jobs:
     runs-on: ${{ matrix.os }}-latest
     steps:
       - uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938 # v4.2.0
-      - uses: pCYSl5EDgo/cat@master
+      - name: curl remote file output
         id: read_recent
-        with:
-          path: sources-for-download/regular-issues.txt
+        run: |
+          echo "ISSUE_NUMBER=sources-for-download/regular-issues.txt" >> $GITHUB_ENV
+        shell: bash
       - run: |
-          echo "ISSUE_NUMBER=${{ steps.read_recent.outputs.text }}" >> $GITHUB_ENV
-          echo "ISSUE_MINUS_ONE=$((${{ steps.read_recent.outputs.text }}-1))" >> $GITHUB_ENV
-          echo "ISSUE_MINUS_FIVE=$((${{ steps.read_recent.outputs.text }}-5))" >> $GITHUB_ENV
-          echo "ISSUE_MINUS_SIX=$((${{ steps.read_recent.outputs.text }}-6))" >> $GITHUB_ENV
+          echo "ISSUE_MINUS_ONE=$((${{ env.ISSUE_NUMBER }}-1))" >> $GITHUB_ENV
+          echo "ISSUE_MINUS_FIVE=$((${{ env.ISSUE_NUMBER }}-5))" >> $GITHUB_ENV
+          echo "ISSUE_MINUS_SIX=$((${{ env.ISSUE_NUMBER }}-6))" >> $GITHUB_ENV
         shell: bash
 
       - name: Set OS-specific variables for Windows
