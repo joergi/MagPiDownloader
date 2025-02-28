@@ -13,7 +13,7 @@ IFS=$'\n\t'
 # VERSION=1.0
 # USAGE="Usage: bash magpi-issue-downloader-latest.sh"
 
-MAGPI_URL="https://magpi.raspberrypi.com"
+MAGPI_URL="https://magazine.raspberrypi.com"
 BASEDIR=$(dirname "$0")/..
 
 #printf -v page_url "$MAGPI_URL/issues"

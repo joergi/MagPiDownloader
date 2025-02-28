@@ -13,7 +13,7 @@ IFS=$'\n\t'
 # you don't need to run this script
 # this is running automatically on Github each date to update the latest issues
 
-MAGPI_URL="https://magpi.raspberrypi.com"
+MAGPI_URL="https://magazine.raspberrypi.com/"
 BASEDIR=$(dirname "$0")/..
 
 #printf -v page_url "$MAGPI_URL/issues"
