@@ -85,8 +85,8 @@ jobs:
         id: md5_files
         shell: bash
         run: |
-          cmp --silent issues/MagPi_1.pdf issues/MagPi_2.pdf && echo '### ERROR: Files Are Identical! && exit 1' 
-          cmp --silent issues/MagPi_2.pdf issues/MagPi_${{ env.ISSUE_MINUS_SIX }}.pdf && echo '### ERROR: Files Are Identical! && exit 1'
-          cmp --silent issues/MagPi_${{ env.ISSUE_MINUS_SIX }}.pdf issues/MagPi_${{ env.ISSUE_MINUS_FIVE }}.pdf && echo '### ERROR: Files Are Identical! && exit 1'
-          cmp --silent issues/MagPi_${{ env.ISSUE_MINUS_FIVE }}.pdf issues/MagPi_${{ env.ISSUE_MINUS_ONE }}.pdf && echo '### ERROR: Files Are Identical! && exit 1'
-          cmp --silent issues/MagPi_${{ env.ISSUE_MINUS_ONE }}.pdf issues/MagPi_${{ env.ISSUE_NUMBER }}.pdf && echo '### ERROR: Files Are Identical! && exit 1'
+          cmp --silent issues/MagPi_1.pdf issues/MagPi_2.pdf && echo '### ERROR: Files Are Identical!' && exit 1 
+          cmp --silent issues/MagPi_2.pdf issues/MagPi_${{ env.ISSUE_MINUS_SIX }}.pdf && echo '### ERROR: Files Are Identical!' && exit 1
+          cmp --silent issues/MagPi_${{ env.ISSUE_MINUS_SIX }}.pdf issues/MagPi_${{ env.ISSUE_MINUS_FIVE }}.pdf && echo '### ERROR: Files Are Identical!' && exit 1
+          cmp --silent issues/MagPi_${{ env.ISSUE_MINUS_FIVE }}.pdf issues/MagPi_${{ env.ISSUE_MINUS_ONE }}.pdf && echo '### ERROR: Files Are Identical!' && exit 1
+          cmp --silent issues/MagPi_${{ env.ISSUE_MINUS_ONE }}.pdf issues/MagPi_${{ env.ISSUE_NUMBER }}.pdf && echo '### ERROR: Files Are Identical!' && exit 1
