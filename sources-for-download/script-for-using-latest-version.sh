@@ -1,6 +1,6 @@
 #!/bin/bash
 set -o errexit
-#set -o pipefail
+set -o pipefail
 set -o nounset
 IFS=$'\n\t'
 
@@ -12,20 +12,18 @@ IFS=$'\n\t'
 # VERSION=0.1
 # you don't need to run this script
 # this is running automatically on Github each date to update the latest issues
-
-MAGPI_URL="https://magazine.raspberrypi.com/"
+MAGPI_URL="https://magazine.raspberrypi.com"
 BASEDIR=$(dirname "$0")/..
-
 #printf -v page_url "$MAGPI_URL/issues"
 page_url=$(printf '%s\n' "$MAGPI_URL/issues")
 
-latest_issue=$(curl -sf "$page_url" | grep "Get PDF" | head -n 1 | sed 's/^.*issues\///' | sed 's/\/pdf.*$//')
-echo "Latest Issue is " "$latest_issue"
+latest_issue=$(curl -sf "$page_url" | sed -n 's/.*href="\/issues\/\([0-9]\+\)\/pdf".*/\1/p' | head -n 1)
 
 file="$BASEDIR/sources-for-download/regular-issues.txt";
 
 if bash "$BASEDIR"/linux_mac/magpi-issue-downloader.sh -f "$latest_issue" -l "$latest_issue"; then
   echo "Download was successful."
+  echo "xxx $latest_issue"
   echo "$latest_issue" > "$file"
 else
   echo "Download failed."
