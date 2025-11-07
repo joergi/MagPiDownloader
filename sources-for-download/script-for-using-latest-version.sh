@@ -30,6 +30,7 @@ if bash "$BASEDIR"/linux_mac/magpi-issue-downloader.sh -f "$latest_issue" -l "$l
 else
   echo "Download failed."
   rm "$BASEDIR"/issues/MagPi_"$latest_issue".pdf
+  exit 1
 fi
 
 exit 0
