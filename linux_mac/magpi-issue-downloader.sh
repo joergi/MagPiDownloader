@@ -29,7 +29,7 @@ downloadUrl="https://magazine.raspberrypi.com/issues/%02d/pdf/download"
 file="$BASEDIR/sources-for-download/regular-issues.txt";
 
 if [ "${IS_DOCKER:-false}" == "true" ]; then
-    remote_url="https://raw.githubusercontent.com/joergi/MagPiDownloader/main/sources-for-download/regular-issues.txt"
+    remote_url="https://raw.githubusercontent.com/joergi/MagPiDownloader/refs/heads/main/sources-for-download/regular-issues.txt"
     recentIssue=$(curl -s "$remote_url")
 else
     recentIssue=$(cat "$file")
