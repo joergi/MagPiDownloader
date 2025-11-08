@@ -2,6 +2,8 @@
 
 ![Linting](https://github.com/joergi/MagPiDownloader/workflows/Linting/badge.svg)  ![Regular issues](https://github.com/joergi/MagPiDownloader/workflows/Testing%20regular%20issues/badge.svg) ![Special Issues](https://github.com/joergi/MagPiDownloader/workflows/Testing%20special%20issues/badge.svg) [![Testing docker regular issues](https://github.com/joergi/MagPiDownloader/actions/workflows/testing-docker-regular-issues.yml/badge.svg)](https://github.com/joergi/MagPiDownloader/actions/workflows/testing-docker-regular-issues.yml) ![Docker Image Version (latest semver)](https://img.shields.io/docker/v/joergi/mag-pi-downloader)
  
+# Windows and Docker are at the moment not supported (and will be maybe removed in the future)
+
 
 All the issues are downloadable for free on [https://www.raspberrypi.org/magpi/issues/](https://www.raspberrypi.org/magpi/issues/)  
 You can also buy all the paper versions of this issues on [http://swag.raspberrypi.org/collections/magpi](http://swag.raspberrypi.org/collections/magpi)
