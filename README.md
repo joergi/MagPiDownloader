@@ -1,6 +1,6 @@
 # MagPiDownloader for ~~Windows~~ Mac, Linux ~~and Docker~~
 
-![Linting](https://github.com/joergi/MagPiDownloader/workflows/Linting/badge.svg)  ![Regular issues](https://github.com/joergi/MagPiDownloader/workflows/Testing%20regular%20issues/badge.svg) ![Special Issues](https://github.com/joergi/MagPiDownloader/workflows/Testing%20special%20issues/badge.svg) [![Testing docker regular issues](https://github.com/joergi/MagPiDownloader/actions/workflows/testing-docker-regular-issues.yml/badge.svg)](https://github.com/joergi/MagPiDownloader/actions/workflows/testing-docker-regular-issues.yml)
+![Linting](https://github.com/joergi/MagPiDownloader/workflows/Linting/badge.svg)  ![Regular issues](https://github.com/joergi/MagPiDownloader/workflows/Testing%20regular%20issues/badge.svg) ![Special Issues](https://github.com/joergi/MagPiDownloader/workflows/Testing%20special%20issues/badge.svg) 
  
 # Windows and Docker are at the moment NOT WORKING (and will be maybe removed in the future)
 
