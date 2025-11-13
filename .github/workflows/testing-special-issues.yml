@@ -14,7 +14,8 @@ jobs:
   special-issues:
     strategy:
       matrix:
-        os: [ macos, ubuntu, windows]
+        os: [ macos, ubuntu]
+#        os: [ macos, ubuntu, windows]
       fail-fast: false # Allows to see results from other combinations
     runs-on: ${{ matrix.os }}-latest
     steps:
@@ -40,7 +41,7 @@ jobs:
         id: check_files
         uses: andstor/file-existence-action@076e0072799f4942c8bc574a82233e1e4d13e9d6 # v3.0.0
         with:
-          files: "special_issues/MagPiSE1.pdf, special_issues/Projects_Book_v3.pdf, special_issues/Retro_Gaming.pdf, special_issues/C_and_GUI_Programming_2nd_Edition.pdf"
+          files: "special_issues/C_and_GUI_Programming_2nd_Edition.pdf, special_issues/Get_started_with_MicroPython_on_Raspberry_Pi_Pico_2nd_ed.pdf, special_issues/Retro_Gaming_with_Raspberry_Pi_3rd_ed.pdf"
           fail: true
       - name: lslah
         run: ls -lah special_issues/

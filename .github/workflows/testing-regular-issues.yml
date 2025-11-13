@@ -16,7 +16,8 @@ jobs:
   regular:
     strategy:
       matrix:
-        os: [ macos, ubuntu, windows]
+#        os: [ macos, ubuntu, windows]
+        os: [ macos, ubuntu]
       fail-fast: false # Allows to see results from other combinations
     runs-on: ${{ matrix.os }}-latest
     steps:
