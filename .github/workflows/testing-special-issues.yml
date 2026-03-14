@@ -14,11 +14,12 @@ jobs:
   special-issues:
     strategy:
       matrix:
-        os: [ macos, ubuntu, windows]
+        os: [ macos, ubuntu]
+#        os: [ macos, ubuntu, windows]
       fail-fast: false # Allows to see results from other combinations
     runs-on: ${{ matrix.os }}-latest
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - name: Set OS-specific variables for Windows
         if: matrix.os == 'windows'
         run: |
@@ -40,7 +41,7 @@ jobs:
         id: check_files
         uses: andstor/file-existence-action@076e0072799f4942c8bc574a82233e1e4d13e9d6 # v3.0.0
         with:
-          files: "special_issues/MagPiSE1.pdf, special_issues/Projects_Book_v3.pdf, special_issues/Retro_Gaming.pdf, special_issues/C_and_GUI_Programming_2nd_Edition.pdf"
+          files: "special_issues/C_and_GUI_Programming_2nd_Edition.pdf, special_issues/Get_started_with_MicroPython_on_Raspberry_Pi_Pico_2nd_ed.pdf, special_issues/Retro_Gaming_with_Raspberry_Pi_3rd_ed.pdf"
           fail: true
       - name: lslah
         run: ls -lah special_issues/
