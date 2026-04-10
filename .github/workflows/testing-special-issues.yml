@@ -49,3 +49,11 @@ jobs:
       - name: File exists
         if: steps.check_files.outputs.files_exists == 'false'
         run: exit 1
+
+      - name: "check if files are all different"
+        id: md5_files
+        shell: bash
+        run: |
+          cmp --silent special_issues/MagPiSE1.pdf special_issues/Projects_Book_v3.pdf && { echo '### ERROR: Files Are Identical! ###'; exit 1; } || true 
+          cmp --silent special_issues/Projects_Book_v3.pdf special_issues/Retro_Gaming.pdf && { echo '### ERROR: Files Are Identical! ###'; exit 1; } || true
+          cmp --silent special_issues/Retro_Gaming.pdf special_issues/C_and_GUI_Programming_2nd_Edition.pdf.pdf && { echo '### ERROR: Files Are Identical! ###'; exit 1; } || true
